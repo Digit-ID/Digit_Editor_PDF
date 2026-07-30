@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1F6FEB">
+<title>DigiPDF — Digit I&amp;D</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="DigiPDF">
+<script>try{
+/* Animação de arranque Digit (idêntica ao Conciliador de Contas). */
+var _dark=false;
+try{ _dark=(localStorage.getItem('digipdf_tema')==='escuro'); }catch(e){}
+var _bg=_dark?'#0E1420':'#FBFAF7';
+var _t0=Date.now(), _MIN=1500;
+var LOGO='data:image/png;base64,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';
+var CSS='#__boot{position:fixed;inset:0;z-index:2147483000;background:'+_bg+';display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;transition:opacity .45s ease}'
++'#__boot.off{opacity:0;pointer-events:none}'
++'#__boot .mark{width:236px;height:100px;background-image:url('+LOGO+');background-repeat:no-repeat;background-size:contain;background-position:center;transform-origin:50% 60%;animation:digitFlex 1.05s cubic-bezier(.34,1.4,.4,1) both}'
++'#__boot .bar{width:118px;height:3px;border-radius:3px;background:rgba(31,111,235,.14);overflow:hidden;opacity:0;animation:bfade .5s ease .85s both}'
++'#__boot .bar i{display:block;width:38%;height:100%;border-radius:3px;background:#1F6FEB;animation:bslide 1.15s ease-in-out infinite}'
++'#__bootmsg{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:12px;font-weight:600;color:#7b8798;margin-top:-8px}'
++'@keyframes digitFlex{0%{opacity:0;transform:scale(.52,1.28) skewX(-9deg)}22%{opacity:1}38%{transform:scale(1.14,.9) skewX(5deg)}58%{transform:scale(.95,1.06) skewX(-3deg)}76%{transform:scale(1.03,.98) skewX(1.5deg)}100%{opacity:1;transform:scale(1,1) skewX(0)}}'
++'@keyframes bfade{to{opacity:1}}'
++'@keyframes bslide{0%{transform:translateX(-110%)}100%{transform:translateX(320%)}}';
+var HTML='<div class="mark"></div><div class="bar"><i></i></div><div id="__bootmsg"></div>';
+window.__bootHTML=HTML;
+function _ensure(){
+  if(window.__bootDone) return;
+  var st=document.getElementById('__bootstyle');
+  if(!st){ st=document.createElement('style'); st.id='__bootstyle'; st.textContent=CSS; (document.head||document.documentElement).appendChild(st); }
+  var d=document.getElementById('__boot');
+  if(!d){ d=document.createElement('div'); d.id='__boot'; d.innerHTML=HTML; document.documentElement.appendChild(d); }
+  else if(d.parentNode!==document.documentElement){ document.documentElement.appendChild(d); }
+}
+_ensure();
+var _iv=setInterval(function(){ if(window.__bootDone){ clearInterval(_iv); return; } _ensure(); },50);
+try{ new MutationObserver(function(){ _ensure(); }).observe(document.documentElement,{childList:true}); }catch(e){}
+setTimeout(function(){ if(window.__hideBoot) window.__hideBoot(); },15000);
+window.__hideBoot=function(){
+  if(window.__bootDone) return;
+  var falta=_MIN-(Date.now()-_t0);
+  if(falta>0){ setTimeout(window.__hideBoot,falta); return; }
+  window.__bootDone=1; clearInterval(_iv);
+  var d=document.getElementById('__boot'); if(!d) return;
+  d.className='off'; setTimeout(function(){ if(d.parentNode) d.parentNode.removeChild(d); },500);
+};
+}catch(e){}</script>
+<style>
+  :root{
+    --brand:#1F6FEB; --brand-dark:#1558c4; --brand-soft:#e9f1fe; --brand-ink:#ffffff;
+    --bg:#f5f7fb; --card:#ffffff; --ink:#111a27; --muted:#5f6b7c; --faint:#8b96a6;
+    --line:#e4e8ef; --line2:#eef1f6;
+    --chip:#eef2f8; --hover:#e6ebf3;
+    --ok:#1e874b; --ok-bg:#e8f6ee; --warn:#b4530d; --warn-bg:#fdf2e6; --err:#c0392b; --err-bg:#fdeceb;
+    --sel:#1F6FEB; --sel-bg:#e9f1fe;
+    --sh:0 1px 2px rgba(17,26,39,.05);
+    --sh2:0 6px 20px rgba(17,26,39,.10);
+    --f-ui:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --f-ti:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --f-num:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --r-card:13px; --r-btn:10px; --r-chip:9px;
+  }
+  [data-theme="escuro"]{
+    --brand:#4d8dff; --brand-dark:#3576e8; --brand-soft:#16233a; --brand-ink:#0b1220;
+    --bg:#0E1420; --card:#151d2b; --ink:#e7ecf4; --muted:#95a1b3; --faint:#717f92;
+    --line:#243043; --line2:#1c2637;
+    --chip:#1d2737; --hover:#2a374d;
+    --ok:#42c07a; --ok-bg:#12281c; --warn:#e0913f; --warn-bg:#2a1f11; --err:#ef6a5a; --err-bg:#2b1614;
+    --sel:#4d8dff; --sel-bg:#16233a;
+    --sh:0 1px 2px rgba(0,0,0,.3); --sh2:0 6px 22px rgba(0,0,0,.45);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;font-family:var(--f-ui);background:var(--bg);color:var(--ink);font-size:14px;line-height:1.5;
+    -webkit-text-size-adjust:100%}
+  h1,h2,h3,.ti{font-family:var(--f-ti);font-weight:600;letter-spacing:-.01em}
+  .mono{font-family:var(--f-num)}
+  svg{flex:0 0 auto}
+  .hidden{display:none !important}
+
+  /* ---------- barra superior ---------- */
+  .top{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:12px;
+    padding:10px 18px;background:var(--card);border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:11px;min-width:0}
+  .brand img{height:30px;width:auto;display:block}
+  .brand .nm{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+  .brand .nm b{font-family:var(--f-ti);font-size:17px;font-weight:600;white-space:nowrap}
+  .brand .nm span{font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--faint);font-weight:700}
+  .top-sp{flex:1}
+  .top-acts{display:flex;align-items:center;gap:7px}
+
+  /* ---------- botões ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:36px;padding:0 13px;
+    border:1px solid transparent;border-radius:var(--r-btn);background:var(--brand);color:var(--brand-ink);
+    font-family:var(--f-ui);font-size:13px;font-weight:600;cursor:pointer;transition:.14s;white-space:nowrap}
+  .btn:hover{background:var(--brand-dark)}
+  .btn.g{background:var(--card);color:var(--ink);border-color:var(--line)}
+  .btn.g:hover{background:var(--chip)}
+  .btn.q{background:transparent;color:var(--muted);border-color:transparent}
+  .btn.q:hover{background:var(--chip);color:var(--ink)}
+  .btn.ic{width:36px;padding:0}
+  .btn.sm{height:31px;padding:0 10px;font-size:12px}
+  .btn.dz{background:var(--err);color:#fff}
+  .btn:disabled{opacity:.45;cursor:not-allowed}
+  .btn:disabled:hover{background:var(--brand)}
+  .btn.g:disabled:hover{background:var(--card)}
+
+  .segs{display:flex;gap:3px;background:var(--chip);border-radius:var(--r-chip);padding:3px}
+  .seg{border:none;background:transparent;padding:5px 9px;border-radius:7px;font-family:var(--f-ui);
+    font-size:11.5px;font-weight:700;color:var(--muted);cursor:pointer;transition:.14s}
+  .seg:hover{background:var(--hover);color:var(--ink)}
+  .seg.on{background:var(--brand);color:var(--brand-ink)}
+
+  /* ---------- privacidade ---------- */
+  .priv{display:flex;align-items:center;gap:9px;margin:0 0 14px;padding:10px 14px;
+    background:var(--ok-bg);border:1px solid color-mix(in srgb,var(--ok) 25%,transparent);
+    border-radius:var(--r-chip);font-size:12.5px;font-weight:600;color:var(--ok)}
+  .priv svg{color:var(--ok)}
+
+  /* ---------- layout ---------- */
+  .wrap{max-width:1360px;margin:0 auto;padding:16px 18px 30px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);box-shadow:var(--sh)}
+  .pad{padding:16px}
+  h2.sec{margin:0 0 4px;font-size:18px}
+  .sub{color:var(--muted);font-size:13px;margin:0 0 14px}
+
+  /* ---------- zona de arrasto ---------- */
+  .drop{border:2px dashed color-mix(in srgb,var(--brand) 45%,var(--line));border-radius:var(--r-card);
+    padding:38px 22px;text-align:center;cursor:pointer;background:var(--card);transition:.15s}
+  .drop:hover,.drop.over{border-color:var(--brand);background:var(--brand-soft)}
+  .drop .ico{color:var(--brand);margin-bottom:10px}
+  .drop .t1{font-size:16px;font-family:var(--f-ti);font-weight:600}
+  .drop .t1 b{color:var(--brand)}
+  .drop .t2{font-size:12.5px;color:var(--muted);margin-top:6px}
+  .quick{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+
+  /* ---------- barra de ações ---------- */
+  .bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:11px 14px;
+    background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);
+    box-shadow:var(--sh);margin-bottom:12px;position:sticky;top:57px;z-index:40}
+  .bar .sp{flex:1}
+  .bar .divi{width:1px;height:24px;background:var(--line);margin:0 3px}
+  .selinfo{font-size:12.5px;font-weight:700;color:var(--brand);background:var(--brand-soft);
+    padding:5px 10px;border-radius:8px;white-space:nowrap}
+
+  /* ---------- documentos ---------- */
+  .docs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+  .docchip{display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--card);
+    border:1px solid var(--line);border-radius:var(--r-chip);font-size:12.5px;box-shadow:var(--sh)}
+  .docchip .dn{font-weight:600;max-width:210px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .docchip .dp{color:var(--faint);font-family:var(--f-num);font-size:11.5px}
+  .docchip .dcol{width:8px;height:8px;border-radius:50%;flex:0 0 auto}
+  .minibtn{border:none;background:transparent;color:var(--muted);cursor:pointer;padding:3px;
+    border-radius:6px;display:inline-flex}
+  .minibtn:hover{background:var(--chip);color:var(--ink)}
+
+  /* ---------- grelha de páginas ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:12px}
+  .pg{position:relative;background:var(--card);border:1px solid var(--line);border-radius:11px;
+    padding:8px;cursor:pointer;transition:.12s;user-select:none;box-shadow:var(--sh)}
+  .pg:hover{border-color:color-mix(in srgb,var(--brand) 40%,var(--line))}
+  .pg.sel{border-color:var(--sel);background:var(--sel-bg);box-shadow:0 0 0 2px color-mix(in srgb,var(--sel) 28%,transparent)}
+  .pg.drag{opacity:.4}
+  .pg.dropbefore{box-shadow:-3px 0 0 0 var(--brand)}
+  .pg.dropafter{box-shadow:3px 0 0 0 var(--brand)}
+  .thumb{position:relative;width:100%;aspect-ratio:1/1.35;display:flex;align-items:center;justify-content:center;
+    background:var(--line2);border-radius:7px;overflow:hidden}
+  .thumb canvas,.thumb img{max-width:100%;max-height:100%;display:block;
+    box-shadow:0 1px 4px rgba(17,26,39,.14);background:#fff;transition:transform .18s ease}
+  .thumb .ld{width:20px;height:20px;border:2px solid var(--line);border-top-color:var(--brand);
+    border-radius:50%;animation:sp .7s linear infinite}
+  @keyframes sp{to{transform:rotate(360deg)}}
+  .pgfoot{display:flex;align-items:center;gap:5px;margin-top:7px}
+  .pgnum{font-family:var(--f-num);font-size:11.5px;font-weight:700;color:var(--muted)}
+  .pgsrc{width:7px;height:7px;border-radius:50%;flex:0 0 auto}
+  .pgacts{margin-left:auto;display:flex;gap:1px}
+  .pgacts .minibtn{padding:4px}
+  .pgtick{position:absolute;top:12px;left:12px;width:19px;height:19px;border-radius:6px;
+    border:1.5px solid var(--line);background:var(--card);display:flex;align-items:center;justify-content:center;
+    color:transparent}
+  .pg.sel .pgtick{background:var(--sel);border-color:var(--sel);color:#fff}
+  .pgrot{position:absolute;top:12px;right:12px;font-family:var(--f-num);font-size:10px;font-weight:700;
+    background:var(--brand);color:var(--brand-ink);padding:2px 5px;border-radius:5px}
+
+  .pgerr{font-family:var(--f-num);font-weight:700;color:var(--err)}
+  .bi{display:inline-flex;align-items:center;justify-content:center}
+
+  /* ---------- lista de ferramentas ---------- */
+  .toolrow{display:flex;align-items:flex-start;gap:11px;width:100%;text-align:left;margin-bottom:8px;
+    padding:12px 13px;border:1px solid var(--line);border-radius:var(--r-btn);background:var(--card);
+    color:var(--ink);font-family:var(--f-ui);font-size:13px;cursor:pointer;transition:.14s}
+  .toolrow:hover{border-color:color-mix(in srgb,var(--brand) 45%,var(--line));background:var(--brand-soft)}
+  .toolrow .ti{color:var(--brand);display:inline-flex;margin-top:1px}
+  .toolrow .tt{display:flex;flex-direction:column;gap:2px;min-width:0}
+  .toolrow .tt b{font-weight:700}
+  .toolrow .tt span{color:var(--muted);font-size:12px}
+
+  /* ---------- ajuda ---------- */
+  .hh{font-family:var(--f-ti);font-size:15px;font-weight:600;margin:18px 0 6px}
+  .hh:first-child{margin-top:0}
+  .hp{font-size:13px;color:var(--ink);margin:0 0 8px;text-align:justify;line-height:1.62}
+  .hp b{font-weight:700}
+  kbd{font-family:var(--f-num);font-size:11px;background:var(--chip);border:1px solid var(--line);
+    border-bottom-width:2px;border-radius:5px;padding:1px 5px;white-space:nowrap}
+
+  /* ---------- modais ---------- */
+  .ov{position:fixed;inset:0;background:rgba(10,16,26,.5);backdrop-filter:blur(2px);z-index:200;
+    display:flex;align-items:center;justify-content:center;padding:18px}
+  .ov.hidden{display:none !important}
+  .mo{background:var(--card);border:1px solid var(--line);border-radius:15px;box-shadow:var(--sh2);
+    width:100%;max-width:520px;max-height:86vh;display:flex;flex-direction:column;overflow:hidden}
+  .mo.wide{max-width:900px}
+  .mo-h{display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid var(--line)}
+  .mo-h h3{margin:0;font-size:17px;flex:1}
+  .mo-b{padding:18px;overflow:auto}
+  .mo-f{display:flex;gap:8px;padding:14px 18px;border-top:1px solid var(--line);background:var(--card)}
+  .mo-f .sp{flex:1}
+  .x{border:none;background:var(--chip);width:31px;height:31px;border-radius:9px;cursor:pointer;
+    color:var(--muted);display:inline-flex;align-items:center;justify-content:center}
+  .x:hover{background:var(--hover);color:var(--ink)}
+
+  /* ---------- formulários ---------- */
+  .fld{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+  .fld>label{font-size:11.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .inp{height:38px;padding:0 11px;border:1px solid var(--line);border-radius:var(--r-btn);background:var(--card);
+    color:var(--ink);font-family:var(--f-ui);font-size:13.5px;width:100%}
+  .inp:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+  select.inp{cursor:pointer}
+  .row{display:flex;gap:10px;flex-wrap:wrap}
+  .row>*{flex:1 1 160px;min-width:0}
+  .rad{display:flex;flex-direction:column;gap:7px}
+  .rad label{display:flex;align-items:flex-start;gap:9px;padding:11px 12px;border:1px solid var(--line);
+    border-radius:var(--r-btn);cursor:pointer;font-size:13px;transition:.14s}
+  .rad label:hover{border-color:color-mix(in srgb,var(--brand) 40%,var(--line));background:var(--brand-soft)}
+  .rad input{margin-top:2px;accent-color:var(--brand);width:16px;height:16px;flex:0 0 auto}
+  .rad .rt{display:flex;flex-direction:column;gap:2px}
+  .rad .rt b{font-weight:700}
+  .rad .rt span{color:var(--muted);font-size:12px}
+  .rad label:has(input:checked){border-color:var(--brand);background:var(--brand-soft)}
+  .chk{display:inline-flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;font-weight:600}
+  .chk input{accent-color:var(--brand);width:16px;height:16px}
+
+  /* ---------- avisos ---------- */
+  .note{border-radius:var(--r-chip);padding:11px 13px;font-size:12.5px;line-height:1.55;
+    border:1px solid;margin-bottom:12px}
+  .note.i{background:var(--brand-soft);border-color:color-mix(in srgb,var(--brand) 25%,transparent);color:var(--ink)}
+  .note.w{background:var(--warn-bg);border-color:color-mix(in srgb,var(--warn) 28%,transparent);color:var(--warn)}
+  .note.e{background:var(--err-bg);border-color:color-mix(in srgb,var(--err) 28%,transparent);color:var(--err)}
+  .note.o{background:var(--ok-bg);border-color:color-mix(in srgb,var(--ok) 25%,transparent);color:var(--ok)}
+  .note b{font-weight:700}
+
+  /* ---------- progresso ---------- */
+  .prog{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);z-index:300;
+    background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh2);
+    padding:13px 17px;min-width:290px;max-width:calc(100vw - 36px)}
+  .prog.hidden{display:none !important}
+  .prog .pt{font-size:12.5px;font-weight:600;margin-bottom:8px;display:flex;gap:8px;align-items:center}
+  .prog .pt .n{margin-left:auto;font-family:var(--f-num);color:var(--muted)}
+  .track{height:5px;background:var(--chip);border-radius:5px;overflow:hidden}
+  .track i{display:block;height:100%;background:var(--brand);border-radius:5px;width:0;transition:width .2s}
+
+  /* ---------- toasts ---------- */
+  .toasts{position:fixed;right:16px;bottom:16px;z-index:400;display:flex;flex-direction:column;gap:8px;
+    max-width:min(380px,calc(100vw - 32px))}
+  .toast{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--brand);
+    border-radius:11px;box-shadow:var(--sh2);padding:11px 13px;font-size:12.8px;line-height:1.5;
+    animation:tin .22s ease both}
+  .toast.err{border-left-color:var(--err)} .toast.ok{border-left-color:var(--ok)}
+  .toast.warn{border-left-color:var(--warn)}
+  .toast b{display:block;margin-bottom:2px}
+  @keyframes tin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  /* ---------- barra inferior (móvel) ---------- */
+  .mbar{display:none}
+
+  /* ---------- tabela de pré-visualização ---------- */
+  .tbwrap{overflow:auto;max-height:52vh;border:1px solid var(--line);border-radius:var(--r-btn)}
+  table.pv{border-collapse:collapse;width:100%;font-size:12.5px;white-space:nowrap}
+  table.pv th,table.pv td{border:1px solid var(--line);padding:5px 8px;text-align:left}
+  table.pv thead th{position:sticky;top:0;background:var(--chip);font-weight:700;z-index:1}
+  table.pv tr.head td{background:var(--brand-soft);font-weight:700}
+  table.pv tr.off td{opacity:.35;text-decoration:line-through}
+  table.pv td.num{text-align:right;font-family:var(--f-num)}
+  .colhdr{display:flex;gap:4px;align-items:center}
+
+  /* ---------- responsivo ---------- */
+  @media(max-width:820px){
+    .wrap{padding:12px 11px 96px}
+    .top{padding:9px 12px;gap:8px}
+    .brand img{height:24px} .brand .nm b{font-size:15px} .brand .nm span{font-size:9px}
+    .brand{gap:8px} .top-acts{gap:5px}
+    /* estas ações já estão na barra inferior fixa */
+    .bar #bSave,.bar #bDel,.bar #bMore{display:none}
+    .btn{height:40px;min-width:40px} .btn.ic{width:40px}
+    .seg{padding:7px 10px;min-height:34px}
+    .bar{position:static;padding:10px}
+    .bar .lbl{display:none}
+    .grid{grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:9px}
+    .pg{padding:6px}
+    .mo{max-height:92vh} .mo-b{padding:14px}
+    .prog{bottom:82px;left:11px;right:11px;transform:none;min-width:0;max-width:none}
+    .toasts{right:11px;left:11px;bottom:82px;max-width:none}
+    /* barra inferior fixa com as ações principais */
+    .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:70;gap:6px;
+      padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:var(--card);
+      border-top:1px solid var(--line);box-shadow:0 -3px 14px rgba(17,26,39,.07)}
+    .mbar .btn{flex:1;height:46px;flex-direction:column;gap:2px;font-size:10.5px;padding:0 4px}
+    .mbar .btn svg{width:19px;height:19px}
+    .drop{padding:26px 14px}
+  }
+  @media(max-width:520px){
+    .brand .nm span{display:none}
+    .segs .seg{padding:7px 8px;font-size:11px}
+    #bHelp span:not(.bi){display:none} #bHelp{width:40px;padding:0}
+    .wrap{padding:10px 9px 96px}
+    .priv{font-size:11.8px;padding:9px 11px}
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="brand">
+    <img id="logo" alt="Digit" src="">
+    <div class="nm"><b>DigiPDF</b><span>Digit&nbsp;·&nbsp;I&amp;D</span></div>
+  </div>
+  <div class="top-sp"></div>
+  <div class="top-acts">
+    <button id="bTheme" class="btn g ic" title="Tema"></button>
+    <div class="segs" id="langs">
+      <button class="seg on" data-l="pt">PT</button>
+      <button class="seg" data-l="en">EN</button>
+      <button class="seg" data-l="es">ES</button>
+    </div>
+    <button id="bHelp" class="btn g" data-i18n="mHelp">Ajuda</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="priv" id="priv"></div>
+
+  <!-- ===================== ESTADO VAZIO ===================== -->
+  <section id="empty">
+    <h2 class="sec" data-i18n="emptyT">Editor de PDF</h2>
+    <p class="sub" data-i18n="emptyS">Junta, divide, roda e reorganiza páginas. Converte para Excel e Word. Tudo dentro do teu navegador.</p>
+    <div class="drop" id="drop">
+      <div class="ico" id="dropIco"></div>
+      <div class="t1" data-i18n="dropT">Arrasta ficheiros para aqui ou <b data-i18n="dropB">escolhe do teu computador</b></div>
+      <div class="t2" data-i18n="dropS">PDF para editar · Excel, CSV e Word para converter em PDF</div>
+      <input id="file" type="file" accept=".pdf,.xlsx,.xlsm,.xls,.csv,.docx" multiple class="hidden">
+    </div>
+    <div class="quick">
+      <button class="btn g sm" id="qPdf" data-i18n="qPdf">Abrir PDF</button>
+      <button class="btn g sm" id="qXls" data-i18n="qXls">Excel ou CSV → PDF</button>
+      <button class="btn g sm" id="qDoc" data-i18n="qDoc">Word → PDF</button>
+    </div>
+    <div class="note i" style="margin-top:18px" id="emptyNote"></div>
+  </section>
+
+  <!-- ===================== EDITOR ===================== -->
+  <section id="editor" class="hidden">
+    <div class="docs" id="docs"></div>
+
+    <div class="bar">
+      <button class="btn g ic" id="bUndo" title="Ctrl+Z"></button>
+      <button class="btn g ic" id="bRedo" title="Ctrl+Shift+Z"></button>
+      <div class="divi"></div>
+      <button class="btn g sm" id="bAll"><span data-i18n="aAll">Selecionar tudo</span></button>
+      <button class="btn g sm" id="bNone" data-i18n="aNone">Limpar</button>
+      <span class="selinfo hidden" id="selInfo"></span>
+      <div class="divi"></div>
+      <button class="btn g sm" id="bRotL" title=""><span class="lbl" data-i18n="aRotL">Rodar −90°</span></button>
+      <button class="btn g sm" id="bRotR" title=""><span class="lbl" data-i18n="aRotR">Rodar +90°</span></button>
+      <button class="btn g sm" id="bRot180" title=""><span class="lbl">180°</span></button>
+      <div class="divi"></div>
+      <button class="btn g sm" id="bFirst"><span class="lbl" data-i18n="aFirst">Para o início</span></button>
+      <button class="btn g sm" id="bLast"><span class="lbl" data-i18n="aLast">Para o fim</span></button>
+      <button class="btn g sm" id="bDup"><span class="lbl" data-i18n="aDup">Duplicar</span></button>
+      <button class="btn g sm dz" id="bDel"><span class="lbl" data-i18n="aDel">Eliminar</span></button>
+      <div class="sp"></div>
+      <button class="btn g sm" id="bMore" data-i18n="aMore">Mais…</button>
+      <button class="btn g sm" id="bExtract" data-i18n="aExtract">Extrair seleção</button>
+      <button class="btn g sm" id="bSplit" data-i18n="aSplit">Dividir…</button>
+      <button class="btn sm" id="bSave" data-i18n="aSave">Guardar PDF</button>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </section>
+</div>
+
+<!-- barra inferior no telemóvel -->
+<div class="mbar hidden" id="mbar">
+  <button class="btn g" id="mAdd"><span data-i18n="mAdd">Abrir</span></button>
+  <button class="btn g" id="mRot"><span data-i18n="mRot">Rodar</span></button>
+  <button class="btn g" id="mDel"><span data-i18n="mDel">Eliminar</span></button>
+  <button class="btn g" id="mMore"><span data-i18n="mMore">Mais</span></button>
+  <button class="btn" id="mSave"><span data-i18n="mSave">Guardar</span></button>
+</div>
+
+<div class="prog hidden" id="prog">
+  <div class="pt"><span id="progT"></span><span class="n" id="progN"></span></div>
+  <div class="track"><i id="progBar"></i></div>
+</div>
+<div class="toasts" id="toasts"></div>
+
+<!-- ===================== MODAIS ===================== -->
+<div class="ov hidden" id="ovSplit"><div class="mo">
+  <div class="mo-h"><h3 data-i18n="spT">Dividir PDF</h3><button class="x" data-close></button></div>
+  <div class="mo-b">
+    <div class="rad">
+      <label><input type="radio" name="spm" value="rng" checked><span class="rt"><b data-i18n="spR1">Por intervalos</b><span data-i18n="spR1s">Um PDF por cada intervalo indicado.</span></span></label>
+      <label><input type="radio" name="spm" value="evn"><span class="rt"><b data-i18n="spR2">A cada N páginas</b><span data-i18n="spR2s">Divide em blocos do mesmo tamanho.</span></span></label>
+      <label><input type="radio" name="spm" value="one"><span class="rt"><b data-i18n="spR3">Uma página por ficheiro</b><span data-i18n="spR3s">Todos os ficheiros num ZIP.</span></span></label>
+    </div>
+    <div class="fld" id="spRngW"><label data-i18n="spRng">Intervalos</label>
+      <input class="inp" id="spRng" placeholder="1-3, 7, 9-12"></div>
+    <div class="fld hidden" id="spEvnW"><label data-i18n="spEvn">Páginas por ficheiro</label>
+      <input class="inp" id="spEvn" type="number" min="1" value="10"></div>
+    <div class="note i" id="spInfo"></div>
+  </div>
+  <div class="mo-f"><div class="sp"></div><button class="btn g" data-close data-i18n="cancel">Cancelar</button>
+    <button class="btn" id="spGo" data-i18n="spGo">Dividir</button></div>
+</div></div>
+
+<div class="ov hidden" id="ovMore"><div class="mo">
+  <div class="mo-h"><h3 data-i18n="moT">Mais ferramentas</h3><button class="x" data-close></button></div>
+  <div class="mo-b" id="moreBody"></div>
+  <div class="mo-f"><div class="sp"></div><button class="btn g" data-close data-i18n="close">Fechar</button></div>
+</div></div>
+
+<div class="ov hidden" id="ovHelp"><div class="mo wide">
+  <div class="mo-h"><h3 data-i18n="hT">Como funciona</h3><button class="x" data-close></button></div>
+  <div class="mo-b" id="helpBody"></div>
+  <div class="mo-f"><div class="sp"></div><button class="btn" data-close data-i18n="gotIt">Entendido</button></div>
+</div></div>
+
+<div class="ov hidden" id="ovGen"><div class="mo">
+  <div class="mo-h"><h3 id="genT"></h3><button class="x" data-close></button></div>
+  <div class="mo-b" id="genBody"></div>
+  <div class="mo-f"><div class="sp"></div><button class="btn g" data-close data-i18n="cancel">Cancelar</button>
+    <button class="btn" id="genGo"></button></div>
+</div></div>
+
+<script src="vendor/pdf.min.js"></script>
+<script src="vendor/pdf-lib.min.js"></script>
+<script src="vendor/jszip.min.js"></script>
+<script src="vendor/xlsx.full.min.js"></script>
+<script src="vendor/mammoth.browser.min.js"></script>
+<script src="vendor/docx.iife.js"></script>
+<script>
+/* =========================================================================
+   DigiPDF — Digit I&D
+   Tudo corre no navegador. Nenhum byte sai do dispositivo.
+   ========================================================================= */
+"use strict";
+
+/* ---------------- 1. idiomas ---------------- */
+const I18N={
+pt:{
+ priv:"Os teus ficheiros nunca saem deste dispositivo. Todo o processamento é feito aqui, no teu navegador.",
+ emptyT:"Editor de PDF", emptyS:"Junta, divide, roda e reorganiza páginas. Converte para Excel e Word. Tudo dentro do teu navegador.",
+ dropT:"Arrasta ficheiros para aqui ou <b>escolhe do teu computador</b>", dropB:"escolhe do teu computador",
+ dropS:"PDF para editar · Excel, CSV e Word para converter em PDF",
+ qPdf:"Abrir PDF", qXls:"Excel ou CSV → PDF", qDoc:"Word → PDF",
+ emptyNote:"<b>Sem servidores, sem contas, sem envios.</b> Depois de a página carregar, o DigiPDF funciona mesmo sem ligação à internet. Fecha o separador e não fica nada.",
+ mHelp:"Ajuda", aAll:"Selecionar tudo", aNone:"Limpar", aRotL:"Rodar −90°", aRotR:"Rodar +90°",
+ aFirst:"Para o início", aLast:"Para o fim", aDup:"Duplicar", aDel:"Eliminar",
+ aMore:"Mais…", aExtract:"Extrair seleção", aSplit:"Dividir…", aSave:"Guardar PDF",
+ mAdd:"Abrir", mRot:"Rodar", mDel:"Eliminar", mMore:"Mais", mSave:"Guardar",
+ selN:"{n} selecionada(s)", pagesN:"{n} página(s)", docsN:"{n} documento(s)",
+ cancel:"Cancelar", close:"Fechar", gotIt:"Entendido", apply:"Aplicar",
+ spT:"Dividir PDF", spR1:"Por intervalos", spR1s:"Um PDF por cada intervalo indicado.",
+ spR2:"A cada N páginas", spR2s:"Divide em blocos do mesmo tamanho.",
+ spR3:"Uma página por ficheiro", spR3s:"Todos os ficheiros num ZIP.",
+ spRng:"Intervalos", spEvn:"Páginas por ficheiro", spGo:"Dividir",
+ spInfo:"O documento tem <b>{n}</b> páginas. Exemplo de intervalos: <b>1-3, 7, 9-12</b>.",
+ moT:"Mais ferramentas",
+ hT:"Como funciona",
+ /* mensagens */
+ okLoad:"{n} ficheiro(s) carregado(s).",
+ errPwd:"<b>PDF protegido por palavra-passe</b><br>O DigiPDF não abre ficheiros protegidos. Retira a proteção no programa onde o criaste e tenta outra vez.",
+ errBad:"<b>Não foi possível ler «{f}»</b><br>O ficheiro pode estar danificado ou não ser um PDF válido.",
+ errBig:"<b>«{f}» é muito grande ({s})</b><br>Ficheiros acima de 50 MB podem esgotar a memória do navegador. Podes tentar, mas se o separador bloquear, divide o ficheiro antes.",
+ errNoPdf:"Este ficheiro não é um PDF. Usa a conversão de Excel ou Word para PDF.",
+ errEmpty:"Não há páginas para guardar.",
+ errSel:"Seleciona primeiro as páginas.",
+ errRange:"Não consegui entender os intervalos. Usa números e traços, por exemplo <b>1-3, 7, 9-12</b>.",
+ okSaved:"Guardado: <b>{f}</b>",
+ okSplit:"{n} ficheiro(s) criado(s).",
+ wLoad:"A abrir {f}…", wSave:"A criar o PDF…", wSplit:"A dividir…", wThumb:"A preparar as miniaturas…",
+ undoNo:"Nada para desfazer.", redoNo:"Nada para refazer.",
+ confDel:"Eliminar {n} página(s)?",
+},
+en:{
+ priv:"Your files never leave this device. All processing happens right here, in your browser.",
+ emptyT:"PDF editor", emptyS:"Merge, split, rotate and reorder pages. Convert to Excel and Word. All inside your browser.",
+ dropT:"Drag files here or <b>pick them from your computer</b>", dropB:"pick them from your computer",
+ dropS:"PDF to edit · Excel, CSV and Word to convert into PDF",
+ qPdf:"Open PDF", qXls:"Excel or CSV → PDF", qDoc:"Word → PDF",
+ emptyNote:"<b>No servers, no accounts, no uploads.</b> Once the page has loaded, DigiPDF works even with no internet connection. Close the tab and nothing is left behind.",
+ mHelp:"Help", aAll:"Select all", aNone:"Clear", aRotL:"Rotate −90°", aRotR:"Rotate +90°",
+ aFirst:"To the start", aLast:"To the end", aDup:"Duplicate", aDel:"Delete",
+ aMore:"More…", aExtract:"Extract selection", aSplit:"Split…", aSave:"Save PDF",
+ mAdd:"Open", mRot:"Rotate", mDel:"Delete", mMore:"More", mSave:"Save",
+ selN:"{n} selected", pagesN:"{n} page(s)", docsN:"{n} document(s)",
+ cancel:"Cancel", close:"Close", gotIt:"Got it", apply:"Apply",
+ spT:"Split PDF", spR1:"By ranges", spR1s:"One PDF per range you list.",
+ spR2:"Every N pages", spR2s:"Split into equally sized blocks.",
+ spR3:"One page per file", spR3s:"All files inside a ZIP.",
+ spRng:"Ranges", spEvn:"Pages per file", spGo:"Split",
+ spInfo:"The document has <b>{n}</b> pages. Range example: <b>1-3, 7, 9-12</b>.",
+ moT:"More tools",
+ hT:"How it works",
+ okLoad:"{n} file(s) loaded.",
+ errPwd:"<b>Password-protected PDF</b><br>DigiPDF does not open protected files. Remove the protection in the program that created it and try again.",
+ errBad:"<b>Could not read “{f}”</b><br>The file may be damaged or not a valid PDF.",
+ errBig:"<b>“{f}” is very large ({s})</b><br>Files over 50 MB may exhaust the browser's memory. You can try, but if the tab freezes, split the file first.",
+ errNoPdf:"This file is not a PDF. Use the Excel or Word to PDF conversion instead.",
+ errEmpty:"There are no pages to save.",
+ errSel:"Select some pages first.",
+ errRange:"I could not understand the ranges. Use numbers and dashes, for example <b>1-3, 7, 9-12</b>.",
+ okSaved:"Saved: <b>{f}</b>",
+ okSplit:"{n} file(s) created.",
+ wLoad:"Opening {f}…", wSave:"Building the PDF…", wSplit:"Splitting…", wThumb:"Preparing thumbnails…",
+ undoNo:"Nothing to undo.", redoNo:"Nothing to redo.",
+ confDel:"Delete {n} page(s)?",
+},
+es:{
+ priv:"Tus ficheros nunca salen de este dispositivo. Todo el procesamiento ocurre aquí, en tu navegador.",
+ emptyT:"Editor de PDF", emptyS:"Une, divide, gira y reordena páginas. Convierte a Excel y Word. Todo dentro de tu navegador.",
+ dropT:"Arrastra ficheros aquí o <b>elígelos de tu ordenador</b>", dropB:"elígelos de tu ordenador",
+ dropS:"PDF para editar · Excel, CSV y Word para convertir a PDF",
+ qPdf:"Abrir PDF", qXls:"Excel o CSV → PDF", qDoc:"Word → PDF",
+ emptyNote:"<b>Sin servidores, sin cuentas, sin subidas.</b> Una vez cargada la página, DigiPDF funciona incluso sin conexión a internet. Cierras la pestaña y no queda nada.",
+ mHelp:"Ayuda", aAll:"Seleccionar todo", aNone:"Limpiar", aRotL:"Girar −90°", aRotR:"Girar +90°",
+ aFirst:"Al principio", aLast:"Al final", aDup:"Duplicar", aDel:"Eliminar",
+ aMore:"Más…", aExtract:"Extraer selección", aSplit:"Dividir…", aSave:"Guardar PDF",
+ mAdd:"Abrir", mRot:"Girar", mDel:"Eliminar", mMore:"Más", mSave:"Guardar",
+ selN:"{n} seleccionada(s)", pagesN:"{n} página(s)", docsN:"{n} documento(s)",
+ cancel:"Cancelar", close:"Cerrar", gotIt:"Entendido", apply:"Aplicar",
+ spT:"Dividir PDF", spR1:"Por intervalos", spR1s:"Un PDF por cada intervalo indicado.",
+ spR2:"Cada N páginas", spR2s:"Divide en bloques del mismo tamaño.",
+ spR3:"Una página por fichero", spR3s:"Todos los ficheros en un ZIP.",
+ spRng:"Intervalos", spEvn:"Páginas por fichero", spGo:"Dividir",
+ spInfo:"El documento tiene <b>{n}</b> páginas. Ejemplo de intervalos: <b>1-3, 7, 9-12</b>.",
+ moT:"Más herramientas",
+ hT:"Cómo funciona",
+ okLoad:"{n} fichero(s) cargado(s).",
+ errPwd:"<b>PDF protegido con contraseña</b><br>DigiPDF no abre ficheros protegidos. Quita la protección en el programa donde lo creaste e inténtalo otra vez.",
+ errBad:"<b>No pude leer «{f}»</b><br>El fichero puede estar dañado o no ser un PDF válido.",
+ errBig:"<b>«{f}» es muy grande ({s})</b><br>Los ficheros de más de 50 MB pueden agotar la memoria del navegador. Puedes intentarlo, pero si la pestaña se bloquea, divide el fichero antes.",
+ errNoPdf:"Este fichero no es un PDF. Usa la conversión de Excel o Word a PDF.",
+ errEmpty:"No hay páginas para guardar.",
+ errSel:"Selecciona primero las páginas.",
+ errRange:"No entendí los intervalos. Usa números y guiones, por ejemplo <b>1-3, 7, 9-12</b>.",
+ okSaved:"Guardado: <b>{f}</b>",
+ okSplit:"{n} fichero(s) creado(s).",
+ wLoad:"Abriendo {f}…", wSave:"Creando el PDF…", wSplit:"Dividiendo…", wThumb:"Preparando las miniaturas…",
+ undoNo:"Nada que deshacer.", redoNo:"Nada que rehacer.",
+ confDel:"¿Eliminar {n} página(s)?",
+}};
+let LANG="pt";
+function t(k,vars){
+  let s=(I18N[LANG]&&I18N[LANG][k])!=null?I18N[LANG][k]:(I18N.pt[k]!=null?I18N.pt[k]:k);
+  if(vars) for(const v in vars) s=s.split("{"+v+"}").join(vars[v]);
+  return s;
+}
+function tp(k,vars){ return String(t(k,vars)).replace(/<[^>]*>/g,""); }
+
+/* ---------------- 2. ícones (linha, 1.75) ---------------- */
+const SVG=(p,s)=>`<svg width="${s||17}" height="${s||17}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+const IC={
+ shield:SVG('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>',16),
+ upload:SVG('<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>',34),
+ undo:SVG('<path d="M3 7v6h6"/><path d="M3.5 13a9 9 0 1 0 2.6-6.4L3 9"/>'),
+ redo:SVG('<path d="M21 7v6h-6"/><path d="M20.5 13a9 9 0 1 1-2.6-6.4L21 9"/>'),
+ rotL:SVG('<path d="M3 8v6h6"/><path d="M3.6 14a9 9 0 1 0 2.5-6.3L3 10"/>'),
+ rotR:SVG('<path d="M21 8v6h-6"/><path d="M20.4 14a9 9 0 1 1-2.5-6.3L21 10"/>'),
+ rot180:SVG('<path d="M12 3a9 9 0 1 1-9 9"/><polyline points="3 8 3 12 7 12"/>'),
+ first:SVG('<polyline points="11 17 6 12 11 7"/><line x1="18" y1="7" x2="18" y2="17"/><polyline points="18 17 13 12 18 7" opacity="0"/>'),
+ last:SVG('<polyline points="13 7 18 12 13 17"/><line x1="6" y1="7" x2="6" y2="17"/>'),
+ dup:SVG('<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>'),
+ del:SVG('<polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/>'),
+ save:SVG('<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>'),
+ scissors:SVG('<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.1" y2="15.9"/><line x1="14.5" y1="14.5" x2="20" y2="20"/><line x1="8.1" y1="8.1" x2="12" y2="12"/>'),
+ extract:SVG('<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>'),
+ more:SVG('<circle cx="12" cy="12" r="1.4"/><circle cx="19" cy="12" r="1.4"/><circle cx="5" cy="12" r="1.4"/>'),
+ sun:SVG('<circle cx="12" cy="12" r="4.5"/><line x1="12" y1="1.5" x2="12" y2="3.5"/><line x1="12" y1="20.5" x2="12" y2="22.5"/><line x1="4" y1="4" x2="5.5" y2="5.5"/><line x1="18.5" y1="18.5" x2="20" y2="20"/><line x1="1.5" y1="12" x2="3.5" y2="12"/><line x1="20.5" y1="12" x2="22.5" y2="12"/><line x1="4" y1="20" x2="5.5" y2="18.5"/><line x1="18.5" y1="5.5" x2="20" y2="4"/>',16),
+ moon:SVG('<path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/>',16),
+ x:SVG('<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>',15),
+ check:SVG('<polyline points="20 6 9 17 4 12"/>',13),
+ up:SVG('<polyline points="18 15 12 9 6 15"/>',14),
+ down:SVG('<polyline points="6 9 12 15 18 9"/>',14),
+ left:SVG('<polyline points="15 18 9 12 15 6"/>',14),
+ right:SVG('<polyline points="9 18 15 12 9 6"/>',14),
+ grid:SVG('<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>'),
+ sheet:SVG('<rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/>'),
+ doc:SVG('<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/>'),
+ drop:SVG('<path d="M12 2.7s6.5 6.4 6.5 10.6a6.5 6.5 0 0 1-13 0C5.5 9.1 12 2.7 12 2.7z"/>'),
+ stamp:SVG('<path d="M5 21h14"/><path d="M7 17h10l-1-4H8z"/><path d="M12 13V9a3 3 0 1 0-3-3"/>'),
+ hash:SVG('<line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/>'),
+ info:SVG('<circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>'),
+ zip:SVG('<path d="M21 8v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6l2 3h6a2 2 0 0 1 2 2z"/><line x1="12" y1="11" x2="12" y2="17"/>'),
+};
+
+/* ---------------- 3. utilidades ---------------- */
+const $=id=>document.getElementById(id);
+const el=(tag,cls,html)=>{const e=document.createElement(tag); if(cls)e.className=cls; if(html!=null)e.innerHTML=html; return e;};
+function fmtBytes(b){
+  if(b<1024) return b+" B";
+  if(b<1048576) return (b/1024).toFixed(0)+" KB";
+  return (b/1048576).toFixed(b<10485760?1:0)+" MB";
+}
+function toast(html,kind,ms){
+  const box=$("toasts"); const d=el("div","toast"+(kind?" "+kind:""),html);
+  box.appendChild(d);
+  setTimeout(()=>{ d.style.opacity="0"; d.style.transform="translateY(6px)";
+    setTimeout(()=>d.remove(),240); }, ms||(kind==="err"?9000:4200));
+}
+let PROG=false;
+function progOn(txt){ PROG=true; $("progT").textContent=txt||""; $("progN").textContent=""; $("progBar").style.width="0%"; $("prog").classList.remove("hidden"); }
+function progSet(i,n,txt){ if(!PROG)return; if(txt)$("progT").textContent=txt;
+  $("progN").textContent=n?i+"/"+n:""; $("progBar").style.width=(n?Math.round(i/n*100):0)+"%"; }
+function progOff(){ PROG=false; $("prog").classList.add("hidden"); }
+const yield_=()=>new Promise(r=>setTimeout(r,0));
+const paint=()=>new Promise(r=>requestAnimationFrame(()=>setTimeout(r,0)));
+function dl(blob,name){
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=name;
+  document.body.appendChild(a); a.click();
+  setTimeout(()=>{URL.revokeObjectURL(a.href); a.remove();},600);
+}
+function baseName(n){ return String(n||"documento").replace(/\.[^.]+$/,""); }
+
+/* ---------------- 4. arranque das bibliotecas locais ---------------- */
+pdfjsLib.GlobalWorkerOptions.workerSrc = "vendor/pdf.worker.min.js";
+const PDFDoc   = PDFLib.PDFDocument;
+const degrees  = PDFLib.degrees;
+
+/* ---------------- 5. estado ---------------- */
+let DOCS = [];              /* {id,name,size,bytes,js,n,color} */
+let PAGES = [];             /* {uid,doc,idx,rot} */
+let SEL = new Set();        /* uids */
+let HIST = [], HPOS = -1;
+let UID = 0, DID = 0;
+let LAST_CLICK = -1;        /* índice para shift-click */
+const THUMB = new Map();    /* "doc:idx:rot" -> Promise<{url,w,h}> */
+const COLORS = ["#1F6FEB","#0f9d58","#b4530d","#8e44ad","#00838f","#c0392b","#5b6b7f","#7a6a00"];
+const TOOLS = [];           /* preenchido pelas conversões / utilidades */
+let CONV = null;            /* módulo de conversões (definido mais abaixo) */
+
+function docById(id){ for(const d of DOCS) if(d.id===id) return d; return null; }
+function pageAt(i){ return PAGES[i]; }
+function idxOf(uid){ for(let i=0;i<PAGES.length;i++) if(PAGES[i].uid===uid) return i; return -1; }
+function selIdx(){ const a=[]; for(let i=0;i<PAGES.length;i++) if(SEL.has(PAGES[i].uid)) a.push(i); return a; }
+
+/* ---------------- 6. histórico (desfazer / refazer, sem limite) ---------------- */
+function snap(){
+  return { p: PAGES.map(p=>({uid:p.uid,doc:p.doc,idx:p.idx,rot:p.rot})), s: Array.from(SEL) };
+}
+function pushHist(){
+  HIST = HIST.slice(0, HPOS+1);
+  HIST.push(snap());
+  HPOS = HIST.length-1;
+  syncBar();
+}
+function applySnap(s){
+  PAGES = s.p.map(p=>({uid:p.uid,doc:p.doc,idx:p.idx,rot:p.rot}));
+  SEL = new Set(s.s.filter(u=>PAGES.some(p=>p.uid===u)));
+  render();
+}
+function undo(){
+  if(HPOS<=0){ toast(t("undoNo")); return; }
+  HPOS--; applySnap(HIST[HPOS]); syncBar();
+}
+function redo(){
+  if(HPOS>=HIST.length-1){ toast(t("redoNo")); return; }
+  HPOS++; applySnap(HIST[HPOS]); syncBar();
+}
+
+/* ---------------- 7. abrir ficheiros ---------------- */
+const MAXB = 50*1024*1024;
+
+async function addFiles(list){
+  const files = Array.from(list||[]);
+  if(!files.length) return;
+  const pdfs = [], others = [];
+  for(const f of files){
+    const n = f.name.toLowerCase();
+    if(n.endsWith(".pdf")) pdfs.push(f);
+    else others.push(f);
+  }
+  if(others.length){
+    if(CONV && CONV.incoming) CONV.incoming(others);
+    else toast(t("errNoPdf"),"warn");
+  }
+  if(!pdfs.length) return;
+
+  progOn(t("wLoad",{f:pdfs[0].name}));
+  let ok=0;
+  for(let i=0;i<pdfs.length;i++){
+    const f = pdfs[i];
+    progSet(i, pdfs.length, t("wLoad",{f:f.name}));
+    await paint();
+    if(f.size > MAXB) toast(t("errBig",{f:f.name,s:fmtBytes(f.size)}),"warn");
+    try{
+      const buf = new Uint8Array(await f.arrayBuffer());
+      /* pdf.js consome (transfere) o buffer: guardamos uma cópia para o pdf-lib */
+      const keep = buf.slice(0);
+      const js = await pdfjsLib.getDocument({data:buf, isEvalSupported:false}).promise;
+      const d = { id:"d"+(++DID), name:f.name, size:f.size, bytes:keep, js:js, n:js.numPages,
+                  color: COLORS[(DID-1)%COLORS.length] };
+      DOCS.push(d);
+      for(let p=0;p<d.n;p++) PAGES.push({uid:"u"+(++UID), doc:d.id, idx:p, rot:0});
+      ok++;
+    }catch(e){
+      const nm = (e && e.name) || "";
+      if(nm==="PasswordException" || /password/i.test(String(e && e.message))) toast(t("errPwd"),"err");
+      else toast(t("errBad",{f:f.name}),"err");
+    }
+  }
+  progOff();
+  if(ok){
+    pushHist();
+    render();
+    toast(t("okLoad",{n:ok}),"ok");
+  }
+}
+
+/* ---------------- 8. miniaturas ---------------- */
+function thumbKey(p){ return p.doc+":"+p.idx+":"+p.rot; }
+function thumbFor(p){
+  const k = thumbKey(p);
+  if(THUMB.has(k)) return THUMB.get(k);
+  const pr = (async()=>{
+    const d = docById(p.doc);
+    const page = await d.js.getPage(p.idx+1);
+    const base = page.getViewport({scale:1});
+    const sc = Math.min(230/base.width, 320/base.height, 2);
+    const vp = page.getViewport({scale:sc, rotation:(page.rotate + p.rot)%360});
+    const c = document.createElement("canvas");
+    c.width = Math.max(1,Math.ceil(vp.width)); c.height = Math.max(1,Math.ceil(vp.height));
+    const cx = c.getContext("2d");
+    cx.fillStyle="#fff"; cx.fillRect(0,0,c.width,c.height);
+    await page.render({canvasContext:cx, viewport:vp}).promise;
+    return { url:c.toDataURL("image/jpeg",0.74), w:c.width, h:c.height };
+  })().catch(()=>null);
+  THUMB.set(k,pr);
+  if(THUMB.size>900){ const first=THUMB.keys().next().value; THUMB.delete(first); }
+  return pr;
+}
+
+let OBS = null;
+function observer(){
+  if(OBS) return OBS;
+  OBS = new IntersectionObserver(entries=>{
+    for(const en of entries){
+      if(!en.isIntersecting) continue;
+      const box = en.target;
+      OBS.unobserve(box);
+      const uid = box.dataset.uid;
+      const p = PAGES[idxOf(uid)];
+      if(!p) continue;
+      thumbFor(p).then(r=>{
+        if(!r) { box.innerHTML='<div class="pgerr">!</div>'; return; }
+        if(box.dataset.uid!==uid) return;
+        const im = new Image();
+        im.src = r.url; im.alt="";
+        box.innerHTML=""; box.appendChild(im);
+      });
+    }
+  }, { root:null, rootMargin:"600px 0px" });
+  return OBS;
+}
+
+/* ---------------- 9. desenho ---------------- */
+function render(){
+  const has = PAGES.length>0 || DOCS.length>0;
+  $("empty").classList.toggle("hidden", has);
+  $("editor").classList.toggle("hidden", !has);
+  $("mbar").classList.toggle("hidden", !has);
+  if(!has){ $("grid").innerHTML=""; $("docs").innerHTML=""; syncBar(); return; }
+
+  /* fichas de documentos */
+  const ds = $("docs"); ds.innerHTML="";
+  for(const d of DOCS){
+    const used = PAGES.reduce((a,p)=>a+(p.doc===d.id?1:0),0);
+    const c = el("div","docchip");
+    c.innerHTML = '<span class="dcol" style="background:'+d.color+'"></span>'+
+      '<span class="dn" title="'+esc(d.name)+'">'+esc(d.name)+'</span>'+
+      '<span class="dp">'+used+'/'+d.n+' · '+fmtBytes(d.size)+'</span>';
+    const b = el("button","minibtn",IC.del); b.title = t("aDel");
+    b.onclick = ()=>{ removeDoc(d.id); };
+    c.appendChild(b);
+    ds.appendChild(c);
+  }
+
+  /* grelha */
+  const g = $("grid");
+  const frag = document.createDocumentFragment();
+  observer();
+  for(let i=0;i<PAGES.length;i++){
+    const p = PAGES[i], d = docById(p.doc);
+    const card = el("div","pg"+(SEL.has(p.uid)?" sel":""));
+    card.dataset.uid = p.uid; card.draggable = true;
+    const th = el("div","thumb",'<div class="ld"></div>');
+    th.dataset.uid = p.uid;
+    card.appendChild(th);
+    const tick = el("div","pgtick",IC.check); card.appendChild(tick);
+    if(p.rot%360) card.appendChild(el("div","pgrot",(((p.rot%360)+360)%360)+"°"));
+    const foot = el("div","pgfoot");
+    foot.innerHTML = '<span class="pgsrc" style="background:'+(d?d.color:"#999")+'" title="'+esc(d?d.name:"")+'"></span>'+
+                     '<span class="pgnum">'+(i+1)+'</span>';
+    const acts = el("div","pgacts");
+    const mk=(ic,ti,fn)=>{ const b=el("button","minibtn",ic); b.title=ti; b.onclick=e=>{e.stopPropagation(); fn();}; return b; };
+    acts.appendChild(mk(IC.rotR, t("aRotR"), ()=>{ p.rot=(p.rot+90)%360; pushHist(); render(); }));
+    acts.appendChild(mk(IC.dup,  t("aDup"),  ()=>{ dupAt(i); }));
+    acts.appendChild(mk(IC.del,  t("aDel"),  ()=>{ delAt([i]); }));
+    foot.appendChild(acts);
+    card.appendChild(foot);
+    frag.appendChild(card);
+    observer().observe(th);
+  }
+  g.innerHTML=""; g.appendChild(frag);
+  syncBar();
+}
+function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+function syncBar(){
+  const n = SEL.size, np = PAGES.length;
+  const si = $("selInfo");
+  si.classList.toggle("hidden", n===0);
+  si.textContent = tp("selN",{n:n});
+  $("bUndo").disabled = HPOS<=0;
+  $("bRedo").disabled = HPOS>=HIST.length-1;
+  ["bRotL","bRotR","bRot180","bFirst","bLast","bDup","bDel","bExtract"].forEach(id=>{ $(id).disabled = n===0; });
+  $("bSave").disabled = np===0;
+  $("bSplit").disabled = np===0;
+  const h2 = $("editor").querySelector(".docs");
+  if(h2) h2.title = tp("pagesN",{n:np});
+}
+
+/* ---------------- 10. seleção ---------------- */
+function setSel(arr){ SEL = new Set(arr); render(); }
+$("grid").addEventListener("click", e=>{
+  const card = e.target.closest(".pg"); if(!card) return;
+  const uid = card.dataset.uid, i = idxOf(uid);
+  const tick = e.target.closest(".pgtick");
+  if(e.shiftKey && LAST_CLICK>=0){
+    const a = Math.min(LAST_CLICK,i), b = Math.max(LAST_CLICK,i);
+    for(let k=a;k<=b;k++) SEL.add(PAGES[k].uid);
+  } else if(e.ctrlKey || e.metaKey || tick){
+    if(SEL.has(uid)) SEL.delete(uid); else SEL.add(uid);
+    LAST_CLICK = i;
+  } else {
+    if(SEL.size===1 && SEL.has(uid)) SEL.delete(uid);
+    else { SEL = new Set([uid]); }
+    LAST_CLICK = i;
+  }
+  render();
+});
+
+/* ---------------- 11. ações sobre páginas ---------------- */
+function rot(deg){
+  const s = selIdx(); if(!s.length){ toast(t("errSel"),"warn"); return; }
+  for(const i of s) PAGES[i].rot = (((PAGES[i].rot+deg)%360)+360)%360;
+  pushHist(); render();
+}
+function delAt(list){
+  if(!list.length) return;
+  const kill = new Set(list.map(i=>PAGES[i].uid));
+  PAGES = PAGES.filter(p=>!kill.has(p.uid));
+  kill.forEach(u=>SEL.delete(u));
+  DOCS = DOCS.filter(d=>PAGES.some(p=>p.doc===d.id));
+  pushHist(); render();
+}
+function dupAt(i){
+  const p = PAGES[i];
+  PAGES.splice(i+1,0,{uid:"u"+(++UID), doc:p.doc, idx:p.idx, rot:p.rot});
+  pushHist(); render();
+}
+function dupSel(){
+  const s = selIdx(); if(!s.length){ toast(t("errSel"),"warn"); return; }
+  const add = s.map(i=>PAGES[i]);
+  let off = 0;
+  for(let k=s.length-1;k>=0;k--){
+    const p = PAGES[s[k]];
+    PAGES.splice(s[k]+1,0,{uid:"u"+(++UID), doc:p.doc, idx:p.idx, rot:p.rot});
+  }
+  pushHist(); render();
+}
+function moveSel(toStart){
+  const s = selIdx(); if(!s.length){ toast(t("errSel"),"warn"); return; }
+  const move = s.map(i=>PAGES[i]);
+  const rest = PAGES.filter(p=>!SEL.has(p.uid));
+  PAGES = toStart ? move.concat(rest) : rest.concat(move);
+  pushHist(); render();
+}
+function removeDoc(id){
+  PAGES = PAGES.filter(p=>p.doc!==id);
+  DOCS = DOCS.filter(d=>d.id!==id);
+  SEL = new Set(PAGES.filter(p=>SEL.has(p.uid)).map(p=>p.uid));
+  pushHist(); render();
+}
+
+/* arrastar para reordenar */
+let DRAG = null;
+$("grid").addEventListener("dragstart", e=>{
+  const card = e.target.closest(".pg"); if(!card) return;
+  DRAG = card.dataset.uid; card.classList.add("drag");
+  e.dataTransfer.effectAllowed="move";
+  try{ e.dataTransfer.setData("text/plain",DRAG); }catch(_){}
+});
+$("grid").addEventListener("dragend", ()=>{
+  DRAG=null;
+  $("grid").querySelectorAll(".pg").forEach(c=>c.classList.remove("drag","dropbefore","dropafter"));
+});
+$("grid").addEventListener("dragover", e=>{
+  if(!DRAG) return; e.preventDefault();
+  const card = e.target.closest(".pg"); if(!card) return;
+  const r = card.getBoundingClientRect();
+  const after = (e.clientX - r.left) > r.width/2;
+  $("grid").querySelectorAll(".pg").forEach(c=>c.classList.remove("dropbefore","dropafter"));
+  card.classList.add(after?"dropafter":"dropbefore");
+});
+$("grid").addEventListener("drop", e=>{
+  if(!DRAG) return; e.preventDefault();
+  const card = e.target.closest(".pg"); if(!card) return;
+  const r = card.getBoundingClientRect();
+  const after = (e.clientX - r.left) > r.width/2;
+  const target = card.dataset.uid;
+  if(target===DRAG && SEL.size<=1){ DRAG=null; return; }
+  /* move o grupo selecionado se a página arrastada faz parte dele */
+  const group = SEL.has(DRAG) ? PAGES.filter(p=>SEL.has(p.uid)) : [PAGES[idxOf(DRAG)]];
+  const gids = new Set(group.map(p=>p.uid));
+  if(gids.has(target)){ DRAG=null; render(); return; }
+  const rest = PAGES.filter(p=>!gids.has(p.uid));
+  let at = rest.findIndex(p=>p.uid===target);
+  if(at<0) at = rest.length-1;
+  rest.splice(at+(after?1:0), 0, ...group);
+  PAGES = rest; DRAG=null;
+  pushHist(); render();
+});
+
+/* ---------------- 12. gravar / extrair / dividir ---------------- */
+async function libFor(id, cache){
+  if(cache[id]) return cache[id];
+  const d = docById(id);
+  cache[id] = await PDFDoc.load(d.bytes, {ignoreEncryption:false});
+  return cache[id];
+}
+async function buildPdf(list, msg){
+  const out = await PDFDoc.create();
+  const cache = {};
+  for(let i=0;i<list.length;i++){
+    const p = list[i];
+    if(i%6===0){ progSet(i,list.length,msg); await paint(); }
+    const src = await libFor(p.doc, cache);
+    const [cp] = await out.copyPages(src,[p.idx]);
+    if(p.rot%360){
+      let cur = 0;
+      try{ cur = cp.getRotation().angle||0; }catch(_){}
+      cp.setRotation(degrees((((cur+p.rot)%360)+360)%360));
+    }
+    out.addPage(cp);
+  }
+  out.setProducer("DigiPDF · Digit I&D");
+  out.setCreator("DigiPDF · Digit I&D");
+  return await out.save({useObjectStreams:true});
+}
+async function savePdf(){
+  if(!PAGES.length){ toast(t("errEmpty"),"warn"); return; }
+  progOn(t("wSave"));
+  try{
+    const bytes = await buildPdf(PAGES, t("wSave"));
+    const name = (DOCS.length===1 ? baseName(DOCS[0].name) : "digipdf") + "-editado.pdf";
+    dl(new Blob([bytes],{type:"application/pdf"}), name);
+    toast(t("okSaved",{f:name}),"ok");
+  }catch(e){ toast(t("errBad",{f:"PDF"}),"err"); console.error(e); }
+  progOff();
+}
+async function extractSel(){
+  const s = selIdx(); if(!s.length){ toast(t("errSel"),"warn"); return; }
+  progOn(t("wSave"));
+  try{
+    const bytes = await buildPdf(s.map(i=>PAGES[i]), t("wSave"));
+    const name = (DOCS.length===1?baseName(DOCS[0].name):"digipdf")+"-selecao.pdf";
+    dl(new Blob([bytes],{type:"application/pdf"}), name);
+    toast(t("okSaved",{f:name}),"ok");
+  }catch(e){ toast(t("errBad",{f:"PDF"}),"err"); console.error(e); }
+  progOff();
+}
+function parseRanges(txt, max){
+  const out = [];
+  const parts = String(txt||"").split(/[,;\n]+/).map(s=>s.trim()).filter(Boolean);
+  if(!parts.length) return null;
+  for(const p of parts){
+    let m = p.match(/^(\d+)\s*[-–a]\s*(\d+)$/);
+    if(m){
+      let a=+m[1], b=+m[2]; if(a>b){const z=a;a=b;b=z;}
+      if(a<1||b>max) return null;
+      const r=[]; for(let k=a;k<=b;k++) r.push(k-1);
+      out.push(r); continue;
+    }
+    m = p.match(/^(\d+)$/);
+    if(m){ const a=+m[1]; if(a<1||a>max) return null; out.push([a-1]); continue; }
+    return null;
+  }
+  return out;
+}
+async function doSplit(){
+  const mode = document.querySelector('input[name="spm"]:checked').value;
+  const n = PAGES.length;
+  let groups = [];
+  if(mode==="rng"){
+    const r = parseRanges($("spRng").value, n);
+    if(!r){ toast(t("errRange"),"err"); return; }
+    groups = r.map(g=>g.map(i=>PAGES[i]));
+  } else if(mode==="evn"){
+    const k = Math.max(1, parseInt($("spEvn").value,10)||1);
+    for(let i=0;i<n;i+=k) groups.push(PAGES.slice(i,i+k));
+  } else {
+    for(let i=0;i<n;i++) groups.push([PAGES[i]]);
+  }
+  closeAll();
+  progOn(t("wSplit"));
+  const base = DOCS.length===1?baseName(DOCS[0].name):"digipdf";
+  try{
+    const files = [];
+    for(let i=0;i<groups.length;i++){
+      progSet(i,groups.length,t("wSplit"));
+      await paint();
+      const bytes = await buildPdf(groups[i], t("wSplit"));
+      files.push({name: base+"-"+String(i+1).padStart(String(groups.length).length,"0")+".pdf", bytes});
+    }
+    if(files.length===1){
+      dl(new Blob([files[0].bytes],{type:"application/pdf"}), files[0].name);
+    } else {
+      progSet(1,1,"ZIP");
+      const zip = new JSZip();
+      for(const f of files) zip.file(f.name, f.bytes);
+      const blob = await zip.generateAsync({type:"blob",compression:"DEFLATE",compressionOptions:{level:3}});
+      dl(blob, base+"-dividido.zip");
+    }
+    toast(t("okSplit",{n:files.length}),"ok");
+  }catch(e){ toast(t("errBad",{f:"PDF"}),"err"); console.error(e); }
+  progOff();
+}
+
+/* ---------------- 13. modais ---------------- */
+function openOv(id){ $(id).classList.remove("hidden"); }
+function closeAll(){ document.querySelectorAll(".ov").forEach(o=>o.classList.add("hidden")); }
+document.addEventListener("click", e=>{
+  if(e.target.hasAttribute && e.target.hasAttribute("data-close")) closeAll();
+  const x = e.target.closest && e.target.closest("[data-close]");
+  if(x) closeAll();
+});
+document.querySelectorAll(".ov").forEach(o=>o.addEventListener("click", e=>{ if(e.target===o) closeAll(); }));
+
+function openSplit(){
+  $("spInfo").innerHTML = t("spInfo",{n:PAGES.length});
+  openOv("ovSplit");
+}
+document.querySelectorAll('input[name="spm"]').forEach(r=>r.addEventListener("change",()=>{
+  const v = document.querySelector('input[name="spm"]:checked').value;
+  $("spRngW").classList.toggle("hidden", v!=="rng");
+  $("spEvnW").classList.toggle("hidden", v!=="evn");
+}));
+
+function openMore(){
+  const b = $("moreBody"); b.innerHTML="";
+  if(!TOOLS.length){ b.innerHTML='<div class="note i">—</div>'; }
+  for(const tool of TOOLS){
+    const row = el("button","toolrow");
+    row.innerHTML = '<span class="ti">'+tool.icon+'</span><span class="tt"><b>'+esc(t(tool.title))+'</b><span>'+esc(t(tool.sub))+'</span></span>';
+    row.onclick = ()=>{ closeAll(); tool.run(); };
+    b.appendChild(row);
+  }
+  openOv("ovMore");
+}
+
+/* modal genérico: campos + ação */
+function genModal(title, bodyHtml, goLabel, onGo){
+  $("genT").textContent = title;
+  $("genBody").innerHTML = bodyHtml;
+  const g = $("genGo"); g.textContent = goLabel;
+  g.onclick = ()=>{ onGo(); };
+  openOv("ovGen");
+}
+
+/* ---------------- 14. teclado ---------------- */
+document.addEventListener("keydown", e=>{
+  const tag = (e.target.tagName||"").toLowerCase();
+  if(tag==="input"||tag==="textarea"||tag==="select") { if(e.key==="Escape") closeAll(); return; }
+  if(e.key==="Escape"){ closeAll(); return; }
+  const cmd = e.ctrlKey||e.metaKey;
+  if(cmd && e.key.toLowerCase()==="z"){ e.preventDefault(); e.shiftKey?redo():undo(); return; }
+  if(cmd && e.key.toLowerCase()==="y"){ e.preventDefault(); redo(); return; }
+  if(cmd && e.key.toLowerCase()==="a"){ if(PAGES.length){ e.preventDefault(); setSel(PAGES.map(p=>p.uid)); } return; }
+  if(cmd && e.key.toLowerCase()==="s"){ if(PAGES.length){ e.preventDefault(); savePdf(); } return; }
+  if((e.key==="Delete"||e.key==="Backspace") && SEL.size){ e.preventDefault(); delAt(selIdx()); return; }
+  if(e.key==="["){ rot(-90); return; }
+  if(e.key==="]"){ rot(90); return; }
+});
+
+/* ---------------- 15. ligações ---------------- */
+function bind(){
+  const pick = acc=>{ const f=$("file"); f.accept=acc||".pdf,.xlsx,.xlsm,.xls,.csv,.docx"; f.value=""; f.click(); };
+  $("drop").onclick = ()=>pick();
+  $("qPdf").onclick = ()=>pick(".pdf");
+  $("qXls").onclick = ()=>pick(".xlsx,.xlsm,.xls,.csv");
+  $("qDoc").onclick = ()=>pick(".docx");
+  $("file").onchange = e=>{ addFiles(e.target.files); e.target.value=""; };
+
+  const dz = $("drop");
+  ["dragenter","dragover"].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();dz.classList.add("over");}));
+  ["dragleave","drop"].forEach(ev=>dz.addEventListener(ev,e=>{e.preventDefault();dz.classList.remove("over");}));
+  dz.addEventListener("drop", e=>{ if(e.dataTransfer&&e.dataTransfer.files) addFiles(e.dataTransfer.files); });
+  window.addEventListener("dragover", e=>{ if(e.dataTransfer && Array.from(e.dataTransfer.types||[]).includes("Files")) e.preventDefault(); });
+  window.addEventListener("drop", e=>{
+    if(DRAG) return;
+    if(e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length){ e.preventDefault(); addFiles(e.dataTransfer.files); }
+  });
+
+  $("bUndo").onclick = undo;
+  $("bRedo").onclick = redo;
+  $("bAll").onclick  = ()=>setSel(PAGES.map(p=>p.uid));
+  $("bNone").onclick = ()=>setSel([]);
+  $("bRotL").onclick = ()=>rot(-90);
+  $("bRotR").onclick = ()=>rot(90);
+  $("bRot180").onclick = ()=>rot(180);
+  $("bFirst").onclick = ()=>moveSel(true);
+  $("bLast").onclick  = ()=>moveSel(false);
+  $("bDup").onclick   = dupSel;
+  $("bDel").onclick   = ()=>delAt(selIdx());
+  $("bExtract").onclick = extractSel;
+  $("bSplit").onclick = openSplit;
+  $("bSave").onclick  = savePdf;
+  $("bMore").onclick  = openMore;
+  $("spGo").onclick   = doSplit;
+
+  $("mAdd").onclick  = ()=>pick();
+  $("mRot").onclick  = ()=>rot(90);
+  $("mDel").onclick  = ()=>{ if(SEL.size) delAt(selIdx()); else toast(t("errSel"),"warn"); };
+  $("mMore").onclick = openMore;
+  $("mSave").onclick = savePdf;
+
+  $("bHelp").onclick = openHelp;
+  $("bTheme").onclick = toggleTheme;
+  $("langs").addEventListener("click", e=>{
+    const b = e.target.closest(".seg"); if(!b) return;
+    setLang(b.dataset.l);
+  });
+}
+
+/* ---------------- 16. tema ---------------- */
+const TKEY="digipdf_tema";
+function curTheme(){ try{ return localStorage.getItem(TKEY)||"claro"; }catch(e){ return "claro"; } }
+function applyTheme(v){
+  document.documentElement.dataset.theme = (v==="escuro"?"escuro":"");
+  $("bTheme").innerHTML = v==="escuro" ? IC.sun : IC.moon;
+  const mc = document.querySelector('meta[name="theme-color"]');
+  if(mc) mc.setAttribute("content", v==="escuro"?"#0E1420":"#1F6FEB");
+}
+function toggleTheme(){
+  const v = curTheme()==="escuro" ? "claro" : "escuro";
+  try{ localStorage.setItem(TKEY,v); }catch(e){}
+  applyTheme(v);
+}
+
+/* ---------------- 17. idioma ---------------- */
+const LKEY="digipdf_lang";
+function setLang(l){
+  LANG = (I18N[l]?l:"pt");
+  try{ localStorage.setItem(LKEY,LANG); }catch(e){}
+  document.documentElement.lang = LANG;
+  document.querySelectorAll("#langs .seg").forEach(b=>b.classList.toggle("on", b.dataset.l===LANG));
+  applyLang();
+}
+function applyLang(){
+  document.querySelectorAll("[data-i18n]").forEach(e=>{ e.innerHTML = t(e.dataset.i18n); });
+  $("priv").innerHTML = IC.shield + "<span>" + t("priv") + "</span>";
+  $("emptyNote").innerHTML = t("emptyNote");
+  $("dropIco").innerHTML = IC.upload;
+  $("bUndo").title = tp("undoT"); $("bRedo").title = tp("redoT");
+  $("bTheme").title = tp("themeT");
+  render();
+}
+
+/* ---------------- 18. ajuda ---------------- */
+function openHelp(){
+  $("helpBody").innerHTML = HELP[LANG]||HELP.pt;
+  openOv("ovHelp");
+}
+
+/* ---------------- 19. decorar botões com ícones ---------------- */
+function deco(id, ic, before){
+  const b = $(id); if(!b) return;
+  if(b.hasAttribute("data-i18n")){
+    const k = b.getAttribute("data-i18n");
+    b.removeAttribute("data-i18n");
+    const sp = el("span",null,t(k)); sp.setAttribute("data-i18n",k);
+    b.innerHTML=""; b.appendChild(sp);
+  }
+  const s = el("span","bi",ic);
+  if(before===false) b.appendChild(s); else b.insertBefore(s, b.firstChild);
+}
+function icons(){
+  deco("bUndo",IC.undo); deco("bRedo",IC.redo);
+  deco("bAll",IC.grid); deco("bNone",IC.x);
+  deco("bRotL",IC.rotL); deco("bRotR",IC.rotR); deco("bRot180",IC.rot180);
+  deco("bFirst",IC.first); deco("bLast",IC.last);
+  deco("bDup",IC.dup); deco("bDel",IC.del);
+  deco("bMore",IC.more); deco("bExtract",IC.extract);
+  deco("bSplit",IC.scissors); deco("bSave",IC.save);
+  deco("mAdd",IC.upload_sm||IC.extract); deco("mRot",IC.rotR); deco("mDel",IC.del);
+  deco("mMore",IC.more); deco("mSave",IC.save);
+  deco("bHelp",IC.info);
+  $("dropIco").innerHTML = IC.upload;
+  document.querySelectorAll(".x").forEach(b=>{ if(!b.innerHTML.trim()) b.innerHTML=IC.x; });
+}
+
+/* ---------------- 20. textos adicionais ---------------- */
+IC.upload_sm = SVG('<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>',19);
+
+Object.assign(I18N.pt,{
+  undoT:"Desfazer (Ctrl+Z)", redoT:"Refazer (Ctrl+Shift+Z)", themeT:"Mudar o tema",
+});
+Object.assign(I18N.en,{
+  undoT:"Undo (Ctrl+Z)", redoT:"Redo (Ctrl+Shift+Z)", themeT:"Switch theme",
+});
+Object.assign(I18N.es,{
+  undoT:"Deshacer (Ctrl+Z)", redoT:"Rehacer (Ctrl+Shift+Z)", themeT:"Cambiar el tema",
+});
+
+const HELP={
+pt:`
+<div class="note o"><b>Privacidade.</b> Todo o processamento acontece dentro deste separador do navegador. Nenhum ficheiro, byte ou metadado é enviado para lado nenhum: não existem servidores, nem APIs externas, nem análise de utilização, nem cópias. Depois de a página carregar, o DigiPDF funciona mesmo sem ligação à internet. Quando fechas o separador, tudo desaparece da memória.</div>
+<div class="hh">1. Abrir documentos</div>
+<p class="hp">Arrasta um ou vários PDF para a zona indicada, ou clica para os escolher no teu computador. Podes abrir vários documentos ao mesmo tempo: as páginas de todos aparecem numa única grelha, cada uma com um ponto colorido que indica de que ficheiro veio. É assim que se juntam documentos — basta abri-los e gravar.</p>
+<div class="hh">2. Selecionar páginas</div>
+<p class="hp">Clica numa página para a selecionar. Com <kbd>Shift</kbd> selecionas um intervalo desde a última página em que clicaste, e com <kbd>Ctrl</kbd> (ou <kbd>Cmd</kbd>) juntas ou retiras páginas uma a uma. O quadradinho no canto de cada página faz o mesmo. <kbd>Ctrl</kbd>+<kbd>A</kbd> seleciona tudo.</p>
+<div class="hh">3. Rodar, apagar, duplicar e reordenar</div>
+<p class="hp">Com páginas selecionadas usa os botões da barra para rodar −90°, +90° ou 180°, duplicar, eliminar, ou mandar para o início ou para o fim do documento. Para mudar a ordem, arrasta uma página para o lugar onde a queres; se tiveres várias selecionadas, todas se movem juntas. Cada página tem também botões rápidos de rodar, duplicar e eliminar.</p>
+<div class="hh">4. Desfazer sem limite</div>
+<p class="hp">Todas as alterações podem ser desfeitas com <kbd>Ctrl</kbd>+<kbd>Z</kbd> e refeitas com <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd>. Não há limite de passos: podes voltar atrás até ao momento em que abriste os ficheiros.</p>
+<div class="hh">5. Guardar, extrair e dividir</div>
+<p class="hp"><b>Guardar PDF</b> cria um ficheiro novo com as páginas na ordem e na rotação que vês no ecrã. <b>Extrair seleção</b> cria um PDF apenas com as páginas selecionadas. <b>Dividir</b> permite três formas: por intervalos que indicas (por exemplo <b>1-3, 7, 9-12</b>), a cada N páginas, ou uma página por ficheiro. Quando resulta mais do que um ficheiro, o DigiPDF entrega-os dentro de um ZIP.</p>
+<div class="hh">6. Atalhos de teclado</div>
+<p class="hp"><kbd>Ctrl</kbd>+<kbd>A</kbd> selecionar tudo · <kbd>Delete</kbd> eliminar a seleção · <kbd>[</kbd> e <kbd>]</kbd> rodar · <kbd>Ctrl</kbd>+<kbd>S</kbd> guardar · <kbd>Ctrl</kbd>+<kbd>Z</kbd> desfazer · <kbd>Esc</kbd> fechar janelas.</p>
+<div class="hh">7. O que o DigiPDF não faz</div>
+<p class="hp">Não abre PDF protegidos por palavra-passe e não coloca nem retira palavras-passe: fazê-lo bem exige criptografia que não é segura de implementar deste lado. Não faz reconhecimento de texto (OCR): se um PDF for uma digitalização, as páginas são imagens e não há texto para converter — o DigiPDF avisa-te em vez de devolver um resultado vazio. Ficheiros muito grandes (acima de 50 MB) podem esgotar a memória do navegador.</p>
+`,
+en:`
+<div class="note o"><b>Privacy.</b> All processing happens inside this browser tab. No file, byte or piece of metadata is sent anywhere: there are no servers, no external APIs, no usage analytics and no copies. Once the page has loaded, DigiPDF works even with no internet connection. When you close the tab, everything is gone from memory.</div>
+<div class="hh">1. Opening documents</div>
+<p class="hp">Drag one or more PDFs onto the drop area, or click to pick them from your computer. You can open several documents at once: pages from all of them appear in a single grid, each with a coloured dot showing which file it came from. That is how merging works here — just open the files and save.</p>
+<div class="hh">2. Selecting pages</div>
+<p class="hp">Click a page to select it. <kbd>Shift</kbd> selects a range from the last page you clicked, and <kbd>Ctrl</kbd> (or <kbd>Cmd</kbd>) adds or removes pages one by one. The little square in the corner of each page does the same. <kbd>Ctrl</kbd>+<kbd>A</kbd> selects everything.</p>
+<div class="hh">3. Rotate, delete, duplicate and reorder</div>
+<p class="hp">With pages selected, use the toolbar to rotate −90°, +90° or 180°, duplicate, delete, or send them to the start or the end of the document. To change the order, drag a page where you want it; if several are selected they all move together. Each page also has quick rotate, duplicate and delete buttons.</p>
+<div class="hh">4. Unlimited undo</div>
+<p class="hp">Every change can be undone with <kbd>Ctrl</kbd>+<kbd>Z</kbd> and redone with <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd>. There is no step limit: you can go all the way back to the moment you opened the files.</p>
+<div class="hh">5. Save, extract and split</div>
+<p class="hp"><b>Save PDF</b> creates a new file with the pages in the order and rotation you see on screen. <b>Extract selection</b> creates a PDF with the selected pages only. <b>Split</b> offers three ways: by ranges you type (for example <b>1-3, 7, 9-12</b>), every N pages, or one page per file. When the result is more than one file, DigiPDF hands them over inside a ZIP.</p>
+<div class="hh">6. Keyboard shortcuts</div>
+<p class="hp"><kbd>Ctrl</kbd>+<kbd>A</kbd> select all · <kbd>Delete</kbd> delete selection · <kbd>[</kbd> and <kbd>]</kbd> rotate · <kbd>Ctrl</kbd>+<kbd>S</kbd> save · <kbd>Ctrl</kbd>+<kbd>Z</kbd> undo · <kbd>Esc</kbd> close dialogs.</p>
+<div class="hh">7. What DigiPDF does not do</div>
+<p class="hp">It does not open password-protected PDFs and it neither adds nor removes passwords: doing that properly requires cryptography that cannot be implemented safely on this side. It does no text recognition (OCR): if a PDF is a scan, the pages are images and there is no text to convert — DigiPDF tells you instead of handing back an empty result. Very large files (over 50 MB) may exhaust the browser's memory.</p>
+`,
+es:`
+<div class="note o"><b>Privacidad.</b> Todo el procesamiento ocurre dentro de esta pestaña del navegador. Ningún fichero, byte o metadato se envía a ningún sitio: no hay servidores, ni APIs externas, ni analítica de uso, ni copias. Una vez cargada la página, DigiPDF funciona incluso sin conexión a internet. Al cerrar la pestaña, todo desaparece de la memoria.</div>
+<div class="hh">1. Abrir documentos</div>
+<p class="hp">Arrastra uno o varios PDF a la zona indicada, o haz clic para elegirlos de tu ordenador. Puedes abrir varios documentos a la vez: las páginas de todos aparecen en una sola cuadrícula, cada una con un punto de color que indica de qué fichero viene. Así se unen documentos aquí: basta abrirlos y guardar.</p>
+<div class="hh">2. Seleccionar páginas</div>
+<p class="hp">Haz clic en una página para seleccionarla. Con <kbd>Shift</kbd> seleccionas un intervalo desde la última página en la que hiciste clic, y con <kbd>Ctrl</kbd> (o <kbd>Cmd</kbd>) añades o quitas páginas una a una. El cuadradito de la esquina de cada página hace lo mismo. <kbd>Ctrl</kbd>+<kbd>A</kbd> selecciona todo.</p>
+<div class="hh">3. Girar, borrar, duplicar y reordenar</div>
+<p class="hp">Con páginas seleccionadas usa los botones de la barra para girar −90°, +90° o 180°, duplicar, eliminar, o enviarlas al principio o al final del documento. Para cambiar el orden, arrastra una página al lugar que quieras; si tienes varias seleccionadas, todas se mueven juntas. Cada página tiene además botones rápidos de girar, duplicar y eliminar.</p>
+<div class="hh">4. Deshacer sin límite</div>
+<p class="hp">Cualquier cambio se puede deshacer con <kbd>Ctrl</kbd>+<kbd>Z</kbd> y rehacer con <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd>. No hay límite de pasos: puedes volver hasta el momento en que abriste los ficheros.</p>
+<div class="hh">5. Guardar, extraer y dividir</div>
+<p class="hp"><b>Guardar PDF</b> crea un fichero nuevo con las páginas en el orden y la rotación que ves en pantalla. <b>Extraer selección</b> crea un PDF solo con las páginas seleccionadas. <b>Dividir</b> ofrece tres formas: por intervalos que indicas (por ejemplo <b>1-3, 7, 9-12</b>), cada N páginas, o una página por fichero. Cuando el resultado es más de un fichero, DigiPDF los entrega dentro de un ZIP.</p>
+<div class="hh">6. Atajos de teclado</div>
+<p class="hp"><kbd>Ctrl</kbd>+<kbd>A</kbd> seleccionar todo · <kbd>Delete</kbd> eliminar la selección · <kbd>[</kbd> y <kbd>]</kbd> girar · <kbd>Ctrl</kbd>+<kbd>S</kbd> guardar · <kbd>Ctrl</kbd>+<kbd>Z</kbd> deshacer · <kbd>Esc</kbd> cerrar ventanas.</p>
+<div class="hh">7. Lo que DigiPDF no hace</div>
+<p class="hp">No abre PDF protegidos con contraseña y no pone ni quita contraseñas: hacerlo bien exige criptografía que no es seguro implementar de este lado. No hace reconocimiento de texto (OCR): si un PDF es un escaneo, las páginas son imágenes y no hay texto que convertir — DigiPDF te avisa en lugar de devolver un resultado vacío. Los ficheros muy grandes (más de 50 MB) pueden agotar la memoria del navegador.</p>
+`};
+
+/* =========================================================================
+   22. CONVERSÕES E UTILIDADES
+   ========================================================================= */
+
+Object.assign(I18N.pt,{
+  /* ferramentas */
+  tXls:"PDF → Excel", tXlsS:"Extrai o texto e as tabelas para uma folha de cálculo.",
+  tDoc:"PDF → Word", tDocS:"Extrai o texto para um documento .docx editável.",
+  tCmp:"Comprimir (forte)", tCmpS:"Converte cada página em imagem. Reduz muito o tamanho e o texto deixa de ser texto.",
+  tWmk:"Marca de água", tWmkS:"Texto em diagonal sobre as páginas.",
+  tNum:"Numerar páginas", tNumS:"Escreve o número em cada página.",
+  tMet:"Dados do ficheiro", tMetS:"Ver e limpar título, autor e restantes metadados.",
+  tX2P:"Excel ou CSV → PDF", tX2PS:"Tabelas paginadas com o cabeçalho repetido.",
+  tD2P:"Word → PDF", tD2PS:"Converte um .docx em PDF (aproximação do original).",
+  /* pré-visualização */
+  pvT:"Pré-visualizar antes de exportar", pvPage:"Página", pvAll:"Todas",
+  pvHint:"Podes escrever nas células para corrigir o que sair mal. Clica no número da linha para a excluir.",
+  pvHdr:"A primeira linha é cabeçalho", pvNum:"Converter números e datas",
+  pvOneSheet:"Tudo numa única folha", pvExp:"Exportar",
+  pvRows:"{r} linhas × {c} colunas", pvOff:"excluída",
+  scanW:"<b>Este PDF não tem texto</b><br>As páginas são imagens (documento digitalizado ou fotografado). O DigiPDF não faz reconhecimento de texto (OCR), por isso não há nada para converter. Um PDF digitalizado só pode ser convertido com uma ferramenta de OCR.",
+  scanP:"<b>Atenção:</b> {n} página(s) deste PDF não têm texto (são imagens). Essas páginas saem vazias na conversão.",
+  wExtract:"A ler o texto…", wBuild:"A construir o ficheiro…",
+  /* comprimir */
+  cmpQ:"Qualidade da imagem", cmpQ1:"Baixa (ficheiro menor)", cmpQ2:"Média", cmpQ3:"Alta",
+  cmpD:"Resolução", cmpGo:"Comprimir",
+  cmpW:"<b>Isto transforma cada página numa imagem.</b> O resultado deixa de ter texto: não é possível pesquisar, copiar nem converter para Excel ou Word depois. Usa só quando o objetivo é reduzir o tamanho para enviar por email.",
+  cmpR:"Antes: <b>{a}</b> · Depois: <b>{b}</b> · {p}",
+  cmpWorse:"O resultado ficou maior do que o original. O PDF já estava otimizado — mantém o original.",
+  /* marca de água */
+  wmkTxt:"Texto", wmkSz:"Tamanho", wmkOp:"Opacidade", wmkAng:"Inclinação", wmkCol:"Cor",
+  wmkWhere:"Onde aplicar", wmkAllP:"Todas as páginas", wmkSelP:"Só as páginas selecionadas",
+  wmkGo:"Aplicar marca de água",
+  /* números */
+  numPos:"Posição", numTL:"Cima à esquerda", numTC:"Cima ao centro", numTR:"Cima à direita",
+  numBL:"Baixo à esquerda", numBC:"Baixo ao centro", numBR:"Baixo à direita",
+  numFmt:"Formato", numStart:"Começar em", numSz:"Tamanho", numGo:"Numerar",
+  numF1:"1", numF2:"1 / N", numF3:"Página 1 de N", numSkip:"Não numerar a primeira página",
+  /* metadados */
+  metNone:"(vazio)", metTitle:"Título", metAuthor:"Autor", metSubj:"Assunto",
+  metKw:"Palavras-chave", metCreator:"Criado com", metProd:"Produzido por",
+  metCre:"Criado em", metMod:"Alterado em", metClear:"Limpar tudo e guardar",
+  metNote:"Estes dados viajam dentro do ficheiro e muitas vezes revelam nomes de pessoas, do computador ou do programa usado. «Limpar tudo» grava uma cópia sem eles.",
+  /* office → pdf */
+  o2pOri:"Orientação", o2pPort:"Vertical", o2pLand:"Horizontal", o2pAuto:"Automática",
+  o2pSize:"Tamanho da folha", o2pFit:"Ajuste das colunas", o2pFitW:"Encolher para caber na largura",
+  o2pFitC:"Manter o tamanho e cortar o texto longo", o2pGo:"Criar PDF",
+  o2pSheets:"Folhas a incluir", o2pRep:"Repetir a primeira linha em todas as páginas",
+  o2pGrid:"Desenhar as linhas da grelha",
+  o2pDocW:"<b>A conversão é aproximada.</b> O DigiPDF respeita parágrafos, títulos, listas, negrito, itálico e tabelas simples. Não reproduz colunas, caixas de texto, cabeçalhos e rodapés, imagens posicionadas nem tipos de letra do original.",
+  o2pEmpty:"Não encontrei conteúdo para converter neste ficheiro.",
+  okConv:"Criado: <b>{f}</b>",
+});
+Object.assign(I18N.en,{
+  tXls:"PDF → Excel", tXlsS:"Pull the text and tables into a spreadsheet.",
+  tDoc:"PDF → Word", tDocS:"Pull the text into an editable .docx document.",
+  tCmp:"Compress (strong)", tCmpS:"Turns each page into an image. Shrinks a lot and the text stops being text.",
+  tWmk:"Watermark", tWmkS:"Diagonal text across the pages.",
+  tNum:"Number pages", tNumS:"Write the page number on every page.",
+  tMet:"File details", tMetS:"View and clear title, author and the rest of the metadata.",
+  tX2P:"Excel or CSV → PDF", tX2PS:"Paginated tables with the header repeated.",
+  tD2P:"Word → PDF", tD2PS:"Turn a .docx into a PDF (close to the original).",
+  pvT:"Preview before exporting", pvPage:"Page", pvAll:"All",
+  pvHint:"You can type in the cells to fix anything that came out wrong. Click a row number to leave it out.",
+  pvHdr:"First row is a header", pvNum:"Convert numbers and dates",
+  pvOneSheet:"Everything on a single sheet", pvExp:"Export",
+  pvRows:"{r} rows × {c} columns", pvOff:"excluded",
+  scanW:"<b>This PDF has no text</b><br>The pages are images (a scan or a photo). DigiPDF does no text recognition (OCR), so there is nothing to convert. A scanned PDF can only be converted with an OCR tool.",
+  scanP:"<b>Note:</b> {n} page(s) of this PDF have no text (they are images). Those pages come out empty.",
+  wExtract:"Reading the text…", wBuild:"Building the file…",
+  cmpQ:"Image quality", cmpQ1:"Low (smallest file)", cmpQ2:"Medium", cmpQ3:"High",
+  cmpD:"Resolution", cmpGo:"Compress",
+  cmpW:"<b>This turns every page into an image.</b> The result has no text left: you cannot search it, copy from it, or convert it to Excel or Word afterwards. Use it only when the goal is a smaller file to email.",
+  cmpR:"Before: <b>{a}</b> · After: <b>{b}</b> · {p}",
+  cmpWorse:"The result came out larger than the original. This PDF was already optimised — keep the original.",
+  wmkTxt:"Text", wmkSz:"Size", wmkOp:"Opacity", wmkAng:"Angle", wmkCol:"Colour",
+  wmkWhere:"Where to apply", wmkAllP:"All pages", wmkSelP:"Selected pages only",
+  wmkGo:"Apply watermark",
+  numPos:"Position", numTL:"Top left", numTC:"Top centre", numTR:"Top right",
+  numBL:"Bottom left", numBC:"Bottom centre", numBR:"Bottom right",
+  numFmt:"Format", numStart:"Start at", numSz:"Size", numGo:"Number pages",
+  numF1:"1", numF2:"1 / N", numF3:"Page 1 of N", numSkip:"Skip the first page",
+  metNone:"(empty)", metTitle:"Title", metAuthor:"Author", metSubj:"Subject",
+  metKw:"Keywords", metCreator:"Created with", metProd:"Produced by",
+  metCre:"Created on", metMod:"Modified on", metClear:"Clear everything and save",
+  metNote:"This data travels inside the file and often reveals people's names, the computer or the program used. “Clear everything” saves a copy without it.",
+  o2pOri:"Orientation", o2pPort:"Portrait", o2pLand:"Landscape", o2pAuto:"Automatic",
+  o2pSize:"Paper size", o2pFit:"Column fitting", o2pFitW:"Shrink to fit the width",
+  o2pFitC:"Keep the size and cut long text", o2pGo:"Create PDF",
+  o2pSheets:"Sheets to include", o2pRep:"Repeat the first row on every page",
+  o2pGrid:"Draw the grid lines",
+  o2pDocW:"<b>The conversion is approximate.</b> DigiPDF keeps paragraphs, headings, lists, bold, italic and simple tables. It does not reproduce columns, text boxes, headers and footers, positioned images or the original fonts.",
+  o2pEmpty:"I found no content to convert in this file.",
+  okConv:"Created: <b>{f}</b>",
+});
+Object.assign(I18N.es,{
+  tXls:"PDF → Excel", tXlsS:"Extrae el texto y las tablas a una hoja de cálculo.",
+  tDoc:"PDF → Word", tDocS:"Extrae el texto a un documento .docx editable.",
+  tCmp:"Comprimir (fuerte)", tCmpS:"Convierte cada página en imagen. Reduce mucho el tamaño y el texto deja de ser texto.",
+  tWmk:"Marca de agua", tWmkS:"Texto en diagonal sobre las páginas.",
+  tNum:"Numerar páginas", tNumS:"Escribe el número en cada página.",
+  tMet:"Datos del fichero", tMetS:"Ver y limpiar título, autor y el resto de los metadatos.",
+  tX2P:"Excel o CSV → PDF", tX2PS:"Tablas paginadas con el encabezado repetido.",
+  tD2P:"Word → PDF", tD2PS:"Convierte un .docx en PDF (aproximación del original).",
+  pvT:"Previsualizar antes de exportar", pvPage:"Página", pvAll:"Todas",
+  pvHint:"Puedes escribir en las celdas para corregir lo que haya salido mal. Haz clic en el número de fila para excluirla.",
+  pvHdr:"La primera fila es encabezado", pvNum:"Convertir números y fechas",
+  pvOneSheet:"Todo en una sola hoja", pvExp:"Exportar",
+  pvRows:"{r} filas × {c} columnas", pvOff:"excluida",
+  scanW:"<b>Este PDF no tiene texto</b><br>Las páginas son imágenes (escaneo o foto). DigiPDF no hace reconocimiento de texto (OCR), así que no hay nada que convertir. Un PDF escaneado solo se puede convertir con una herramienta de OCR.",
+  scanP:"<b>Atención:</b> {n} página(s) de este PDF no tienen texto (son imágenes). Esas páginas salen vacías.",
+  wExtract:"Leyendo el texto…", wBuild:"Creando el fichero…",
+  cmpQ:"Calidad de la imagen", cmpQ1:"Baja (fichero más pequeño)", cmpQ2:"Media", cmpQ3:"Alta",
+  cmpD:"Resolución", cmpGo:"Comprimir",
+  cmpW:"<b>Esto convierte cada página en una imagen.</b> El resultado ya no tiene texto: no se puede buscar, copiar ni convertir a Excel o Word después. Úsalo solo cuando el objetivo es reducir el tamaño para enviarlo por correo.",
+  cmpR:"Antes: <b>{a}</b> · Después: <b>{b}</b> · {p}",
+  cmpWorse:"El resultado quedó más grande que el original. Este PDF ya estaba optimizado — quédate con el original.",
+  wmkTxt:"Texto", wmkSz:"Tamaño", wmkOp:"Opacidad", wmkAng:"Inclinación", wmkCol:"Color",
+  wmkWhere:"Dónde aplicar", wmkAllP:"Todas las páginas", wmkSelP:"Solo las páginas seleccionadas",
+  wmkGo:"Aplicar marca de agua",
+  numPos:"Posición", numTL:"Arriba a la izquierda", numTC:"Arriba al centro", numTR:"Arriba a la derecha",
+  numBL:"Abajo a la izquierda", numBC:"Abajo al centro", numBR:"Abajo a la derecha",
+  numFmt:"Formato", numStart:"Empezar en", numSz:"Tamaño", numGo:"Numerar",
+  numF1:"1", numF2:"1 / N", numF3:"Página 1 de N", numSkip:"No numerar la primera página",
+  metNone:"(vacío)", metTitle:"Título", metAuthor:"Autor", metSubj:"Asunto",
+  metKw:"Palabras clave", metCreator:"Creado con", metProd:"Producido por",
+  metCre:"Creado el", metMod:"Modificado el", metClear:"Limpiar todo y guardar",
+  metNote:"Estos datos viajan dentro del fichero y a menudo revelan nombres de personas, del ordenador o del programa usado. «Limpiar todo» guarda una copia sin ellos.",
+  o2pOri:"Orientación", o2pPort:"Vertical", o2pLand:"Horizontal", o2pAuto:"Automática",
+  o2pSize:"Tamaño de la hoja", o2pFit:"Ajuste de las columnas", o2pFitW:"Encoger para caber en el ancho",
+  o2pFitC:"Mantener el tamaño y cortar el texto largo", o2pGo:"Crear PDF",
+  o2pSheets:"Hojas a incluir", o2pRep:"Repetir la primera fila en todas las páginas",
+  o2pGrid:"Dibujar las líneas de la cuadrícula",
+  o2pDocW:"<b>La conversión es aproximada.</b> DigiPDF respeta párrafos, títulos, listas, negrita, cursiva y tablas simples. No reproduce columnas, cuadros de texto, encabezados y pies de página, imágenes posicionadas ni las tipografías del original.",
+  o2pEmpty:"No encontré contenido que convertir en este fichero.",
+  okConv:"Creado: <b>{f}</b>",
+});
+
+/* ---------------- 23. modal grande construído em JS ---------------- */
+function bigModal(title, wide){
+  const ov = el("div","ov");
+  const mo = el("div","mo"+(wide?" wide":""));
+  const h  = el("div","mo-h"); const h3=el("h3",null,esc(title));
+  const x  = el("button","x",IC.x);
+  h.appendChild(h3); h.appendChild(x);
+  const b  = el("div","mo-b");
+  const f  = el("div","mo-f"); f.appendChild(el("div","sp"));
+  mo.appendChild(h); mo.appendChild(b); mo.appendChild(f);
+  ov.appendChild(mo); document.body.appendChild(ov);
+  const api = {
+    body:b, foot:f, ov:ov,
+    close(){ ov.remove(); },
+    btn(label,cls,fn){ const bt=el("button","btn "+(cls||"g"),esc(label)); bt.onclick=fn; f.appendChild(bt); return bt; }
+  };
+  x.onclick = api.close;
+  ov.addEventListener("click", e=>{ if(e.target===ov) api.close(); });
+  return api;
+}
+
+/* ---------------- 24. texto seguro para as fontes padrão ---------------- */
+const WAMAP = {"‘":"'","’":"'","‚":"'","‛":"'","“":'"',"”":'"',
+ "„":'"',"′":"'","″":'"',"–":"-","—":"-","−":"-","…":"...",
+ " ":" "," ":" "," ":" "," ":" ","​":"","•":"-","●":"-",
+ "→":"->","←":"<-","≤":"<=","≥":">=","·":"·","\t":"    "};
+function wa(s){
+  s = String(s==null?"":s);
+  let o="";
+  for(const ch of s){
+    if(WAMAP[ch]!=null){ o+=WAMAP[ch]; continue; }
+    const c = ch.codePointAt(0);
+    if(c===10||c===13){ o+=" "; continue; }
+    if(c<32){ continue; }
+    if(c<=255){ o+=ch; continue; }
+    if(c===0x20AC){ o+=ch; continue; }         /* € existe em WinAnsi */
+    o+="?";
+  }
+  return o;
+}
+
+/* ---------------- 25. extração de texto com posições ---------------- */
+async function extractPageRows(d, pageIdx){
+  const page = await d.js.getPage(pageIdx+1);
+  const tc = await page.getTextContent();
+  const items = [];
+  for(const it of tc.items){
+    if(!it.str || !it.str.trim()) continue;
+    const tr = it.transform;
+    items.push({ x:tr[4], y:tr[5], w:it.width||0, h:Math.abs(tr[3])||Math.abs(it.height)||10, s:it.str });
+  }
+  if(!items.length) return { lines:[], rows:[], cols:0, empty:true };
+
+  /* linhas: agrupar por y */
+  items.sort((a,b)=> (b.y-a.y) || (a.x-b.x));
+  const lines=[]; let cur=null;
+  for(const it of items){
+    const tol = Math.max(2, it.h*0.55);
+    if(cur && Math.abs(cur.y - it.y) <= tol){ cur.items.push(it); cur.y=(cur.y*cur.items.length+it.y)/(cur.items.length+1); }
+    else { cur={ y:it.y, items:[it] }; lines.push(cur); }
+  }
+  for(const L of lines) L.items.sort((a,b)=>a.x-b.x);
+
+  /* colunas: posições de início repetidas em várias linhas */
+  const freq = new Map();
+  for(const L of lines) for(const it of L.items){
+    const k = Math.round(it.x/3)*3;
+    freq.set(k,(freq.get(k)||0)+1);
+  }
+  const need = Math.max(3, Math.round(lines.length*0.30));
+  let starts = Array.from(freq.entries()).filter(([k,v])=>v>=need).map(([k])=>k).sort((a,b)=>a-b);
+  const merged=[];
+  for(const s of starts){ if(!merged.length || s-merged[merged.length-1]>10) merged.push(s); }
+  starts = merged;
+
+  const tabular = starts.length>=2;
+  const rows=[];
+  for(const L of lines){
+    if(!tabular){ rows.push([ L.items.map(i=>i.s).join(" ").replace(/\s+/g," ").trim() ]); continue; }
+    const cells = new Array(starts.length).fill("");
+    for(const it of L.items){
+      let c=0;
+      for(let k=0;k<starts.length;k++) if(it.x >= starts[k]-6) c=k;
+      cells[c] = (cells[c] ? cells[c]+" " : "") + it.s;
+    }
+    rows.push(cells.map(c=>c.replace(/\s+/g," ").trim()));
+  }
+  return { lines: lines.map(L=>({ y:L.y, h:L.items[0].h, s:L.items.map(i=>i.s).join(" ").replace(/\s+/g," ").trim() })),
+           rows, cols: tabular?starts.length:1, tabular, empty:false };
+}
+
+async function extractAll(d, msg){
+  progOn(msg);
+  const pages=[];
+  for(let i=0;i<d.n;i++){
+    progSet(i,d.n,msg);
+    if(i%3===0) await paint();
+    pages.push(await extractPageRows(d, i));
+  }
+  progOff();
+  return pages;
+}
+
+/* datas */
+const MON=/^(\d{1,4})[-\/.](\d{1,2})[-\/.](\d{2,4})$/;
+function toDate(s){
+  const v=String(s).trim(); const m=v.match(MON); if(!m) return null;
+  let a=+m[1], b=+m[2], c=+m[3];
+  let y,mo,d;
+  if(m[1].length===4){ y=a; mo=b; d=c; }
+  else { d=a; mo=b; y=c<100 ? (c<70?2000+c:1900+c) : c; }
+  if(mo<1||mo>12||d<1||d>31||y<1900||y>2200) return null;
+  const dt=new Date(y,mo-1,d);
+  if(dt.getMonth()!==mo-1||dt.getDate()!==d) return null;
+  return dt;
+}
+
+/* números */
+function toNum(s){
+  const v = String(s).trim();
+  if(!v || !/\d/.test(v)) return null;
+  if(!/^[-+(]?\s*[\d.,\s]*\d\s*\)?\s*[%€$]?$/.test(v)) return null;
+  let neg = /^\(.*\)$/.test(v) || /^-/.test(v);
+  let x = v.replace(/[()\s%€$+-]/g,"");
+  const lc = x.lastIndexOf(","), ld = x.lastIndexOf(".");
+  if(lc>-1 && ld>-1){
+    if(lc>ld) x = x.replace(/\./g,"").replace(",",".");
+    else x = x.replace(/,/g,"");
+  } else if(lc>-1){
+    const dec = x.length-lc-1;
+    x = (dec===3 && /^\d{1,3}(,\d{3})+$/.test(x)) ? x.replace(/,/g,"") : x.replace(",",".");
+  } else if(ld>-1){
+    const dec = x.length-ld-1;
+    if(dec===3 && /^\d{1,3}(\.\d{3})+$/.test(x)) x = x.replace(/\./g,"");
+  }
+  if(!/^\d*\.?\d+$/.test(x)) return null;
+  const n = parseFloat(x);
+  if(!isFinite(n)) return null;
+  return neg ? -n : n;
+}
+
+/* ---------------- 26. pré-visualização editável ---------------- */
+function previewGrid(pages, opts){
+  /* pages: [{rows, cols, empty}] ; opts.kind = "xlsx" | "docx" */
+  const m = bigModal(t("pvT"), true);
+  let sel = 0;
+  const state = pages.map(p=>({ rows: p.rows.map(r=>r.slice()), off:new Set(), empty:p.empty }));
+  const nEmpty = pages.filter(p=>p.empty).length;
+
+  const head = el("div");
+  if(nEmpty) head.appendChild(el("div","note w", t("scanP",{n:nEmpty})));
+  head.appendChild(el("div","note i", t("pvHint")));
+
+  const tabs = el("div","segs"); tabs.style.cssText="flex-wrap:wrap;margin-bottom:12px";
+  pages.forEach((p,i)=>{
+    const b = el("button","seg"+(i===0?" on":""), tp("pvPage")+" "+(i+1));
+    b.onclick = ()=>{ sel=i; tabs.querySelectorAll(".seg").forEach((x,k)=>x.classList.toggle("on",k===i)); draw(); };
+    tabs.appendChild(b);
+  });
+
+  const opt = el("div"); opt.style.cssText="display:flex;gap:16px;flex-wrap:wrap;margin:0 0 12px";
+  const cHdr = el("label","chk"); cHdr.innerHTML='<input type="checkbox" checked><span>'+esc(t("pvHdr"))+'</span>';
+  const cNum = el("label","chk"); cNum.innerHTML='<input type="checkbox" checked><span>'+esc(t("pvNum"))+'</span>';
+  const cOne = el("label","chk"); cOne.innerHTML='<input type="checkbox"><span>'+esc(t("pvOneSheet"))+'</span>';
+  opt.appendChild(cHdr); if(opts.kind==="xlsx"){ opt.appendChild(cNum); opt.appendChild(cOne); }
+
+  const info = el("div","hp"); info.style.margin="0 0 8px";
+  const wrap = el("div","tbwrap");
+
+  m.body.appendChild(head); m.body.appendChild(tabs); m.body.appendChild(opt);
+  m.body.appendChild(info); m.body.appendChild(wrap);
+
+  function draw(){
+    const st = state[sel];
+    info.textContent = t("pvRows",{r:st.rows.length, c:st.rows.reduce((a,r)=>Math.max(a,r.length),0)});
+    const tb = el("table","pv");
+    const tbody = el("tbody");
+    st.rows.forEach((r,ri)=>{
+      const tr = el("tr", (ri===0 && cHdr.querySelector("input").checked ? "head":"") + (st.off.has(ri)?" off":""));
+      const th = el("td",null,String(ri+1));
+      th.style.cssText="background:var(--chip);font-family:var(--f-num);font-size:11px;cursor:pointer;text-align:right;position:sticky;left:0";
+      th.title = tp("pvOff");
+      th.onclick = ()=>{ st.off.has(ri)?st.off.delete(ri):st.off.add(ri); draw(); };
+      tr.appendChild(th);
+      r.forEach((c,ci)=>{
+        const td = el("td",null,esc(c));
+        td.contentEditable="true"; td.spellcheck=false;
+        td.oninput = ()=>{ st.rows[ri][ci] = td.textContent; };
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    tb.appendChild(tbody);
+    wrap.innerHTML=""; wrap.appendChild(tb);
+  }
+  cHdr.querySelector("input").onchange = draw;
+  draw();
+
+  m.btn(t("cancel"),"g",m.close);
+  m.btn(t("pvExp"),"", ()=>{
+    const data = state.map(st=>({ rows: st.rows.filter((r,i)=>!st.off.has(i)) }));
+    const o = { header: cHdr.querySelector("input").checked,
+                numbers: cNum.querySelector("input").checked,
+                oneSheet: cOne.querySelector("input").checked };
+    m.close();
+    opts.onExport(data, o);
+  });
+  return m;
+}
+
+/* ---------------- 27. PDF → Excel ---------------- */
+function pickDoc(cb){
+  if(!DOCS.length){ toast(t("errSel"),"warn"); return; }
+  if(DOCS.length===1){ cb(DOCS[0]); return; }
+  const m = bigModal(t("pvPage"));
+  m.body.appendChild(el("div","note i", tp("docsN",{n:DOCS.length})));
+  for(const d of DOCS){
+    const r = el("button","toolrow");
+    r.innerHTML='<span class="ti">'+IC.doc+'</span><span class="tt"><b>'+esc(d.name)+'</b><span>'+d.n+" · "+fmtBytes(d.size)+'</span></span>';
+    r.onclick = ()=>{ m.close(); cb(d); };
+    m.body.appendChild(r);
+  }
+  m.btn(t("cancel"),"g",m.close);
+}
+
+async function pdfToXlsx(){
+  pickDoc(async d=>{
+    const pages = await extractAll(d, t("wExtract"));
+    if(pages.every(p=>p.empty)){ toast(t("scanW"),"err",14000); return; }
+    previewGrid(pages,{ kind:"xlsx", onExport:(data,o)=>{
+      const wb = XLSX.utils.book_new();
+      const conv = r=>r.map(c=>{
+        if(!o.numbers) return c;
+        const dt = toDate(c); if(dt) return dt;
+        const n = toNum(c);
+        return n===null ? c : n;
+      });
+      const aoa = a=>XLSX.utils.aoa_to_sheet(a,{cellDates:true});
+      if(o.oneSheet){
+        const all=[];
+        data.forEach((p,i)=>{
+          if(i>0) all.push([]);
+          p.rows.forEach((r,ri)=>{ if(i>0 && ri===0 && o.header) return; all.push(conv(r)); });
+        });
+        XLSX.utils.book_append_sheet(wb, aoa(all), "PDF");
+      } else {
+        data.forEach((p,i)=>{
+          const ws = aoa(p.rows.map(conv));
+          XLSX.utils.book_append_sheet(wb, ws, (tp("pvPage")+" "+(i+1)).slice(0,31));
+        });
+      }
+      const out = XLSX.write(wb,{bookType:"xlsx",type:"array",cellDates:true});
+      const name = baseName(d.name)+".xlsx";
+      dl(new Blob([out],{type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}), name);
+      toast(t("okConv",{f:name}),"ok");
+    }});
+  });
+}
+
+/* ---------------- 28. PDF → Word ---------------- */
+async function pdfToDocx(){
+  pickDoc(async d=>{
+    const pages = await extractAll(d, t("wExtract"));
+    if(pages.every(p=>p.empty)){ toast(t("scanW"),"err",14000); return; }
+    previewGrid(pages,{ kind:"docx", onExport:async (data,o)=>{
+      progOn(t("wBuild"));
+      try{
+        const D = docx;
+        const children=[];
+        data.forEach((p,i)=>{
+          const src = pages[i];
+          if(i>0) children.push(new D.Paragraph({ children:[new D.PageBreak()] }));
+          if(src.tabular && src.cols>1){
+            const rows = p.rows.filter(r=>r.some(c=>c!==""));
+            if(rows.length){
+              const nc = rows.reduce((a,r)=>Math.max(a,r.length),0);
+              children.push(new D.Table({
+                width:{size:100,type:D.WidthType.PERCENTAGE},
+                rows: rows.map((r,ri)=> new D.TableRow({
+                  tableHeader: (ri===0 && o.header),
+                  children: Array.from({length:nc},(_,ci)=> new D.TableCell({
+                    children:[ new D.Paragraph({ children:[ new D.TextRun({ text:String(r[ci]||""), bold:(ri===0&&o.header), size:19 }) ] }) ]
+                  }))
+                }))
+              }));
+            }
+          } else {
+            for(const r of p.rows){
+              const txt = r.join(" ").trim();
+              children.push(new D.Paragraph({ children:[ new D.TextRun({ text:txt, size:22 }) ], spacing:{after:txt?100:60} }));
+            }
+          }
+        });
+        const doc = new D.Document({ creator:"DigiPDF · Digit I&D", title:baseName(d.name),
+          sections:[{ properties:{}, children: children.length?children:[new D.Paragraph("")] }] });
+        const blob = await D.Packer.toBlob(doc);
+        const name = baseName(d.name)+".docx";
+        dl(blob, name);
+        toast(t("okConv",{f:name}),"ok");
+      }catch(e){ console.error(e); toast(t("errBad",{f:"DOCX"}),"err"); }
+      progOff();
+    }});
+  });
+}
+
+/* ---------------- 29. desenho de PDF a partir de zero ---------------- */
+const SIZES = { A4:[595.28,841.89], A3:[841.89,1190.55], Letter:[612,792], Legal:[612,1008] };
+
+async function stdFonts(pdf){
+  return {
+    r: await pdf.embedFont(PDFLib.StandardFonts.Helvetica),
+    b: await pdf.embedFont(PDFLib.StandardFonts.HelveticaBold),
+    i: await pdf.embedFont(PDFLib.StandardFonts.HelveticaOblique),
+    bi:await pdf.embedFont(PDFLib.StandardFonts.HelveticaBoldOblique)
+  };
+}
+function fitText(s, font, size, maxW){
+  s = wa(s);
+  if(font.widthOfTextAtSize(s,size) <= maxW) return s;
+  let lo=0, hi=s.length;
+  while(lo<hi){
+    const mid=(lo+hi+1)>>1;
+    if(font.widthOfTextAtSize(s.slice(0,mid)+"…",size)<=maxW) lo=mid; else hi=mid-1;
+  }
+  return s.slice(0,lo)+"…";
+}
+function wrapRuns(runs, fonts, size, maxW){
+  /* runs: [{text,bold,italic}] -> linhas de runs */
+  const pick = r => r.bold&&r.italic?fonts.bi : r.bold?fonts.b : r.italic?fonts.i : fonts.r;
+  const words=[];
+  for(const r of runs){
+    const parts = wa(r.text).split(/(\s+)/);
+    for(const p of parts){ if(p==="") continue; words.push({txt:p, r:r, sp:/^\s+$/.test(p)}); }
+  }
+  const lines=[]; let line=[], w=0;
+  for(const wd of words){
+    const ww = pick(wd.r).widthOfTextAtSize(wd.txt,size);
+    if(w+ww>maxW && line.length && !wd.sp){ lines.push(line); line=[]; w=0; }
+    if(wd.sp && !line.length) continue;
+    line.push(wd); w+=ww;
+  }
+  if(line.length) lines.push(line);
+  return lines.length?lines:[[]];
+}
+
+/* ---------------- 30. Excel / CSV → PDF ---------------- */
+async function readSheetFile(file){
+  const buf = await file.arrayBuffer();
+  let wb;
+  if(/\.csv$/i.test(file.name)){
+    /* CSV: o texto tem de ser descodificado explicitamente, senão os acentos saem trocados */
+    let txt=null;
+    try{ txt = new TextDecoder("utf-8",{fatal:true}).decode(buf); }
+    catch(e){ txt = new TextDecoder("windows-1252").decode(buf); }
+    if(txt.charCodeAt(0)===0xFEFF) txt = txt.slice(1);
+    wb = XLSX.read(txt,{type:"string",dense:true,raw:true});
+  } else {
+    wb = XLSX.read(buf,{type:"array",cellDates:true,dense:true});
+  }
+  const out=[];
+  for(const nm of wb.SheetNames){
+    const ws = wb.Sheets[nm];
+    const fmt = XLSX.utils.sheet_to_json(ws,{header:1,raw:false,defval:"",blankrows:false});
+    const raw = XLSX.utils.sheet_to_json(ws,{header:1,raw:true, defval:"",blankrows:false});
+    out.push({ name:nm, rows:fmt.map(r=>r.map(c=>String(c==null?"":c))), raw:raw });
+  }
+  return out;
+}
+function xlsToPdfDialog(file){
+  readSheetFile(file).then(sheets=>{
+    sheets = sheets.filter(s=>s.rows.length);
+    if(!sheets.length){ toast(t("o2pEmpty"),"warn"); return; }
+    const m = bigModal(t("tX2P"));
+    const chk=[];
+    if(sheets.length>1){
+      const f=el("div","fld"); f.appendChild(el("label",null,esc(t("o2pSheets"))));
+      const box=el("div"); box.style.cssText="display:flex;flex-direction:column;gap:6px";
+      sheets.forEach((s,i)=>{
+        const L=el("label","chk"); L.innerHTML='<input type="checkbox" checked><span>'+esc(s.name)+' <span style="color:var(--faint)">('+s.rows.length+')</span></span>';
+        chk.push(L.querySelector("input")); box.appendChild(L);
+      });
+      f.appendChild(box); m.body.appendChild(f);
+    }
+    const row=el("div","row");
+    row.innerHTML =
+      '<div class="fld"><label>'+esc(t("o2pOri"))+'</label><select class="inp" id="_ori">'+
+        '<option value="auto">'+esc(t("o2pAuto"))+'</option><option value="p">'+esc(t("o2pPort"))+'</option><option value="l">'+esc(t("o2pLand"))+'</option></select></div>'+
+      '<div class="fld"><label>'+esc(t("o2pSize"))+'</label><select class="inp" id="_sz">'+
+        Object.keys(SIZES).map(k=>'<option>'+k+'</option>').join("")+'</select></div>';
+    m.body.appendChild(row);
+    const f2=el("div","fld");
+    f2.innerHTML='<label>'+esc(t("o2pFit"))+'</label><select class="inp" id="_fit">'+
+      '<option value="w">'+esc(t("o2pFitW"))+'</option><option value="c">'+esc(t("o2pFitC"))+'</option></select>';
+    m.body.appendChild(f2);
+    const o1=el("label","chk"); o1.innerHTML='<input type="checkbox" id="_rep" checked><span>'+esc(t("o2pRep"))+'</span>';
+    const o2=el("label","chk"); o2.innerHTML='<input type="checkbox" id="_grid" checked><span>'+esc(t("o2pGrid"))+'</span>';
+    const ob=el("div"); ob.style.cssText="display:flex;gap:16px;flex-wrap:wrap";
+    ob.appendChild(o1); ob.appendChild(o2); m.body.appendChild(ob);
+
+    m.btn(t("cancel"),"g",m.close);
+    m.btn(t("o2pGo"),"",()=>{
+      const use = sheets.filter((s,i)=>!chk.length||chk[i].checked);
+      const opt = { ori:m.body.querySelector("#_ori").value, size:m.body.querySelector("#_sz").value,
+                    fit:m.body.querySelector("#_fit").value,
+                    rep:m.body.querySelector("#_rep").checked, grid:m.body.querySelector("#_grid").checked };
+      m.close();
+      buildSheetPdf(file, use, opt);
+    });
+  }).catch(e=>{ console.error(e); toast(t("errBad",{f:file.name}),"err"); });
+}
+async function buildSheetPdf(file, sheets, opt){
+  progOn(t("wBuild"));
+  try{
+    const pdf = await PDFDoc.create();
+    const F = await stdFonts(pdf);
+    const M = 34;
+    for(let si=0; si<sheets.length; si++){
+      const sh = sheets[si];
+      const nc = sh.rows.reduce((a,r)=>Math.max(a,r.length),0);
+      const nums = new Array(nc).fill(0), tot = new Array(nc).fill(0);
+      for(let r=1;r<sh.raw.length;r++) for(let c=0;c<nc;c++){
+        const v=sh.raw[r]&&sh.raw[r][c];
+        if(v==null||v==="") continue; tot[c]++;
+        if(typeof v==="number"||v instanceof Date) nums[c]++;
+        else if(typeof v==="string" && toNum(v)!==null) nums[c]++;
+      }
+      const numeric = nums.map((n,c)=> tot[c]>0 && n/tot[c]>0.6 );
+
+      let size = 8;
+      let W = SIZES[opt.size][0], H = SIZES[opt.size][1];
+      /* largura natural */
+      const nat = new Array(nc).fill(24);
+      for(let r=0;r<sh.rows.length;r++) for(let c=0;c<nc;c++){
+        const s = wa(String(sh.rows[r][c]||""));
+        const fnt = r===0?F.b:F.r;
+        nat[c] = Math.max(nat[c], Math.min(240, fnt.widthOfTextAtSize(s,size)+10));
+      }
+      const natTot = nat.reduce((a,b)=>a+b,0);
+      let land = opt.ori==="l";
+      if(opt.ori==="auto") land = natTot > (H-2*M);
+      if(land){ const z=W; W=H; H=z; }
+      const avail = W-2*M;
+      let cw = nat.slice();
+      if(natTot>avail){
+        if(opt.fit==="w"){
+          const k = avail/natTot;
+          size = Math.max(5, Math.min(8, 8*Math.max(k,0.62)));
+          cw = nat.map(v=>v*k);
+        } else {
+          const k = avail/natTot; cw = nat.map(v=>v*k);
+        }
+      } else {
+        const extra=(avail-natTot)/nc; cw = nat.map(v=>v+extra);
+      }
+      const rh = size*1.75;
+      let page=null, y=0;
+      const newPage=()=>{
+        page = pdf.addPage([W,H]); y = H-M;
+        page.drawText(wa(sh.name), {x:M, y:y+3, size:9, font:F.b, color:PDFLib.rgb(.35,.4,.48)});
+        y -= 12;
+        if(opt.rep && sh.rows.length) drawRow(sh.rows[0], true);
+      };
+      const drawRow=(row,head)=>{
+        let x=M;
+        if(head) page.drawRectangle({x:M,y:y-rh+3,width:cw.reduce((a,b)=>a+b,0),height:rh,color:PDFLib.rgb(.93,.95,.98)});
+        for(let c=0;c<nc;c++){
+          const s = String(row[c]==null?"":row[c]);
+          if(s!==""){
+            const fnt = head?F.b:F.r;
+            const txt = fitText(s,fnt,size,cw[c]-8);
+            const tw = fnt.widthOfTextAtSize(txt,size);
+            const rightAl = !head && numeric[c];
+            page.drawText(txt,{ x: rightAl ? x+cw[c]-4-tw : x+4, y: y-rh+size*0.62, size, font:fnt,
+                                color:PDFLib.rgb(.07,.1,.15) });
+          }
+          if(opt.grid) page.drawLine({start:{x:x,y:y+3},end:{x:x,y:y-rh+3},thickness:.4,color:PDFLib.rgb(.82,.85,.9)});
+          x+=cw[c];
+        }
+        if(opt.grid){
+          page.drawLine({start:{x:x,y:y+3},end:{x:x,y:y-rh+3},thickness:.4,color:PDFLib.rgb(.82,.85,.9)});
+          page.drawLine({start:{x:M,y:y-rh+3},end:{x:x,y:y-rh+3},thickness:.4,color:PDFLib.rgb(.82,.85,.9)});
+        }
+        y-=rh;
+      };
+      newPage();
+      if(opt.grid) page.drawLine({start:{x:M,y:y+3},end:{x:M+cw.reduce((a,b)=>a+b,0),y:y+3},thickness:.4,color:PDFLib.rgb(.82,.85,.9)});
+      for(let r=(opt.rep?1:0); r<sh.rows.length; r++){
+        if(y-rh < M){ newPage(); }
+        drawRow(sh.rows[r], !opt.rep && r===0);
+        if(r%140===0){ progSet(r, sh.rows.length, t("wBuild")); await paint(); }
+      }
+    }
+    pdf.setProducer("DigiPDF · Digit I&D"); pdf.setCreator("DigiPDF · Digit I&D");
+    const bytes = await pdf.save();
+    const name = baseName(file.name)+".pdf";
+    dl(new Blob([bytes],{type:"application/pdf"}), name);
+    toast(t("okConv",{f:name}),"ok");
+  }catch(e){ console.error(e); toast(t("errBad",{f:file.name}),"err"); }
+  progOff();
+}
+
+/* ---------------- 31. Word → PDF ---------------- */
+async function docxToPdfDialog(file){
+  const m = bigModal(t("tD2P"));
+  m.body.appendChild(el("div","note w", t("o2pDocW")));
+  const row=el("div","row");
+  row.innerHTML='<div class="fld"><label>'+esc(t("o2pSize"))+'</label><select class="inp" id="_dsz">'+
+    Object.keys(SIZES).map(k=>'<option>'+k+'</option>').join("")+'</select></div>'+
+    '<div class="fld"><label>'+esc(t("o2pOri"))+'</label><select class="inp" id="_dori">'+
+    '<option value="p">'+esc(t("o2pPort"))+'</option><option value="l">'+esc(t("o2pLand"))+'</option></select></div>';
+  m.body.appendChild(row);
+  m.btn(t("cancel"),"g",m.close);
+  m.btn(t("o2pGo"),"",()=>{
+    const sz=m.body.querySelector("#_dsz").value, ori=m.body.querySelector("#_dori").value;
+    m.close(); buildDocxPdf(file, sz, ori);
+  });
+}
+function htmlToBlocks(html){
+  const doc = new DOMParser().parseFromString(html,"text/html");
+  const blocks=[];
+  const runsOf=(node, st)=>{
+    const out=[];
+    node.childNodes.forEach(n=>{
+      if(n.nodeType===3){ if(n.nodeValue) out.push({text:n.nodeValue, bold:st.b, italic:st.i}); return; }
+      if(n.nodeType!==1) return;
+      const tag=n.tagName.toLowerCase();
+      const s2={ b: st.b || tag==="strong"||tag==="b", i: st.i || tag==="em"||tag==="i" };
+      if(tag==="br"){ out.push({text:"\n",bold:st.b,italic:st.i}); return; }
+      out.push(...runsOf(n,s2));
+    });
+    return out;
+  };
+  const walk=(parent, depth)=>{
+    parent.childNodes.forEach(n=>{
+      if(n.nodeType!==1) return;
+      const tag=n.tagName.toLowerCase();
+      if(/^h[1-6]$/.test(tag)){
+        blocks.push({type:"h", lvl:+tag[1], runs:runsOf(n,{b:true,i:false})});
+      } else if(tag==="p"){
+        const rs = runsOf(n,{b:false,i:false});
+        blocks.push({type:"p", runs:rs, indent:depth*16});
+      } else if(tag==="ul"||tag==="ol"){
+        let k=1;
+        n.querySelectorAll(":scope > li").forEach(li=>{
+          blocks.push({type:"li", bullet: tag==="ol" ? (k++)+"." : "•",
+                       runs: runsOf(li,{b:false,i:false}), indent: depth*16+14});
+          li.querySelectorAll(":scope > ul, :scope > ol").forEach(sub=>walk(sub.parentNode, depth+1));
+        });
+      } else if(tag==="table"){
+        const rows=[];
+        n.querySelectorAll("tr").forEach(tr=>{
+          const cells=[]; tr.querySelectorAll("th,td").forEach(td=>cells.push(td.textContent.replace(/\s+/g," ").trim()));
+          if(cells.length) rows.push(cells);
+        });
+        if(rows.length) blocks.push({type:"table", rows});
+      } else {
+        walk(n, depth);
+      }
+    });
+  };
+  walk(doc.body,0);
+  return blocks.filter(b=> b.type==="table" || (b.runs && b.runs.some(r=>r.text.trim()!=="")) );
+}
+async function buildDocxPdf(file, szName, ori){
+  progOn(t("wBuild"));
+  try{
+    const buf = await file.arrayBuffer();
+    const res = await mammoth.convertToHtml({arrayBuffer:buf});
+    const blocks = htmlToBlocks(res.value||"");
+    if(!blocks.length){ toast(t("o2pEmpty"),"warn"); progOff(); return; }
+    let [W,H]=SIZES[szName]; if(ori==="l"){ const z=W; W=H; H=z; }
+    const pdf = await PDFDoc.create(); const F = await stdFonts(pdf);
+    const M=56, avail=W-2*M;
+    let page=pdf.addPage([W,H]), y=H-M;
+    const nl=(need)=>{ if(y-need<M){ page=pdf.addPage([W,H]); y=H-M; } };
+    const HS={1:19,2:16,3:14,4:12.5,5:11.5,6:11};
+    for(let bi=0; bi<blocks.length; bi++){
+      const b=blocks[bi];
+      if(bi%25===0){ progSet(bi,blocks.length,t("wBuild")); await paint(); }
+      if(b.type==="table"){
+        const nc=b.rows.reduce((a,r)=>Math.max(a,r.length),0);
+        const cw=avail/nc, size=8.5, rh=size*1.8;
+        for(let ri=0; ri<b.rows.length; ri++){
+          nl(rh+4);
+          let x=M; const head=ri===0;
+          if(head) page.drawRectangle({x:M,y:y-rh,width:avail,height:rh,color:PDFLib.rgb(.93,.95,.98)});
+          for(let c=0;c<nc;c++){
+            const s=String(b.rows[ri][c]||"");
+            if(s) page.drawText(fitText(s, head?F.b:F.r, size, cw-8), {x:x+4, y:y-rh+size*0.6, size, font:head?F.b:F.r, color:PDFLib.rgb(.07,.1,.15)});
+            page.drawLine({start:{x:x,y:y},end:{x:x,y:y-rh},thickness:.4,color:PDFLib.rgb(.82,.85,.9)});
+            x+=cw;
+          }
+          page.drawLine({start:{x:x,y:y},end:{x:x,y:y-rh},thickness:.4,color:PDFLib.rgb(.82,.85,.9)});
+          page.drawLine({start:{x:M,y:y-rh},end:{x:M+avail,y:y-rh},thickness:.4,color:PDFLib.rgb(.82,.85,.9)});
+          if(ri===0) page.drawLine({start:{x:M,y:y},end:{x:M+avail,y:y},thickness:.4,color:PDFLib.rgb(.82,.85,.9)});
+          y-=rh;
+        }
+        y-=8; continue;
+      }
+      const size = b.type==="h" ? (HS[b.lvl]||12) : 10.5;
+      const lead = size*1.42;
+      const ind = b.indent||0;
+      const lines = wrapRuns(b.runs, F, size, avail-ind);
+      if(b.type==="h"){ y-=6; nl(lead+8); }
+      for(let li=0; li<lines.length; li++){
+        nl(lead);
+        let x = M+ind;
+        if(b.type==="li" && li===0){
+          page.drawText(wa(b.bullet),{x:M+ind-14,y:y-size,size,font:F.r,color:PDFLib.rgb(.3,.35,.42)});
+        }
+        for(const wd of lines[li]){
+          const fnt = wd.r.bold&&wd.r.italic?F.bi : wd.r.bold?F.b : wd.r.italic?F.i : F.r;
+          const txt = wa(wd.txt);
+          if(txt.trim()!=="") page.drawText(txt,{x,y:y-size,size,font:fnt,color:PDFLib.rgb(.07,.1,.15)});
+          x += fnt.widthOfTextAtSize(txt,size);
+        }
+        y-=lead;
+      }
+      y -= b.type==="h" ? 5 : (b.type==="li" ? 2 : 6);
+    }
+    pdf.setProducer("DigiPDF · Digit I&D"); pdf.setCreator("DigiPDF · Digit I&D");
+    pdf.setTitle(baseName(file.name));
+    const bytes = await pdf.save();
+    const name = baseName(file.name)+".pdf";
+    dl(new Blob([bytes],{type:"application/pdf"}), name);
+    toast(t("okConv",{f:name}),"ok");
+  }catch(e){ console.error(e); toast(t("errBad",{f:file.name}),"err"); }
+  progOff();
+}
+
+/* ---------------- 32. comprimir (rasterizar) ---------------- */
+function compressDialog(){
+  if(!PAGES.length){ toast(t("errEmpty"),"warn"); return; }
+  const m = bigModal(t("tCmp"));
+  m.body.appendChild(el("div","note w", t("cmpW")));
+  const row=el("div","row");
+  row.innerHTML='<div class="fld"><label>'+esc(t("cmpQ"))+'</label><select class="inp" id="_q">'+
+      '<option value="0.4">'+esc(t("cmpQ1"))+'</option><option value="0.62" selected>'+esc(t("cmpQ2"))+'</option><option value="0.82">'+esc(t("cmpQ3"))+'</option></select></div>'+
+    '<div class="fld"><label>'+esc(t("cmpD"))+'</label><select class="inp" id="_d">'+
+      '<option value="96">96 dpi</option><option value="120" selected>120 dpi</option><option value="150">150 dpi</option><option value="200">200 dpi</option></select></div>';
+  m.body.appendChild(row);
+  const res = el("div","note i hidden"); m.body.appendChild(res);
+  m.btn(t("cancel"),"g",m.close);
+  m.btn(t("cmpGo"),"",()=>{
+    const q=parseFloat(m.body.querySelector("#_q").value), dpi=parseInt(m.body.querySelector("#_d").value,10);
+    m.close(); doCompress(q,dpi);
+  });
+}
+async function doCompress(q,dpi){
+  progOn(t("cmpGo"));
+  try{
+    const before = DOCS.reduce((a,d)=>a+d.size,0);
+    const pdf = await PDFDoc.create();
+    const scale = dpi/72;
+    for(let i=0;i<PAGES.length;i++){
+      progSet(i,PAGES.length,t("cmpGo")); await paint();
+      const p=PAGES[i], d=docById(p.doc);
+      const jp = await d.js.getPage(p.idx+1);
+      const vp = jp.getViewport({scale, rotation:(jp.rotate+p.rot)%360});
+      const c=document.createElement("canvas");
+      c.width=Math.max(1,Math.ceil(vp.width)); c.height=Math.max(1,Math.ceil(vp.height));
+      const cx=c.getContext("2d"); cx.fillStyle="#fff"; cx.fillRect(0,0,c.width,c.height);
+      await jp.render({canvasContext:cx, viewport:vp}).promise;
+      const url = c.toDataURL("image/jpeg", q);
+      const img = await pdf.embedJpg(url);
+      const pw = vp.width/scale, ph = vp.height/scale;
+      const pgn = pdf.addPage([pw,ph]);
+      pgn.drawImage(img,{x:0,y:0,width:pw,height:ph});
+    }
+    pdf.setProducer("DigiPDF · Digit I&D"); pdf.setCreator("DigiPDF · Digit I&D");
+    const bytes = await pdf.save();
+    const after = bytes.length;
+    const pct = before>0 ? Math.round((1-after/before)*100) : 0;
+    const name = (DOCS.length===1?baseName(DOCS[0].name):"digipdf")+"-comprimido.pdf";
+    dl(new Blob([bytes],{type:"application/pdf"}), name);
+    toast(t("cmpR",{a:fmtBytes(before), b:fmtBytes(after), p:(pct>0?("−"+pct+"%"):("+"+Math.abs(pct)+"%"))}), pct>0?"ok":"warn", 12000);
+    if(after>=before) toast(t("cmpWorse"),"warn",12000);
+  }catch(e){ console.error(e); toast(t("errBad",{f:"PDF"}),"err"); }
+  progOff();
+}
+
+/* ---------------- 33. marca de água ---------------- */
+const WCOLS={ grey:[.45,.5,.56], red:[.75,.16,.14], blue:[.12,.35,.75], black:[0,0,0] };
+function watermarkDialog(){
+  if(!PAGES.length){ toast(t("errEmpty"),"warn"); return; }
+  const m = bigModal(t("tWmk"));
+  const f=el("div","fld"); f.innerHTML='<label>'+esc(t("wmkTxt"))+'</label><input class="inp" id="_wt" value="CÓPIA">';
+  m.body.appendChild(f);
+  const row=el("div","row");
+  row.innerHTML='<div class="fld"><label>'+esc(t("wmkSz"))+'</label><input class="inp" id="_ws" type="number" min="8" max="200" value="54"></div>'+
+    '<div class="fld"><label>'+esc(t("wmkOp"))+'</label><input class="inp" id="_wo" type="number" min="5" max="100" value="22"></div>'+
+    '<div class="fld"><label>'+esc(t("wmkAng"))+'</label><input class="inp" id="_wa" type="number" min="-90" max="90" value="35"></div>'+
+    '<div class="fld"><label>'+esc(t("wmkCol"))+'</label><select class="inp" id="_wc"><option value="grey">'+esc(t("wmkCol"))+' 1</option><option value="red">2</option><option value="blue">3</option><option value="black">4</option></select></div>';
+  m.body.appendChild(row);
+  const rad=el("div","rad");
+  rad.innerHTML='<label><input type="radio" name="_ww" value="all" checked><span class="rt"><b>'+esc(t("wmkAllP"))+'</b></span></label>'+
+    '<label><input type="radio" name="_ww" value="sel"'+(SEL.size?"":" disabled")+'><span class="rt"><b>'+esc(t("wmkSelP"))+'</b><span>'+esc(tp("selN",{n:SEL.size}))+'</span></span></label>';
+  m.body.appendChild(el("div","fld")).appendChild(rad);
+  m.btn(t("cancel"),"g",m.close);
+  m.btn(t("wmkGo"),"",()=>{
+    const o={ txt:m.body.querySelector("#_wt").value||"", size:+m.body.querySelector("#_ws").value||54,
+      op:(+m.body.querySelector("#_wo").value||18)/100, ang:+m.body.querySelector("#_wa").value||0,
+      col:m.body.querySelector("#_wc").value,
+      only: m.body.querySelector('input[name="_ww"]:checked').value==="sel" };
+    m.close(); applyStamp("wmk",o);
+  });
+}
+
+/* ---------------- 34. numerar páginas ---------------- */
+function numberDialog(){
+  if(!PAGES.length){ toast(t("errEmpty"),"warn"); return; }
+  const m = bigModal(t("tNum"));
+  const row=el("div","row");
+  row.innerHTML='<div class="fld"><label>'+esc(t("numPos"))+'</label><select class="inp" id="_np">'+
+      ['numTL','numTC','numTR','numBL','numBC','numBR'].map((k,i)=>'<option value="'+k+'"'+(k==="numBC"?" selected":"")+'>'+esc(t(k))+'</option>').join("")+'</select></div>'+
+    '<div class="fld"><label>'+esc(t("numFmt"))+'</label><select class="inp" id="_nf">'+
+      '<option value="1">'+esc(t("numF1"))+'</option><option value="2">'+esc(t("numF2"))+'</option><option value="3">'+esc(t("numF3"))+'</option></select></div>'+
+    '<div class="fld"><label>'+esc(t("numStart"))+'</label><input class="inp" id="_ns" type="number" value="1" min="0"></div>'+
+    '<div class="fld"><label>'+esc(t("numSz"))+'</label><input class="inp" id="_nz" type="number" value="9" min="6" max="24"></div>';
+  m.body.appendChild(row);
+  const L=el("label","chk"); L.innerHTML='<input type="checkbox" id="_nk"><span>'+esc(t("numSkip"))+'</span>';
+  m.body.appendChild(L);
+  m.btn(t("cancel"),"g",m.close);
+  m.btn(t("numGo"),"",()=>{
+    const o={ pos:m.body.querySelector("#_np").value, fmt:m.body.querySelector("#_nf").value,
+      start:parseInt(m.body.querySelector("#_ns").value,10)||0, size:+m.body.querySelector("#_nz").value||9,
+      skip:m.body.querySelector("#_nk").checked };
+    m.close(); applyStamp("num",o);
+  });
+}
+
+async function applyStamp(kind,o){
+  progOn(t("wSave"));
+  try{
+    const selSet = new Set(selIdx());
+    const base = await buildPdf(PAGES, t("wSave"));
+    const pdf = await PDFDoc.load(base);
+    const F = await stdFonts(pdf);
+    const pgs = pdf.getPages();
+    const N = pgs.length;
+    for(let i=0;i<N;i++){
+      if(i%25===0){ progSet(i,N,t("wSave")); await paint(); }
+      const pg = pgs[i];
+      const { width:W, height:H } = pg.getSize();
+      const rot = (pg.getRotation && pg.getRotation().angle) || 0;
+      const land = (rot%180)!==0;
+      const w = land?H:W, h = land?W:H;
+      if(kind==="wmk"){
+        if(o.only && !selSet.has(i)) continue;
+        if(!o.txt.trim()) continue;
+        let txt = wa(o.txt);
+        const c = WCOLS[o.col]||WCOLS.grey;
+        const a = o.ang*Math.PI/180, ca=Math.cos(a), sa=Math.sin(a);
+        /* encolhe se não couber na diagonal */
+        let size = o.size;
+        const diag = Math.abs(w*ca)+Math.abs(h*sa);
+        while(size>6 && F.b.widthOfTextAtSize(txt,size) > diag*0.92) size -= 1;
+        const tw = F.b.widthOfTextAtSize(txt,size);
+        /* o texto roda em torno do ponto inicial: recuar meio comprimento e meia altura */
+        const x = w/2 - (tw/2)*ca + (size*0.35)*sa;
+        const y = h/2 - (tw/2)*sa - (size*0.35)*ca;
+        pg.drawText(txt,{ x, y, size, font:F.b, color:PDFLib.rgb(c[0],c[1],c[2]), opacity:o.op,
+          rotate:degrees(o.ang) });
+      } else {
+        if(o.skip && i===0) continue;
+        const n = o.start + i;
+        const tot = o.start + N - 1;
+        const txt = wa(o.fmt==="1" ? String(n) : o.fmt==="2" ? (n+" / "+tot) : (tp("numF3").replace("1",String(n)).replace("N",String(tot))));
+        const tw = F.r.widthOfTextAtSize(txt,o.size);
+        const mx = 34, my = 26;
+        const x = /R$/.test(o.pos) ? w-mx-tw : /C$/.test(o.pos) ? (w-tw)/2 : mx;
+        const y = /^numT/.test(o.pos) ? h-my : my-o.size*0.2;
+        pg.drawText(txt,{x,y,size:o.size,font:F.r,color:PDFLib.rgb(.28,.33,.4)});
+      }
+    }
+    pdf.setProducer("DigiPDF · Digit I&D");
+    const bytes = await pdf.save();
+    const name = (DOCS.length===1?baseName(DOCS[0].name):"digipdf")+(kind==="wmk"?"-marca":"-numerado")+".pdf";
+    dl(new Blob([bytes],{type:"application/pdf"}), name);
+    toast(t("okSaved",{f:name}),"ok");
+  }catch(e){ console.error(e); toast(t("errBad",{f:"PDF"}),"err"); }
+  progOff();
+}
+
+/* ---------------- 35. metadados ---------------- */
+async function metaDialog(){
+  if(!DOCS.length){ toast(t("errEmpty"),"warn"); return; }
+  pickDoc(async d=>{
+    let src=null;
+    try{ src = await PDFDoc.load(d.bytes); }catch(e){ toast(t("errBad",{f:d.name}),"err"); return; }
+    const g=f=>{ try{ const v=f(); if(v==null||v==="") return null; return v instanceof Date ? v.toLocaleString() : String(v); }catch(e){ return null; } };
+    const rows=[
+      ["metTitle", g(()=>src.getTitle())], ["metAuthor", g(()=>src.getAuthor())],
+      ["metSubj", g(()=>src.getSubject())], ["metKw", g(()=>{const k=src.getKeywords(); return Array.isArray(k)?k.join(", "):k;})],
+      ["metCreator", g(()=>src.getCreator())], ["metProd", g(()=>src.getProducer())],
+      ["metCre", g(()=>src.getCreationDate())], ["metMod", g(()=>src.getModificationDate())],
+    ];
+    const m = bigModal(t("tMet"));
+    const tb = el("table","pv"); tb.style.whiteSpace="normal";
+    const bd = el("tbody");
+    for(const [k,v] of rows){
+      const tr=el("tr");
+      const a=el("td",null,esc(t(k))); a.style.cssText="font-weight:700;width:34%";
+      const b=el("td",null, v?esc(v):'<span style="color:var(--faint)">'+esc(t("metNone"))+'</span>');
+      tr.appendChild(a); tr.appendChild(b); bd.appendChild(tr);
+    }
+    tb.appendChild(bd);
+    const w=el("div","tbwrap"); w.appendChild(tb);
+    m.body.appendChild(w);
+    m.body.appendChild(el("div","note i", t("metNote")));
+    m.btn(t("close"),"g",m.close);
+    m.btn(t("metClear"),"",async ()=>{
+      m.close(); progOn(t("wSave"));
+      try{
+        const bytes = await buildPdf(PAGES.filter(p=>p.doc===d.id), t("wSave"));
+        const out = await PDFDoc.load(bytes);
+        out.setTitle(""); out.setAuthor(""); out.setSubject(""); out.setKeywords([]);
+        out.setCreator(""); out.setProducer("");
+        const z=new Date(0); out.setCreationDate(z); out.setModificationDate(z);
+        const b2 = await out.save();
+        const name = baseName(d.name)+"-sem-dados.pdf";
+        dl(new Blob([b2],{type:"application/pdf"}), name);
+        toast(t("okSaved",{f:name}),"ok");
+      }catch(e){ console.error(e); toast(t("errBad",{f:d.name}),"err"); }
+      progOff();
+    });
+  });
+}
+
+/* ---------------- 36. registo de ferramentas ---------------- */
+TOOLS.push(
+  { title:"tXls", sub:"tXlsS", icon:IC.sheet,    run:pdfToXlsx },
+  { title:"tDoc", sub:"tDocS", icon:IC.doc,      run:pdfToDocx },
+  { title:"tCmp", sub:"tCmpS", icon:IC.zip,      run:compressDialog },
+  { title:"tWmk", sub:"tWmkS", icon:IC.stamp,    run:watermarkDialog },
+  { title:"tNum", sub:"tNumS", icon:IC.hash,     run:numberDialog },
+  { title:"tMet", sub:"tMetS", icon:IC.info,     run:metaDialog },
+  { title:"tX2P", sub:"tX2PS", icon:IC.sheet,    run:()=>pickOffice(".xlsx,.xlsm,.xls,.csv") },
+  { title:"tD2P", sub:"tD2PS", icon:IC.doc,      run:()=>pickOffice(".docx") }
+);
+function pickOffice(acc){
+  const inp=document.createElement("input"); inp.type="file"; inp.accept=acc;
+  inp.onchange=()=>{ if(inp.files&&inp.files[0]) routeOffice(inp.files[0]); };
+  inp.click();
+}
+function routeOffice(f){
+  const n=f.name.toLowerCase();
+  if(/\.(xlsx|xlsm|xls|csv)$/.test(n)) xlsToPdfDialog(f);
+  else if(/\.docx$/.test(n)) docxToPdfDialog(f);
+  else if(/\.doc$/.test(n)) toast(t("errBad",{f:f.name}),"err");
+  else toast(t("errNoPdf"),"warn");
+}
+CONV = { incoming(files){ for(const f of files) routeOffice(f); } };
+
+/* ---------------- 21. arranque ---------------- */
+(function init(){
+  $("logo").src = (typeof LOGO!=="undefined") ? LOGO : "";
+  applyTheme(curTheme());
+  icons();
+  bind();
+  let l="pt"; try{ l = localStorage.getItem(LKEY)||"pt"; }catch(e){}
+  setLang(l);
+  HIST=[snap()]; HPOS=0;
+  syncBar();
+  if(window.__hideBoot) window.__hideBoot();
+})();
+</script>
+</body>
+</html>
