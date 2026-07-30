@@ -286,6 +286,62 @@ window.__hideBoot=function(){
   table.pv td.num{text-align:right;font-family:var(--f-num)}
   .colhdr{display:flex;gap:4px;align-items:center}
 
+
+  /* ---------- editor de página ---------- */
+  .pe-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 12px;background:var(--card);
+    border:1px solid var(--line);border-radius:var(--r-card) var(--r-card) 0 0;box-shadow:var(--sh)}
+  .pe-main{display:flex;align-items:stretch;min-height:520px;background:var(--card);border:1px solid var(--line);
+    border-top:0;border-radius:0 0 var(--r-card) var(--r-card);overflow:hidden}
+  .pe-rail{width:53px;flex:0 0 auto;border-right:1px solid var(--line);display:flex;flex-direction:column;
+    align-items:center;gap:4px;padding:10px 0}
+  .pe-tool{width:35px;height:35px;border:1px solid transparent;border-radius:var(--r-btn);background:transparent;
+    color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+  .pe-tool:hover{background:var(--chip);color:var(--ink)}
+  .pe-tool.on{background:var(--brand);color:var(--brand-ink)}
+  .pe-tool:disabled{opacity:.35;cursor:not-allowed}
+  .pe-mid{flex:1;min-width:0;background:var(--line2);display:flex;flex-direction:column}
+  .pe-scroll{flex:1;overflow:auto;padding:16px;display:flex;justify-content:center;align-items:flex-start}
+  .pe-page{position:relative;background:#fff;box-shadow:0 2px 12px rgba(17,26,39,.22);flex:0 0 auto}
+  .pe-page canvas{display:block}
+  .pe-layer{position:absolute;inset:0}
+  .pe-blk{position:absolute;border:1px dashed transparent;border-radius:2px;cursor:text}
+  .pe-layer.tt .pe-blk{border-color:color-mix(in srgb,var(--brand) 22%,transparent)}
+  .pe-layer.tt .pe-blk:hover{border-color:color-mix(in srgb,var(--brand) 60%,transparent);
+    background:color-mix(in srgb,var(--brand) 7%,transparent)}
+  .pe-ob{position:absolute}
+  .pe-ob.on{outline:1.5px solid var(--sel);outline-offset:2px}
+  .pe-ed{position:absolute;outline:1.5px solid var(--sel);padding:0;margin:0}
+  .pe-ghost{position:absolute;border:1.5px solid var(--sel);background:color-mix(in srgb,var(--sel) 12%,transparent)}
+  .pe-zoom{display:flex;align-items:center;gap:7px;padding:9px 12px;border-top:1px solid var(--line);background:var(--card)}
+  .pe-side{width:302px;flex:0 0 auto;border-left:1px solid var(--line);padding:14px;overflow:auto;background:var(--card)}
+  .pe-side h4{font-family:var(--f-ti);font-size:15px;font-weight:600;margin:0 0 2px}
+  .pe-side .pe-meta{font-size:11.5px;color:var(--muted);margin-bottom:14px;line-height:1.5}
+  .pe-side .pe-hint{font-size:11.5px;color:var(--faint);line-height:1.55}
+  .pe-sw{display:flex;gap:7px;flex-wrap:wrap}
+  .pe-sw button{width:34px;height:34px;border-radius:var(--r-chip);border:1px solid var(--line);cursor:pointer}
+  .pe-sw button.on{border:2px solid var(--sel)}
+  .pe-num{display:flex;align-items:center;height:38px;border:1px solid var(--line);border-radius:var(--r-btn);overflow:hidden}
+  .pe-num button{border:none;background:transparent;color:var(--muted);width:32px;height:100%;cursor:pointer;
+    font-family:var(--f-num);font-size:14px;font-weight:700}
+  .pe-num button:hover{background:var(--chip);color:var(--ink)}
+  .pe-num span{flex:1;text-align:center;font-family:var(--f-num);font-size:13px;font-weight:700}
+  .pe-xy{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+  .pe-xy div{display:flex;align-items:center;gap:7px;height:34px;padding:0 10px;border:1px solid var(--line);border-radius:var(--r-btn)}
+  .pe-xy b{font-size:11px;color:var(--faint);font-weight:700}
+  .pe-xy span{font-family:var(--f-num);font-size:12.5px}
+  .pe-hr{height:1px;background:var(--line2);margin:14px 0}
+  .pgedit{position:absolute;top:12px;left:37px;display:inline-flex;align-items:center;gap:3px;
+    background:var(--ok);color:#fff;padding:2px 5px;border-radius:5px;font-family:var(--f-num);font-size:10px;font-weight:700}
+  @media(max-width:820px){
+    .pe-main{flex-direction:column;min-height:0}
+    .pe-rail{width:auto;flex-direction:row;border-right:0;border-bottom:1px solid var(--line);padding:8px 10px;overflow:auto}
+    .pe-tool{width:40px;height:40px;flex:0 0 auto}
+    .pe-side{width:auto;border-left:0;border-top:1px solid var(--line)}
+    .pe-scroll{padding:10px}
+    .pe-top{border-radius:var(--r-card);margin-bottom:10px}
+    .pe-main{border-top:1px solid var(--line);border-radius:var(--r-card)}
+  }
+
   /* ---------- responsivo ---------- */
   @media(max-width:820px){
     .wrap{padding:12px 11px 96px}
@@ -389,6 +445,42 @@ window.__hideBoot=function(){
     </div>
 
     <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- ===================== EDITOR DE PÁGINA ===================== -->
+  <section id="pedit" class="hidden">
+    <div class="pe-top">
+      <button class="btn q sm" id="peBack"><span data-i18n="peBack">Grelha</span></button>
+      <div class="divi"></div>
+      <span class="pgsrc" id="peDot" style="width:8px;height:8px"></span>
+      <b id="peName" style="font-size:12.5px;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"></b>
+      <span class="selinfo" id="peWhich" style="color:var(--muted);background:var(--chip)"></span>
+      <div class="sp"></div>
+      <button class="btn g ic" id="peUndo"></button>
+      <button class="btn g ic" id="peRedo"></button>
+      <div class="divi"></div>
+      <button class="btn g sm" id="peDl" data-i18n="peDl">Descarregar cópia</button>
+      <button class="btn sm" id="peApply" data-i18n="peApply">Aplicar à página</button>
+    </div>
+    <div class="pe-main">
+      <div class="pe-rail" id="peRail"></div>
+      <div class="pe-mid">
+        <div class="pe-scroll" id="peScroll">
+          <div class="pe-page" id="pePage"><canvas id="peCv"></canvas><div class="pe-layer" id="peLayer"></div></div>
+        </div>
+        <div class="pe-zoom">
+          <button class="btn g ic sm" id="peZo" style="font-family:var(--f-num);font-weight:700">−</button>
+          <span class="mono" id="peZl" style="font-size:11.5px;font-weight:700;color:var(--muted);min-width:50px;text-align:center"></span>
+          <button class="btn g ic sm" id="peZi" style="font-family:var(--f-num);font-weight:700">+</button>
+          <div class="divi"></div>
+          <div class="segs"><button class="seg on" id="peFw" data-i18n="peFw">Largura</button><button class="seg" id="peFp" data-i18n="peFp">Página</button></div>
+          <div class="sp"></div>
+          <span id="peCount" style="font-size:11.5px;color:var(--faint)"></span>
+        </div>
+      </div>
+      <aside class="pe-side" id="peSide"></aside>
+    </div>
+    <input id="peFile" type="file" accept="image/png,image/jpeg" class="hidden">
   </section>
 </div>
 
@@ -605,6 +697,13 @@ const IC={
  hash:SVG('<line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/>'),
  info:SVG('<circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>'),
  zip:SVG('<path d="M21 8v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6l2 3h6a2 2 0 0 1 2 2z"/><line x1="12" y1="11" x2="12" y2="17"/>'),
+ pen:SVG('<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>'),
+ cursor:SVG('<path d="M6 3l12 7-5.5 1.6L10 20z"/>'),
+ tnew:SVG('<path d="M4 7V5h11v2"/><path d="M9.5 5v13"/><path d="M7 18h5"/><path d="M18 13v7"/><path d="M14.5 16.5h7"/>'),
+ cover:SVG('<rect x="3" y="9" width="18" height="6" rx="1" fill="currentColor" stroke="none"/>'),
+ image:SVG('<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 16l-5-5-6 6"/>'),
+ linei:SVG('<line x1="5" y1="19" x2="19" y2="5"/>'),
+ recti:SVG('<rect x="4" y="6" width="16" height="12" rx="1.5"/>'),
 };
 
 /* ---------------- 3. utilidades ---------------- */
@@ -659,7 +758,9 @@ function selIdx(){ const a=[]; for(let i=0;i<PAGES.length;i++) if(SEL.has(PAGES[
 
 /* ---------------- 6. histórico (desfazer / refazer, sem limite) ---------------- */
 function snap(){
-  return { p: PAGES.map(p=>({uid:p.uid,doc:p.doc,idx:p.idx,rot:p.rot})), s: Array.from(SEL) };
+  const e = {};
+  for(const k in EDITS){ if((EDITS[k]||[]).length) e[k] = EDITS[k].map(o=>Object.assign({},o)); }
+  return { p: PAGES.map(p=>({uid:p.uid,doc:p.doc,idx:p.idx,rot:p.rot})), s: Array.from(SEL), e: e };
 }
 function pushHist(){
   HIST = HIST.slice(0, HPOS+1);
@@ -670,7 +771,10 @@ function pushHist(){
 function applySnap(s){
   PAGES = s.p.map(p=>({uid:p.uid,doc:p.doc,idx:p.idx,rot:p.rot}));
   SEL = new Set(s.s.filter(u=>PAGES.some(p=>p.uid===u)));
+  for(const k in EDITS) delete EDITS[k];
+  for(const k in (s.e||{})) EDITS[k] = s.e[k].map(o=>Object.assign({},o));
   render();
+  if(PE){ PE.sel=null; PE.ed=null; if(!EDITS[PE.uid]) EDITS[PE.uid]=[]; peLayer(); peSide(); }
 }
 function undo(){
   if(HPOS<=0){ toast(t("undoNo")); return; }
@@ -811,11 +915,14 @@ function render(){
     card.appendChild(th);
     const tick = el("div","pgtick",IC.check); card.appendChild(tick);
     if(p.rot%360) card.appendChild(el("div","pgrot",(((p.rot%360)+360)%360)+"°"));
+    const ned = (EDITS[p.uid]||[]).length;
+    if(ned) card.appendChild(el("div","pgedit",IC.pen.replace(/width="17" height="17"/,'width="11" height="11"')+"<span>"+ned+"</span>"));
     const foot = el("div","pgfoot");
     foot.innerHTML = '<span class="pgsrc" style="background:'+(d?d.color:"#999")+'" title="'+esc(d?d.name:"")+'"></span>'+
                      '<span class="pgnum">'+(i+1)+'</span>';
     const acts = el("div","pgacts");
     const mk=(ic,ti,fn)=>{ const b=el("button","minibtn",ic); b.title=ti; b.onclick=e=>{e.stopPropagation(); fn();}; return b; };
+    acts.appendChild(mk(IC.pen, t("peEdit"), ()=>{ openPE(i); }));
     acts.appendChild(mk(IC.rotR, t("aRotR"), ()=>{ p.rot=(p.rot+90)%360; pushHist(); render(); }));
     acts.appendChild(mk(IC.dup,  t("aDup"),  ()=>{ dupAt(i); }));
     acts.appendChild(mk(IC.del,  t("aDel"),  ()=>{ delAt([i]); }));
@@ -879,7 +986,9 @@ function delAt(list){
 }
 function dupAt(i){
   const p = PAGES[i];
-  PAGES.splice(i+1,0,{uid:"u"+(++UID), doc:p.doc, idx:p.idx, rot:p.rot});
+  const nu = "u"+(++UID);
+  PAGES.splice(i+1,0,{uid:nu, doc:p.doc, idx:p.idx, rot:p.rot});
+  if((EDITS[p.uid]||[]).length) EDITS[nu] = EDITS[p.uid].map(o=>Object.assign({},o));
   pushHist(); render();
 }
 function dupSel(){
@@ -888,7 +997,9 @@ function dupSel(){
   let off = 0;
   for(let k=s.length-1;k>=0;k--){
     const p = PAGES[s[k]];
-    PAGES.splice(s[k]+1,0,{uid:"u"+(++UID), doc:p.doc, idx:p.idx, rot:p.rot});
+    const nu = "u"+(++UID);
+    PAGES.splice(s[k]+1,0,{uid:nu, doc:p.doc, idx:p.idx, rot:p.rot});
+    if((EDITS[p.uid]||[]).length) EDITS[nu] = EDITS[p.uid].map(o=>Object.assign({},o));
   }
   pushHist(); render();
 }
@@ -955,6 +1066,8 @@ async function libFor(id, cache){
 async function buildPdf(list, msg){
   const out = await PDFDoc.create();
   const cache = {};
+  const fcache = {};
+  if(list.some(p=>(EDITS[p.uid]||[]).length)) await metrics();
   for(let i=0;i<list.length;i++){
     const p = list[i];
     if(i%6===0){ progSet(i,list.length,msg); await paint(); }
@@ -966,6 +1079,7 @@ async function buildPdf(list, msg){
       cp.setRotation(degrees((((cur+p.rot)%360)+360)%360));
     }
     out.addPage(cp);
+    await drawEdits(out, cp, p, fcache);
   }
   out.setProducer("DigiPDF · Digit I&D");
   out.setCreator("DigiPDF · Digit I&D");
@@ -1095,6 +1209,12 @@ function genModal(title, bodyHtml, goLabel, onGo){
 document.addEventListener("keydown", e=>{
   const tag = (e.target.tagName||"").toLowerCase();
   if(tag==="input"||tag==="textarea"||tag==="select") { if(e.key==="Escape") closeAll(); return; }
+  if(PE && !$("pedit").classList.contains("hidden")){
+    if(e.key==="Escape"){ if(PE.ed) cancelEdit(); else closePE(); return; }
+    if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==="z"){ e.preventDefault(); e.shiftKey?redo():undo(); return; }
+    if((e.key==="Delete"||e.key==="Backspace") && !PE.ed && PE.sel && PE.sel.kind==="obj"){ e.preventDefault(); peDel(); return; }
+    return;
+  }
   if(e.key==="Escape"){ closeAll(); return; }
   const cmd = e.ctrlKey||e.metaKey;
   if(cmd && e.key.toLowerCase()==="z"){ e.preventDefault(); e.shiftKey?redo():undo(); return; }
@@ -1228,12 +1348,99 @@ IC.upload_sm = SVG('<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyli
 
 Object.assign(I18N.pt,{
   undoT:"Desfazer (Ctrl+Z)", redoT:"Refazer (Ctrl+Shift+Z)", themeT:"Mudar o tema",
+  peEdit:"Editar esta página", peBack:"Grelha", peApply:"Aplicar à página", peDl:"Descarregar cópia",
+  peFw:"Largura", peFp:"Página", peWhich:"Página {n} de {m}", peLoad:"A abrir a página…",
+  peChanges:"{n} alteração(ões) nesta página", peNone:"Sem alterações nesta página",
+  peOk:"Alterações aplicadas à página {n}.",
+  tSel:"Selecionar e mover", tText:"Editar texto", tNew:"Escrever texto novo", tCover:"Tapar uma zona",
+  tImg:"Inserir imagem ou assinatura", tLine:"Linha", tRect:"Retângulo",
+  sParaT:"Parágrafo selecionado", sParaM:"{n} linha(s) · {c} caracteres · texto do próprio PDF",
+  sNewM:"{n} linha(s) · {c} caracteres · texto acrescentado por ti",
+  sFont:"Letra", sSize:"Tamanho", sLh:"Entrelinha", sColor:"Cor", sAlign:"Alinhamento",
+  sAl:"Esq.", sAc:"Centro", sAr:"Dir.", sPos:"Posição e tamanho",
+  sReset:"Repor o texto original", sResetN:"O texto original fica guardado até guardares o PDF. Desfazer e refazer não têm limite de passos.",
+  sDelP:"Eliminar este parágrafo", sDelO:"Eliminar",
+  sSubT:"A letra foi substituída",
+  sSub:"O original usa uma letra incorporada em subconjunto: só traz os caracteres que já estavam na página. Estás a escrever com <b>{f}</b>, a mais parecida que este PDF sabe desenhar sem ir buscar nada à internet.",
+  sNewT:"Texto novo", sCoverT:"Zona tapada", sImgT:"Imagem", sLineT:"Linha", sRectT:"Retângulo",
+  sThick:"Espessura", sFill:"Preenchimento", sNoFill:"Sem preenchimento",
+  sNothing:"Nada selecionado",
+  hSel:"Clica numa coisa que tenhas acrescentado para a mover ou mudar.",
+  hText:"Os parágrafos com texto por baixo estão marcados. Clica num deles para escrever dentro dele.",
+  hNew:"Arrasta para desenhar a caixa onde queres escrever.",
+  hCover:"Arrasta por cima do que queres esconder. Fica tapado a sério: por baixo continua lá o texto original até guardares.",
+  hImg:"Escolhe uma imagem PNG ou JPEG do teu computador.",
+  hLine:"Arrasta de um ponto ao outro.", hRect:"Arrasta para desenhar o retângulo.",
+  bNoTextT:"Esta página é uma imagem",
+  bNoText:"<b>Não há texto por baixo para editar.</b> Esta página é uma imagem — um documento digitalizado ou fotografado. O DigiPDF não faz reconhecimento de texto (OCR), e não o faz de propósito: fazê-lo bem obrigaria a enviar a página para fora do dispositivo, e essa é a única coisa que aqui nunca acontece. Para editar este documento tens de o passar primeiro por uma ferramenta de OCR.",
+  bFlat:"<b>Este parágrafo está sobre uma imagem ou sobre um fundo que não é liso.</b> Trocar o texto obrigaria a tapar o que está por baixo, e ficaria uma mancha visível. Podes escrever texto novo por cima, ou tapar a zona à mão.",
+  bWide:"<b>O texto novo é mais comprido do que o original.</b> Vai passar para fora da zona tapada e pode sobrepor-se ao que está abaixo. Podes reduzir o tamanho da letra ou encurtar o texto.",
+  errImg:"Não consegui ler esta imagem. Usa um ficheiro PNG ou JPEG.",
+
 });
 Object.assign(I18N.en,{
   undoT:"Undo (Ctrl+Z)", redoT:"Redo (Ctrl+Shift+Z)", themeT:"Switch theme",
+  peEdit:"Edit this page", peBack:"Grid", peApply:"Apply to page", peDl:"Download a copy",
+  peFw:"Width", peFp:"Page", peWhich:"Page {n} of {m}", peLoad:"Opening the page…",
+  peChanges:"{n} change(s) on this page", peNone:"No changes on this page",
+  peOk:"Changes applied to page {n}.",
+  tSel:"Select and move", tText:"Edit text", tNew:"Write new text", tCover:"Cover an area",
+  tImg:"Insert image or signature", tLine:"Line", tRect:"Rectangle",
+  sParaT:"Paragraph selected", sParaM:"{n} line(s) · {c} characters · text from the PDF itself",
+  sNewM:"{n} line(s) · {c} characters · text you added",
+  sFont:"Font", sSize:"Size", sLh:"Line spacing", sColor:"Colour", sAlign:"Alignment",
+  sAl:"Left", sAc:"Centre", sAr:"Right", sPos:"Position and size",
+  sReset:"Restore the original text", sResetN:"The original text is kept until you save the PDF. Undo and redo have no step limit.",
+  sDelP:"Delete this paragraph", sDelO:"Delete",
+  sSubT:"The font was substituted",
+  sSub:"The original uses a font embedded as a subset: it only carries the characters already on the page. You are writing with <b>{f}</b>, the closest one this PDF can draw without fetching anything from the internet.",
+  sNewT:"New text", sCoverT:"Covered area", sImgT:"Image", sLineT:"Line", sRectT:"Rectangle",
+  sThick:"Thickness", sFill:"Fill", sNoFill:"No fill",
+  sNothing:"Nothing selected",
+  hSel:"Click something you added to move it or change it.",
+  hText:"Paragraphs with text underneath are outlined. Click one to write inside it.",
+  hNew:"Drag to draw the box you want to write in.",
+  hCover:"Drag over what you want to hide. It is really covered: the original text stays underneath until you save.",
+  hImg:"Pick a PNG or JPEG image from your computer.",
+  hLine:"Drag from one point to the other.", hRect:"Drag to draw the rectangle.",
+  bNoTextT:"This page is an image",
+  bNoText:"<b>There is no text underneath to edit.</b> This page is an image — a scan or a photo. DigiPDF does no text recognition (OCR), and that is deliberate: doing it properly would mean sending the page off the device, and that is the one thing that never happens here. To edit this document, run it through an OCR tool first.",
+  bFlat:"<b>This paragraph sits on an image or on a background that is not flat.</b> Replacing the text would mean covering what is underneath, and it would leave a visible patch. You can write new text on top, or cover the area by hand.",
+  bWide:"<b>The new text is longer than the original.</b> It will run outside the covered area and may overlap what is below. You can reduce the font size or shorten the text.",
+  errImg:"I could not read this image. Use a PNG or JPEG file.",
+
 });
 Object.assign(I18N.es,{
   undoT:"Deshacer (Ctrl+Z)", redoT:"Rehacer (Ctrl+Shift+Z)", themeT:"Cambiar el tema",
+  peEdit:"Editar esta página", peBack:"Cuadrícula", peApply:"Aplicar a la página", peDl:"Descargar una copia",
+  peFw:"Ancho", peFp:"Página", peWhich:"Página {n} de {m}", peLoad:"Abriendo la página…",
+  peChanges:"{n} cambio(s) en esta página", peNone:"Sin cambios en esta página",
+  peOk:"Cambios aplicados a la página {n}.",
+  tSel:"Seleccionar y mover", tText:"Editar texto", tNew:"Escribir texto nuevo", tCover:"Tapar una zona",
+  tImg:"Insertar imagen o firma", tLine:"Línea", tRect:"Rectángulo",
+  sParaT:"Párrafo seleccionado", sParaM:"{n} línea(s) · {c} caracteres · texto del propio PDF",
+  sNewM:"{n} línea(s) · {c} caracteres · texto añadido por ti",
+  sFont:"Letra", sSize:"Tamaño", sLh:"Interlineado", sColor:"Color", sAlign:"Alineación",
+  sAl:"Izq.", sAc:"Centro", sAr:"Der.", sPos:"Posición y tamaño",
+  sReset:"Restaurar el texto original", sResetN:"El texto original se guarda hasta que guardes el PDF. Deshacer y rehacer no tienen límite de pasos.",
+  sDelP:"Eliminar este párrafo", sDelO:"Eliminar",
+  sSubT:"La letra se ha sustituido",
+  sSub:"El original usa una letra incrustada en subconjunto: solo trae los caracteres que ya estaban en la página. Estás escribiendo con <b>{f}</b>, la más parecida que este PDF sabe dibujar sin ir a buscar nada a internet.",
+  sNewT:"Texto nuevo", sCoverT:"Zona tapada", sImgT:"Imagen", sLineT:"Línea", sRectT:"Rectángulo",
+  sThick:"Grosor", sFill:"Relleno", sNoFill:"Sin relleno",
+  sNothing:"Nada seleccionado",
+  hSel:"Haz clic en algo que hayas añadido para moverlo o cambiarlo.",
+  hText:"Los párrafos que tienen texto debajo están marcados. Haz clic en uno para escribir dentro.",
+  hNew:"Arrastra para dibujar la caja donde quieres escribir.",
+  hCover:"Arrastra por encima de lo que quieras ocultar. Queda tapado de verdad: debajo sigue el texto original hasta que guardes.",
+  hImg:"Elige una imagen PNG o JPEG de tu ordenador.",
+  hLine:"Arrastra de un punto al otro.", hRect:"Arrastra para dibujar el rectángulo.",
+  bNoTextT:"Esta página es una imagen",
+  bNoText:"<b>No hay texto debajo que editar.</b> Esta página es una imagen: un escaneo o una foto. DigiPDF no hace reconocimiento de texto (OCR), y no lo hace a propósito: hacerlo bien obligaría a enviar la página fuera del dispositivo, y eso es lo único que aquí nunca pasa. Para editar este documento hay que pasarlo antes por una herramienta de OCR.",
+  bFlat:"<b>Este párrafo está sobre una imagen o sobre un fondo que no es liso.</b> Cambiar el texto obligaría a tapar lo que hay debajo, y quedaría una mancha visible. Puedes escribir texto nuevo encima, o tapar la zona a mano.",
+  bWide:"<b>El texto nuevo es más largo que el original.</b> Se saldrá de la zona tapada y puede solaparse con lo que hay debajo. Puedes reducir el tamaño de la letra o acortar el texto.",
+  errImg:"No pude leer esta imagen. Usa un fichero PNG o JPEG.",
+
 });
 
 const HELP={
@@ -1251,7 +1458,10 @@ pt:`
 <p class="hp"><b>Guardar PDF</b> cria um ficheiro novo com as páginas na ordem e na rotação que vês no ecrã. <b>Extrair seleção</b> cria um PDF apenas com as páginas selecionadas. <b>Dividir</b> permite três formas: por intervalos que indicas (por exemplo <b>1-3, 7, 9-12</b>), a cada N páginas, ou uma página por ficheiro. Quando resulta mais do que um ficheiro, o DigiPDF entrega-os dentro de um ZIP.</p>
 <div class="hh">6. Atalhos de teclado</div>
 <p class="hp"><kbd>Ctrl</kbd>+<kbd>A</kbd> selecionar tudo · <kbd>Delete</kbd> eliminar a seleção · <kbd>[</kbd> e <kbd>]</kbd> rodar · <kbd>Ctrl</kbd>+<kbd>S</kbd> guardar · <kbd>Ctrl</kbd>+<kbd>Z</kbd> desfazer · <kbd>Esc</kbd> fechar janelas.</p>
-<div class="hh">7. O que o DigiPDF não faz</div>
+<div class="hh">7. Editar uma página</div>
+<p class="hp">Duplo clique numa miniatura — ou o botão do lápis no pé dela — abre a página sozinha, em grande. Os parágrafos que têm texto por baixo ficam marcados; ao clicar num deles escreve-se dentro dele, com o tamanho, a cor e o alinhamento do original. Também se pode escrever texto novo, tapar uma zona, inserir uma imagem ou assinatura, e desenhar linhas e retângulos. <b>Aplicar à página</b> volta à grelha com as alterações postas, e depois <b>Guardar PDF</b> escreve tudo no ficheiro; nada é definitivo antes disso e <b>Repor o texto original</b> devolve o texto exacto.</p>
+<p class="hp">Duas coisas ditas à cara: trocar texto existente é tapar o antigo e voltar a desenhá-lo, por isso só se oferece quando o fundo é liso — sobre uma imagem ficaria uma mancha, e nesse caso o editor recusa e explica. E a letra original quase nunca pode ser reutilizada, porque os PDF trazem as fontes em subconjunto, só com os caracteres que já estavam na página: o DigiPDF mede a letra do original, escolhe a mais parecida das que consegue desenhar sem ligação à internet, e diz-te qual usou.</p>
+<div class="hh">8. O que o DigiPDF não faz</div>
 <p class="hp">Não abre PDF protegidos por palavra-passe e não coloca nem retira palavras-passe: fazê-lo bem exige criptografia que não é segura de implementar deste lado. Não faz reconhecimento de texto (OCR): se um PDF for uma digitalização, as páginas são imagens e não há texto para converter — o DigiPDF avisa-te em vez de devolver um resultado vazio. Ficheiros muito grandes (acima de 50 MB) podem esgotar a memória do navegador.</p>
 `,
 en:`
@@ -1268,7 +1478,10 @@ en:`
 <p class="hp"><b>Save PDF</b> creates a new file with the pages in the order and rotation you see on screen. <b>Extract selection</b> creates a PDF with the selected pages only. <b>Split</b> offers three ways: by ranges you type (for example <b>1-3, 7, 9-12</b>), every N pages, or one page per file. When the result is more than one file, DigiPDF hands them over inside a ZIP.</p>
 <div class="hh">6. Keyboard shortcuts</div>
 <p class="hp"><kbd>Ctrl</kbd>+<kbd>A</kbd> select all · <kbd>Delete</kbd> delete selection · <kbd>[</kbd> and <kbd>]</kbd> rotate · <kbd>Ctrl</kbd>+<kbd>S</kbd> save · <kbd>Ctrl</kbd>+<kbd>Z</kbd> undo · <kbd>Esc</kbd> close dialogs.</p>
-<div class="hh">7. What DigiPDF does not do</div>
+<div class="hh">7. Editing a page</div>
+<p class="hp">Double-click a thumbnail — or the pencil button in its footer — to open that page on its own, in a large view. Paragraphs with text underneath are outlined; click one to write inside it, keeping the original size, colour and alignment. You can also write new text, cover an area, insert an image or signature, and draw lines and rectangles. <b>Apply to page</b> returns to the grid with the changes in place, and <b>Save PDF</b> then writes everything into the file; nothing is final before that, and <b>Restore the original text</b> gives the exact text back.</p>
+<p class="hp">Two things said plainly: replacing existing text means covering the old text and drawing it again, so it is only offered when the background is flat — over an image it would leave a visible patch, and there the editor refuses and explains why. And the original font can almost never be reused, because PDFs carry fonts as subsets holding only the characters already on the page: DigiPDF measures the original, picks the closest font it can draw with no internet connection, and tells you which one it used.</p>
+<div class="hh">8. What DigiPDF does not do</div>
 <p class="hp">It does not open password-protected PDFs and it neither adds nor removes passwords: doing that properly requires cryptography that cannot be implemented safely on this side. It does no text recognition (OCR): if a PDF is a scan, the pages are images and there is no text to convert — DigiPDF tells you instead of handing back an empty result. Very large files (over 50 MB) may exhaust the browser's memory.</p>
 `,
 es:`
@@ -1285,7 +1498,10 @@ es:`
 <p class="hp"><b>Guardar PDF</b> crea un fichero nuevo con las páginas en el orden y la rotación que ves en pantalla. <b>Extraer selección</b> crea un PDF solo con las páginas seleccionadas. <b>Dividir</b> ofrece tres formas: por intervalos que indicas (por ejemplo <b>1-3, 7, 9-12</b>), cada N páginas, o una página por fichero. Cuando el resultado es más de un fichero, DigiPDF los entrega dentro de un ZIP.</p>
 <div class="hh">6. Atajos de teclado</div>
 <p class="hp"><kbd>Ctrl</kbd>+<kbd>A</kbd> seleccionar todo · <kbd>Delete</kbd> eliminar la selección · <kbd>[</kbd> y <kbd>]</kbd> girar · <kbd>Ctrl</kbd>+<kbd>S</kbd> guardar · <kbd>Ctrl</kbd>+<kbd>Z</kbd> deshacer · <kbd>Esc</kbd> cerrar ventanas.</p>
-<div class="hh">7. Lo que DigiPDF no hace</div>
+<div class="hh">7. Editar una página</div>
+<p class="hp">Doble clic en una miniatura — o el botón del lápiz de su pie — abre esa página sola, en grande. Los párrafos que tienen texto debajo quedan marcados; al hacer clic en uno se escribe dentro, con el tamaño, el color y la alineación del original. También se puede escribir texto nuevo, tapar una zona, insertar una imagen o firma, y dibujar líneas y rectángulos. <b>Aplicar a la página</b> vuelve a la cuadrícula con los cambios puestos, y luego <b>Guardar PDF</b> lo escribe todo en el fichero; nada es definitivo antes de eso, y <b>Restaurar el texto original</b> devuelve el texto exacto.</p>
+<p class="hp">Dos cosas dichas a la cara: cambiar texto existente es tapar el viejo y volver a dibujarlo, así que solo se ofrece cuando el fondo es liso — sobre una imagen quedaría una mancha, y ahí el editor se niega y lo explica. Y la letra original casi nunca se puede reutilizar, porque los PDF llevan las fuentes en subconjunto, solo con los caracteres que ya estaban en la página: DigiPDF mide la del original, elige la más parecida de las que puede dibujar sin conexión, y te dice cuál usó.</p>
+<div class="hh">8. Lo que DigiPDF no hace</div>
 <p class="hp">No abre PDF protegidos con contraseña y no pone ni quita contraseñas: hacerlo bien exige criptografía que no es seguro implementar de este lado. No hace reconocimiento de texto (OCR): si un PDF es un escaneo, las páginas son imágenes y no hay texto que convertir — DigiPDF te avisa en lugar de devolver un resultado vacío. Los ficheros muy grandes (más de 50 MB) pueden agotar la memoria del navegador.</p>
 `};
 
@@ -2281,12 +2497,807 @@ function routeOffice(f){
 }
 CONV = { incoming(files){ for(const f of files) routeOffice(f); } };
 
+
+/* ---------------- 37. editar página ---------------- */
+/* Trocar texto num PDF é tapar o antigo e voltar a desenhá-lo. Só se faz quando o
+   fundo é liso, e a letra usada diz-se sempre. Nada disto vai à internet. */
+
+const EDITS = Object.create(null);      /* uid da página -> [objeto] */
+let PE = null, FMET = null, GID = 0, OIDN = 0;
+
+const STD = ["Helvetica","HelveticaBold","HelveticaOblique","HelveticaBoldOblique",
+ "TimesRoman","TimesRomanBold","TimesRomanItalic","TimesRomanBoldItalic",
+ "Courier","CourierBold","CourierOblique","CourierBoldOblique"];
+const STDNM = { Helvetica:"Helvetica", HelveticaBold:"Helvetica Bold",
+ HelveticaOblique:"Helvetica Oblique", HelveticaBoldOblique:"Helvetica Bold Oblique",
+ TimesRoman:"Times Roman", TimesRomanBold:"Times Bold", TimesRomanItalic:"Times Italic",
+ TimesRomanBoldItalic:"Times Bold Italic", Courier:"Courier", CourierBold:"Courier Bold",
+ CourierOblique:"Courier Oblique", CourierBoldOblique:"Courier Bold Oblique" };
+const PAL = [[26,31,39],[95,107,124],[31,111,235],[192,57,43],[30,135,75],[255,255,255]];
+
+async function metrics(){
+  if(FMET) return FMET;
+  const doc = await PDFDoc.create(); const m = {};
+  for(const k of STD) m[k] = await doc.embedFont(PDFLib.StandardFonts[k]);
+  FMET = m; return FMET;
+}
+function famOf(k){
+  const mono = k.indexOf("Courier")===0, serif = k.indexOf("Times")===0;
+  return { family: mono ? "ui-monospace,SFMono-Regular,Menlo,Consolas,monospace"
+                        : (serif ? "'Times New Roman',Times,serif" : "Helvetica,Arial,sans-serif"),
+           weight: /Bold/.test(k) ? 700 : 400,
+           style: /(Oblique|Italic)/.test(k) ? "italic" : "normal" };
+}
+function rgbCss(c){ return "rgb("+Math.round(c[0])+","+Math.round(c[1])+","+Math.round(c[2])+")"; }
+function pdfRgb(c){ return PDFLib.rgb(c[0]/255, c[1]/255, c[2]/255); }
+function alignCss(a){ return a==="c" ? "center" : (a==="r" ? "right" : "left"); }
+function sameCol(a,b){ return a&&b&&a[0]===b[0]&&a[1]===b[1]&&a[2]===b[2]; }
+
+function wrapText(f, size, text, maxW){
+  const out = [];
+  const paras = String(text==null?"":text).split("\n");
+  for(const para of paras){
+    const words = wa(para).split(/\s+/).filter(w=>w.length);
+    if(!words.length){ out.push(""); continue; }
+    let cur = words[0];
+    for(let i=1;i<words.length;i++){
+      const tryl = cur+" "+words[i];
+      if(f.widthOfTextAtSize(tryl,size) <= maxW+0.02) cur = tryl;
+      else { out.push(cur); cur = words[i]; }
+    }
+    out.push(cur);
+  }
+  return out;
+}
+/* escolhe a fonte padrão cuja largura se aproxima mais da largura observada */
+function pickFont(cls, str, size, obsW){
+  const pool = STD.filter(k => cls==="mono" ? k.indexOf("Courier")===0
+    : (cls==="serif" ? k.indexOf("Times")===0 : k.indexOf("Helvetica")===0));
+  let best = pool[0], bd = Infinity;
+  const s = wa(str||"");
+  if(!s.trim() || !obsW || !FMET) return best;
+  for(const k of pool){
+    const d = Math.abs(FMET[k].widthOfTextAtSize(s,size) - obsW);
+    if(d < bd){ bd = d; best = k; }
+  }
+  return best;
+}
+
+/* ---- deteção de parágrafos, a partir das posições reais do texto ---- */
+async function pageBlocks(d, idx){
+  const page = await d.js.getPage(idx+1);
+  const tc = await page.getTextContent();
+  const st = tc.styles || {};
+  const its = [];
+  for(const it of tc.items){
+    if(!it.str || !it.str.trim()) continue;
+    const tr = it.transform;
+    const size = Math.abs(tr[3]) || Math.abs(it.height) || 10;
+    if(size < 1) continue;
+    const fam = String(((st[it.fontName]||{}).fontFamily)||"").toLowerCase();
+    const cls = fam.indexOf("mono")>=0 ? "mono"
+      : ((fam.indexOf("serif")>=0 && fam.indexOf("sans")<0) ? "serif" : "sans");
+    its.push({ x:tr[4], y:tr[5], w:it.width||0, size:size, s:it.str, cls:cls });
+  }
+  its.sort((a,b)=> (b.y-a.y) || (a.x-b.x));
+  const lines = [];
+  for(const it of its){
+    let L = null;
+    for(let i=lines.length-1; i>=0 && i>=lines.length-3; i--){
+      if(Math.abs(lines[i].y - it.y) <= Math.max(1, it.size*0.3)){ L = lines[i]; break; }
+    }
+    if(L) L.its.push(it); else lines.push({ y:it.y, its:[it] });
+  }
+  for(const L of lines){
+    L.its.sort((a,b)=>a.x-b.x);
+    L.x0 = Math.min.apply(null, L.its.map(i=>i.x));
+    L.x1 = Math.max.apply(null, L.its.map(i=>i.x+i.w));
+    L.size = Math.max.apply(null, L.its.map(i=>i.size));
+    L.cls = L.its[0].cls;
+    let s = "";
+    for(let i=0;i<L.its.length;i++){
+      const it = L.its[i];
+      if(i){
+        const pv = L.its[i-1];
+        if((it.x - (pv.x+pv.w)) > L.size*0.22 && !/\s$/.test(s)) s += " ";
+      }
+      s += it.s;
+    }
+    L.s = s.replace(/\s+/g," ").trim();
+  }
+  lines.sort((a,b)=> b.y - a.y);
+  const blocks = [];
+  for(const L of lines){
+    if(!L.s) continue;
+    const B = blocks.length ? blocks[blocks.length-1] : null;
+    const gap = B ? (B.lastY - L.y) : 0;
+    const ok = B
+      && Math.abs(B.size - L.size) <= Math.max(0.6, B.size*0.12)
+      && gap > 0 && gap <= B.size*2.1
+      && (Math.min(B.x1,L.x1) - Math.max(B.x0,L.x0)) > -B.size
+      && Math.abs(B.x0 - L.x0) <= B.size*3.2;
+    if(ok){
+      B.lines.push(L); B.lastY = L.y;
+      B.x0 = Math.min(B.x0,L.x0); B.x1 = Math.max(B.x1,L.x1);
+    } else {
+      blocks.push({ lines:[L], x0:L.x0, x1:L.x1, y0:L.y, lastY:L.y, size:L.size, cls:L.cls });
+    }
+  }
+  for(let i=0;i<blocks.length;i++){
+    const B = blocks[i];
+    B.id = "b"+i;
+    B.text = B.lines.map(l=>l.s).join(" ").replace(/\s+/g," ").trim();
+    B.top = B.y0 + B.size*0.80;
+    B.bot = B.lastY - B.size*0.26;
+    B.lh = B.lines.length>1 ? Math.max(1, (B.y0 - B.lastY)/((B.lines.length-1)*B.size)) : 1.2;
+  }
+  return { page:page, blocks: blocks.filter(b=>b.text.length>0) };
+}
+
+/* ---- o fundo é liso? qual é a cor do papel e a da tinta? ---- */
+function sampleRect(ctx, r){
+  const x = Math.max(0, Math.floor(r.x-2)), y = Math.max(0, Math.floor(r.y-2));
+  const w = Math.min(ctx.canvas.width - x, Math.ceil(r.w+4));
+  const hh = Math.min(ctx.canvas.height - y, Math.ceil(r.h+4));
+  if(w<=1 || hh<=1) return null;
+  let im;
+  try{ im = ctx.getImageData(x,y,w,hh).data; }catch(e){ return null; }
+  const cnt = new Map(); let dk = null, dv = 1e9;
+  for(let i=0;i<im.length;i+=4){
+    const R=im[i], G=im[i+1], B=im[i+2];
+    const key = ((R>>3)<<10)|((G>>3)<<5)|(B>>3);
+    cnt.set(key,(cnt.get(key)||0)+1);
+    const lum = R*0.299 + G*0.587 + B*0.114;
+    if(lum < dv){ dv = lum; dk = [R,G,B]; }
+  }
+  let bk = 0, bn = 0;
+  cnt.forEach((n,k)=>{ if(n>bn){ bn=n; bk=k; } });
+  const bg = [ ((bk>>10)&31)*8+4, ((bk>>5)&31)*8+4, (bk&31)*8+4 ];
+  const total = im.length/4;
+  let near = 0;
+  for(let i=0;i<im.length;i+=4){
+    if(Math.abs(im[i]-bg[0])<=14 && Math.abs(im[i+1]-bg[1])<=14 && Math.abs(im[i+2]-bg[2])<=14) near++;
+  }
+  return { bg:bg, ink:(dk||[0,0,0]), flat:(near/total) >= 0.55 };
+}
+
+/* ---- coordenadas ---- */
+function toCv(x,y){ const q = PE.vp.convertToViewportPoint(x,y); return [q[0],q[1]]; }
+function toPdf(cx,cy){ const q = PE.vp.convertToPdfPoint(cx,cy); return [q[0],q[1]]; }
+function rectCv(x0,y0,x1,y1){
+  const a = toCv(x0,y1), b = toCv(x1,y0);
+  return { x:Math.min(a[0],b[0]), y:Math.min(a[1],b[1]),
+           w:Math.abs(b[0]-a[0]), h:Math.abs(b[1]-a[1]) };
+}
+function rectPdf(r){
+  const a = toPdf(r.x, r.y+r.h), b = toPdf(r.x+r.w, r.y);
+  return { x:Math.min(a[0],b[0]), y:Math.min(a[1],b[1]),
+           w:Math.abs(b[0]-a[0]), h:Math.abs(b[1]-a[1]) };
+}
+function textBox(o){
+  const nl = Math.max(1, wrapText(FMET[o.font], o.size, o.text, o.w).length);
+  const hpt = o.size*o.lh*(nl-1) + o.size*1.06;
+  const top = (o.base!=null ? o.base : o.y) + o.size*0.80;
+  return { x:o.x, y:top-hpt, w:o.w, h:hpt, nl:nl };
+}
+function objRect(o){
+  if(o.k==="t"){ const b = textBox(o); return { x:b.x, y:b.y, w:b.w, h:b.h }; }
+  if(o.k==="line"){
+    return { x:Math.min(o.x1,o.x2), y:Math.min(o.y1,o.y2),
+             w:Math.abs(o.x2-o.x1), h:Math.abs(o.y2-o.y1) };
+  }
+  return { x:o.x, y:o.y, w:o.w, h:o.h };
+}
+function objById(id){ const a = EDITS[PE.uid]||[]; for(const o of a) if(o.id===id) return o; return null; }
+function blkById(id){ for(const b of PE.blocks) if(b.id===id) return b; return null; }
+function blkTaken(id){ const a = EDITS[PE.uid]||[]; for(const o of a) if(o.k==="t" && o.blk===id) return true; return false; }
+
+/* ---- abrir e fechar ---- */
+async function openPE(i){
+  const p = PAGES[i]; if(!p) return;
+  const d = docById(p.doc); if(!d) return;
+  progOn(tp("peLoad"));
+  try{
+    await metrics();
+    const info = await pageBlocks(d, p.idx);
+    if(!info.blocks.length){ progOff(); noTextModal(); return; }
+    if(!EDITS[p.uid]) EDITS[p.uid] = [];
+    PE = { i:i, uid:p.uid, p:p, d:d, page:info.page, blocks:info.blocks,
+           tool:"text", sel:null, ed:null, scale:1, fit:"w", vp:null, ctx:null, task:null, warned:false };
+    $("editor").classList.add("hidden");
+    $("mbar").classList.add("hidden");
+    $("pedit").classList.remove("hidden");
+    peChrome();
+    await peDraw(true);
+  }catch(e){ console.error(e); toast(t("errBad",{f:d.name}),"err"); }
+  progOff();
+}
+function closePE(){
+  if(!PE) return;
+  if(PE.ed) commitEdit();
+  if(PE.task){ try{ PE.task.cancel(); }catch(e){} }
+  PE = null;
+  $("pedit").classList.add("hidden");
+  $("peLayer").innerHTML = "";
+  render();
+}
+function noTextModal(){
+  const m = bigModal(t("bNoTextT"));
+  m.body.innerHTML = '<div class="note w">'+t("bNoText")+'</div>';
+  m.btn(t("peBack"),"g",m.close);
+}
+
+/* ---- desenho da página ---- */
+async function peDraw(refit){
+  if(!PE) return;
+  const page = PE.page, p = PE.p;
+  const rot = (((page.rotate + p.rot)%360)+360)%360;
+  const base = page.getViewport({scale:1, rotation:rot});
+  if(refit){
+    const box = $("peScroll");
+    const availW = Math.max(240, box.clientWidth - 34);
+    const availH = Math.max(240, box.clientHeight - 34);
+    PE.scale = PE.fit==="p" ? Math.min(availW/base.width, availH/base.height) : availW/base.width;
+    PE.scale = Math.max(0.2, Math.min(4, PE.scale));
+  }
+  const vp = page.getViewport({scale:PE.scale, rotation:rot});
+  PE.vp = vp;
+  const cv = $("peCv");
+  cv.width = Math.ceil(vp.width); cv.height = Math.ceil(vp.height);
+  $("pePage").style.width = cv.width+"px";
+  $("pePage").style.height = cv.height+"px";
+  const cx = cv.getContext("2d");
+  cx.fillStyle = "#fff"; cx.fillRect(0,0,cv.width,cv.height);
+  PE.ctx = cx;
+  if(PE.task){ try{ PE.task.cancel(); }catch(e){} }
+  PE.task = page.render({ canvasContext:cx, viewport:vp });
+  try{ await PE.task.promise; }catch(e){}
+  PE.task = null; PE.ctx = cx;
+  $("peZl").textContent = Math.round(PE.scale*100)+" %";
+  peLayer(); peSide();
+}
+
+function peLayer(){
+  if(!PE || !PE.vp) return;
+  const L = $("peLayer");
+  L.innerHTML = "";
+  L.className = "pe-layer" + (PE.tool==="text" ? " tt" : "");
+  L.style.cursor = (PE.tool==="new"||PE.tool==="cover"||PE.tool==="line"||PE.tool==="rect") ? "crosshair" : "default";
+  if(PE.tool==="text"){
+    for(const b of PE.blocks){
+      if(blkTaken(b.id)) continue;
+      const r = rectCv(b.x0, b.bot, b.x1, b.top);
+      const e = el("div","pe-blk");
+      e.style.cssText = "left:"+r.x+"px;top:"+r.y+"px;width:"+r.w+"px;height:"+r.h+"px";
+      e.dataset.blk = b.id;
+      L.appendChild(e);
+    }
+  }
+  const objs = EDITS[PE.uid]||[];
+  const selO = (PE.sel && PE.sel.kind==="obj") ? PE.sel.o : null;
+  for(const o of objs){
+    const e = objEl(o);
+    e.dataset.oid = o.id;
+    e.style.pointerEvents = (PE.tool==="sel" || (PE.tool==="text" && o.k==="t")) ? "auto" : "none";
+    if(o===selO) e.classList.add("on");
+    L.appendChild(e);
+  }
+  if(selO && PE.tool==="sel" && !PE.ed) handlesFor(selO, L);
+}
+
+function objEl(o){
+  const e = el("div","pe-ob");
+  if(o.k==="line"){
+    const a = toCv(o.x1,o.y1), b = toCv(o.x2,o.y2);
+    const x = Math.min(a[0],b[0])-5, y = Math.min(a[1],b[1])-5;
+    const w = Math.abs(b[0]-a[0])+10, hh = Math.abs(b[1]-a[1])+10;
+    e.style.cssText = "left:"+x+"px;top:"+y+"px;width:"+w+"px;height:"+hh+"px";
+    e.innerHTML = '<svg width="'+w+'" height="'+hh+'" style="display:block">'
+      + '<line x1="'+(a[0]-x)+'" y1="'+(a[1]-y)+'" x2="'+(b[0]-x)+'" y2="'+(b[1]-y)
+      + '" stroke="'+rgbCss(o.color)+'" stroke-width="'+Math.max(1,o.lw*PE.scale)+'" stroke-linecap="round"></line></svg>';
+    return e;
+  }
+  const rr = objRect(o);
+  const r = rectCv(rr.x, rr.y, rr.x+rr.w, rr.y+rr.h);
+  let css = "left:"+r.x+"px;top:"+r.y+"px;width:"+r.w+"px;height:"+r.h+"px;";
+  if(o.k==="patch") css += "background:"+rgbCss(o.color)+";";
+  if(o.k==="rect"){
+    css += "border:"+Math.max(1,o.lw*PE.scale)+"px solid "+rgbCss(o.color)+";";
+    if(o.fill) css += "background:"+rgbCss(o.fill)+";";
+  }
+  if(o.k==="img") css += "overflow:hidden;";
+  if(o.k==="t"){
+    const f = famOf(o.font);
+    const fs = o.size*PE.scale, lh = o.size*o.lh*PE.scale;
+    const pad = (0.80*fs) - ((lh - fs)/2 + 0.75*fs);
+    css += "font-family:"+f.family+";font-weight:"+f.weight+";font-style:"+f.style
+        +  ";color:"+rgbCss(o.color)+";font-size:"+fs+"px;line-height:"+lh
+        +  "px;text-align:"+alignCss(o.align)+";white-space:pre-wrap;padding-top:"+pad+"px;overflow:visible;";
+  }
+  e.style.cssText = css;
+  if(o.k==="img"){
+    const im = new Image(); im.src = o.url; im.alt="";
+    im.style.cssText = "width:100%;height:100%;display:block";
+    e.appendChild(im);
+  }
+  if(o.k==="t") e.textContent = wrapText(FMET[o.font], o.size, o.text, o.w).join("\n");
+  return e;
+}
+
+function handlesFor(o, L){
+  const mk = (cx,cy,hd)=>{
+    const d = el("div","pe-h");
+    d.style.cssText = "left:"+(cx-4)+"px;top:"+(cy-4)+"px;cursor:"+(hd==="r"?"ew-resize":"nwse-resize");
+    d.dataset.hd = hd; L.appendChild(d);
+  };
+  if(o.k==="line"){
+    const a = toCv(o.x1,o.y1), b = toCv(o.x2,o.y2);
+    mk(a[0],a[1],"p1"); mk(b[0],b[1],"p2");
+    return;
+  }
+  const rr = objRect(o);
+  const r = rectCv(rr.x, rr.y, rr.x+rr.w, rr.y+rr.h);
+  if(o.k==="t"){ mk(r.x+r.w, r.y+r.h/2, "r"); return; }
+  mk(r.x+r.w, r.y+r.h, "br");
+}
+
+/* ---- painel lateral ---- */
+function hintFor(tool){
+  return t(tool==="text"?"hText":tool==="new"?"hNew":tool==="cover"?"hCover"
+    :tool==="img"?"hImg":tool==="line"?"hLine":tool==="rect"?"hRect":"hSel");
+}
+function fld(label, inner){
+  return '<div class="fld"><label>'+esc(label)+'</label>'+inner+'</div>';
+}
+function swatches(cols, cur, cls){
+  let s = '<div class="pe-sw">';
+  for(let i=0;i<cols.length;i++){
+    s += '<button data-'+cls+'="'+i+'" class="'+(sameCol(cols[i],cur)?"on":"")
+      +  '" style="background:'+rgbCss(cols[i])+'"></button>';
+  }
+  return s + '</div>';
+}
+function numBox(id, val){
+  return '<div class="pe-num"><button data-nm="'+id+'" data-d="-1">−</button>'
+    + '<span id="'+id+'">'+esc(val)+'</span>'
+    + '<button data-nm="'+id+'" data-d="1">+</button></div>';
+}
+function peSide(){
+  if(!PE) return;
+  const S = $("peSide"), s = PE.sel;
+  $("peCount").textContent = (EDITS[PE.uid]||[]).length
+    ? tp("peChanges",{n:EDITS[PE.uid].length}) : tp("peNone");
+  if(!s){
+    S.innerHTML = '<h4>'+esc(t("sNothing"))+'</h4>'
+      + '<div class="pe-meta">'+esc(hintFor(PE.tool))+'</div>';
+    return;
+  }
+  if(s.kind==="blkNo"){
+    S.innerHTML = '<h4>'+esc(t("sParaT"))+'</h4>'
+      + '<div class="pe-meta">'+esc(tp("sParaM",{n:s.b.lines.length,c:s.b.text.length}))+'</div>'
+      + '<div class="note w">'+t("bFlat")+'</div>';
+    return;
+  }
+  const o = (s.kind==="obj") ? s.o : null;
+  if(o && o.k==="t"){
+    const pal = PAL.slice();
+    let html = '<h4>'+esc(o.blk?t("sParaT"):t("sNewT"))+'</h4>'
+      + '<div class="pe-meta">'+esc(tp(o.blk?"sParaM":"sNewM",{n:textBox(o).nl,c:o.text.length}))+'</div>';
+    if(o.sub) html += '<div class="note i"><b>'+esc(t("sSubT"))+'</b><br>'+t("sSub",{f:STDNM[o.font]})+'</div>';
+    let opts = "";
+    for(const k of STD) opts += '<option value="'+k+'"'+(k===o.font?" selected":"")+'>'+esc(STDNM[k])+'</option>';
+    html += fld(t("sFont"), '<select class="inp" id="peF">'+opts+'</select>');
+    html += '<div class="row">'
+      + '<div class="fld"><label>'+esc(t("sSize"))+'</label>'+numBox("peSz", o.size.toFixed(1).replace(".",",")+" pt")+'</div>'
+      + '<div class="fld"><label>'+esc(t("sLh"))+'</label>'+numBox("peLh", o.lh.toFixed(2).replace(".",","))+'</div>'
+      + '</div>';
+    html += fld(t("sColor"), swatches(pal, o.color, "col"));
+    html += fld(t("sAlign"), '<div class="segs">'
+      + '<button class="seg'+(o.align==="l"?" on":"")+'" data-al="l" style="flex:1">'+esc(t("sAl"))+'</button>'
+      + '<button class="seg'+(o.align==="c"?" on":"")+'" data-al="c" style="flex:1">'+esc(t("sAc"))+'</button>'
+      + '<button class="seg'+(o.align==="r"?" on":"")+'" data-al="r" style="flex:1">'+esc(t("sAr"))+'</button>'
+      + '</div>');
+    const rr = objRect(o);
+    html += '<div class="pe-hr"></div><label style="font-size:11.5px;font-weight:700;color:var(--muted);'
+      + 'text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:8px">'+esc(t("sPos"))+'</label>'
+      + '<div class="pe-xy"><div><b>X</b><span>'+rr.x.toFixed(1)+'</span></div>'
+      + '<div><b>Y</b><span>'+rr.y.toFixed(1)+'</span></div>'
+      + '<div><b>L</b><span>'+rr.w.toFixed(1)+'</span></div>'
+      + '<div><b>A</b><span>'+rr.h.toFixed(1)+'</span></div></div>';
+    html += '<div class="pe-hr"></div>';
+    if(o.orig!=null){
+      html += '<button class="btn g" id="peRst" style="width:100%">'+esc(t("sReset"))+'</button>'
+        + '<div class="pe-hint" style="margin:7px 0 12px">'+esc(t("sResetN"))+'</div>';
+    }
+    html += '<button class="btn q" id="peDel" style="width:100%;color:var(--err)">'
+      + esc(o.blk?t("sDelP"):t("sDelO"))+'</button>';
+    S.innerHTML = html;
+    $("peF").onchange = e=>{ o.font = e.target.value; pushHist(); peLayer(); peSide(); };
+    S.querySelectorAll("[data-col]").forEach(b=>{ b.onclick = ()=>{ o.color = PAL[+b.dataset.col]; pushHist(); peLayer(); peSide(); }; });
+    S.querySelectorAll("[data-al]").forEach(b=>{ b.onclick = ()=>{ o.align = b.dataset.al; pushHist(); peLayer(); peSide(); }; });
+    S.querySelectorAll("[data-nm]").forEach(b=>{ b.onclick = ()=>{
+      const d = +b.dataset.d;
+      if(b.dataset.nm==="peSz") o.size = Math.max(3, Math.min(96, Math.round((o.size + d*0.5)*10)/10));
+      else o.lh = Math.max(0.8, Math.min(3, Math.round((o.lh + d*0.05)*100)/100));
+      pushHist(); peLayer(); peSide();
+    }; });
+    if($("peRst")) $("peRst").onclick = peReset;
+    $("peDel").onclick = peDel;
+    return;
+  }
+  if(o){
+    const isImg = o.k==="img", isLine = o.k==="line", isRect = o.k==="rect";
+    const title = isImg ? t("sImgT") : isLine ? t("sLineT") : isRect ? t("sRectT") : t("sCoverT");
+    let html = '<h4>'+esc(title)+'</h4><div class="pe-meta">'+esc(hintFor("sel"))+'</div>';
+    if(!isImg) html += fld(t("sColor"), swatches(PAL, o.color, "col"));
+    if(isLine || isRect) html += fld(t("sThick"), numBox("peLw", o.lw.toFixed(1).replace(".",",")+" pt"));
+    if(isRect) html += fld(t("sFill"), '<label class="chk"><input type="checkbox" id="peFill"'+(o.fill?" checked":"")+'> '+esc(t("sNoFill"))+'</label>');
+    const rr = objRect(o);
+    html += '<div class="pe-hr"></div><div class="pe-xy">'
+      + '<div><b>X</b><span>'+rr.x.toFixed(1)+'</span></div>'
+      + '<div><b>Y</b><span>'+rr.y.toFixed(1)+'</span></div>'
+      + '<div><b>L</b><span>'+rr.w.toFixed(1)+'</span></div>'
+      + '<div><b>A</b><span>'+rr.h.toFixed(1)+'</span></div></div>'
+      + '<button class="btn q" id="peDel" style="width:100%;color:var(--err)">'+esc(t("sDelO"))+'</button>';
+    S.innerHTML = html;
+    S.querySelectorAll("[data-col]").forEach(b=>{ b.onclick = ()=>{ o.color = PAL[+b.dataset.col]; pushHist(); peLayer(); peSide(); }; });
+    S.querySelectorAll("[data-nm]").forEach(b=>{ b.onclick = ()=>{
+      o.lw = Math.max(0.2, Math.min(24, Math.round((o.lw + (+b.dataset.d)*0.5)*10)/10));
+      pushHist(); peLayer(); peSide();
+    }; });
+    if($("peFill")) $("peFill").onchange = e=>{ o.fill = e.target.checked ? PAL[5] : null; pushHist(); peLayer(); peSide(); };
+    $("peDel").onclick = peDel;
+  }
+}
+
+/* ---- escrever ---- */
+function pickBlock(b){
+  if(!b) return;
+  if(PE.ed) commitEdit();
+  const r = rectCv(b.x0, b.bot, b.x1, b.top);
+  const smp = sampleRect(PE.ctx, r);
+  if(!smp || !smp.flat){ PE.sel = { kind:"blkNo", b:b }; peLayer(); peSide(); return; }
+  const L0 = b.lines[0];
+  const fk = pickFont(b.cls, L0.s, b.size, L0.x1 - L0.x0);
+  PE.sel = { kind:"blk", b:b, smp:smp, font:fk };
+  peLayer(); peSide();
+  startEdit();
+}
+function startEdit(){
+  const s = PE.sel; if(!s) return;
+  if(PE.ed){ PE.ed.el.remove(); PE.ed = null; }
+  let r, size, lh, fk, col, txt, align, bg;
+  if(s.kind==="blk"){
+    r = rectCv(s.b.x0, s.b.bot, s.b.x1, s.b.top);
+    size = s.b.size; lh = s.b.lh; fk = s.font; col = s.smp.ink;
+    txt = s.b.text; align = "l"; bg = rgbCss(s.smp.bg);
+  } else if(s.kind==="obj" && s.o.k==="t"){
+    const o = s.o, rr = objRect(o);
+    r = rectCv(rr.x, rr.y, rr.x+rr.w, rr.y+rr.h);
+    size = o.size; lh = o.lh; fk = o.font; col = o.color; txt = o.text; align = o.align;
+    bg = o.patchBg ? rgbCss(o.patchBg) : "transparent";
+  } else return;
+  const f = famOf(fk);
+  const fs = size*PE.scale, lhp = size*lh*PE.scale;
+  const pad = (0.80*fs) - ((lhp - fs)/2 + 0.75*fs);
+  const d = el("div","pe-ed");
+  d.contentEditable = "true";
+  d.spellcheck = false;
+  d.style.cssText = "left:"+r.x+"px;top:"+r.y+"px;width:"+r.w+"px;min-height:"+r.h+"px;"
+    + "font-family:"+f.family+";font-weight:"+f.weight+";font-style:"+f.style
+    + ";color:"+rgbCss(col)+";font-size:"+fs+"px;line-height:"+lhp+"px;text-align:"+alignCss(align)
+    + ";background:"+bg+";white-space:pre-wrap;padding-top:"+pad+"px";
+  d.textContent = txt;
+  $("peLayer").appendChild(d);
+  PE.ed = { el:d, kind:s.kind };
+  d.focus();
+  try{
+    const rg = document.createRange(); rg.selectNodeContents(d);
+    const sl = window.getSelection(); sl.removeAllRanges(); sl.addRange(rg);
+  }catch(e){}
+}
+function cancelEdit(){
+  if(!PE || !PE.ed) return;
+  PE.ed.el.remove(); PE.ed = null;
+  if(PE.sel && PE.sel.kind==="blk") PE.sel = null;
+  peLayer(); peSide();
+}
+function commitEdit(){
+  if(!PE || !PE.ed) return;
+  const txt = String(PE.ed.el.innerText||"").replace(/\u00a0/g," ").replace(/\n{3,}/g,"\n\n").trim();
+  const s = PE.sel;
+  PE.ed.el.remove(); PE.ed = null;
+  const objs = EDITS[PE.uid];
+  if(s && s.kind==="blk"){
+    const b = s.b;
+    if(!txt || txt===b.text){ PE.sel = null; peLayer(); peSide(); return; }
+    const g = "g"+(++GID);
+    objs.push({ id:"o"+(++OIDN), g:g, k:"patch", x:b.x0-1, y:b.bot-1,
+                w:(b.x1-b.x0)+2, h:(b.top-b.bot)+2, color:s.smp.bg });
+    const o = { id:"o"+(++OIDN), g:g, k:"t", blk:b.id, orig:b.text, sub:true,
+                x:b.x0, base:b.y0, w:(b.x1-b.x0), size:b.size, lh:b.lh, align:"l",
+                font:s.font, color:s.smp.ink, text:txt, patchBg:s.smp.bg };
+    objs.push(o);
+    PE.sel = { kind:"obj", o:o };
+    warnWide(o, (b.top-b.bot));
+    pushHist();
+  } else if(s && s.kind==="obj" && s.o.k==="t"){
+    const o = s.o;
+    if(!txt){ peDel(); return; }
+    if(txt!==o.text){ o.text = txt; pushHist(); if(o.blk) warnWide(o, null); }
+  }
+  peLayer(); peSide();
+}
+function warnWide(o, hOrig){
+  const b = textBox(o);
+  const lim = hOrig!=null ? hOrig : b.h;
+  if(b.h > lim + o.size*0.3 && !PE.warned){ PE.warned = true; toast(t("bWide"),"warn"); }
+}
+function peDel(){
+  const s = PE.sel; if(!s || s.kind!=="obj") return;
+  const objs = EDITS[PE.uid];
+  const i = objs.indexOf(s.o);
+  if(i>=0) objs.splice(i,1);
+  PE.sel = null; pushHist(); peLayer(); peSide();
+}
+function peReset(){
+  const s = PE.sel; if(!s || s.kind!=="obj" || !s.o.g) return;
+  const g = s.o.g;
+  EDITS[PE.uid] = (EDITS[PE.uid]||[]).filter(o=>o.g!==g);
+  PE.sel = null; pushHist(); peLayer(); peSide();
+}
+
+/* ---- rato: mover, redimensionar, desenhar ---- */
+function peDown(e){
+  if(!PE || e.button!==0) return;
+  const L = $("peLayer");
+  const box = L.getBoundingClientRect();
+  const px = e.clientX - box.left, py = e.clientY - box.top;
+  const hd = e.target.closest(".pe-h");
+  if(hd && PE.sel && PE.sel.kind==="obj"){ e.preventDefault(); dragStart(px,py,"h",hd.dataset.hd); return; }
+  if(PE.ed && e.target.closest(".pe-ed")) return;
+  if(PE.ed) commitEdit();
+  const ob = e.target.closest(".pe-ob");
+  if(ob && ob.dataset.oid){
+    const o = objById(ob.dataset.oid);
+    if(o){
+      PE.sel = { kind:"obj", o:o };
+      if(PE.tool==="text" && o.k==="t"){ peLayer(); peSide(); startEdit(); return; }
+      e.preventDefault(); peLayer(); peSide(); dragStart(px,py,"move",null); return;
+    }
+  }
+  const bk = e.target.closest(".pe-blk");
+  if(bk && PE.tool==="text"){ e.preventDefault(); pickBlock(blkById(bk.dataset.blk)); return; }
+  if(PE.tool==="new"||PE.tool==="cover"||PE.tool==="line"||PE.tool==="rect"){
+    e.preventDefault(); dragStart(px,py,"draw",PE.tool); return;
+  }
+  PE.sel = null; peLayer(); peSide();
+}
+function dragStart(px,py,mode,arg){
+  const L = $("peLayer");
+  const box = L.getBoundingClientRect();
+  const st = { px:px, py:py, mode:mode, arg:arg, o:(PE.sel&&PE.sel.kind==="obj")?PE.sel.o:null, moved:false };
+  st.p0 = toPdf(px,py);
+  if(st.o) st.snap = Object.assign({},st.o);
+  let ghost = null;
+  if(mode==="draw"){
+    ghost = el("div","pe-ghost");
+    ghost.style.cssText = "left:"+px+"px;top:"+py+"px;width:0;height:0";
+    L.appendChild(ghost);
+  }
+  const move = ev=>{
+    const cx = ev.clientX - box.left, cy = ev.clientY - box.top;
+    st.moved = true;
+    if(mode==="draw"){
+      if(arg==="line"){
+        ghost.style.cssText = "left:"+Math.min(px,cx)+"px;top:"+Math.min(py,cy)
+          + "px;width:"+Math.abs(cx-px)+"px;height:"+Math.abs(cy-py)+"px";
+      } else {
+        ghost.style.cssText = "left:"+Math.min(px,cx)+"px;top:"+Math.min(py,cy)
+          + "px;width:"+Math.abs(cx-px)+"px;height:"+Math.abs(cy-py)+"px";
+      }
+      return;
+    }
+    const p1 = toPdf(cx,cy);
+    const dx = p1[0]-st.p0[0], dy = p1[1]-st.p0[1];
+    const o = st.o; if(!o) return;
+    if(mode==="move"){
+      if(o.k==="line"){ o.x1 = st.snap.x1+dx; o.y1 = st.snap.y1+dy; o.x2 = st.snap.x2+dx; o.y2 = st.snap.y2+dy; }
+      else if(o.k==="t"){ o.x = st.snap.x+dx; o.base = st.snap.base+dy; }
+      else { o.x = st.snap.x+dx; o.y = st.snap.y+dy; }
+    } else if(mode==="h"){
+      if(arg==="p1"){ o.x1 = st.snap.x1+dx; o.y1 = st.snap.y1+dy; }
+      else if(arg==="p2"){ o.x2 = st.snap.x2+dx; o.y2 = st.snap.y2+dy; }
+      else if(arg==="r"){ o.w = Math.max(o.size*1.2, st.snap.w+dx); }
+      else { o.w = Math.max(3, st.snap.w+dx); o.h = Math.max(3, st.snap.h-dy); o.y = st.snap.y+dy; }
+    }
+    peLayer();
+  };
+  const up = ev=>{
+    window.removeEventListener("pointermove",move);
+    window.removeEventListener("pointerup",up);
+    if(mode==="draw"){
+      const cx = ev.clientX - box.left, cy = ev.clientY - box.top;
+      if(ghost) ghost.remove();
+      finishDraw(arg, px, py, cx, cy);
+      return;
+    }
+    if(st.moved) pushHist();
+    peLayer(); peSide();
+  };
+  window.addEventListener("pointermove",move);
+  window.addEventListener("pointerup",up);
+}
+function finishDraw(tool, x0, y0, x1, y1){
+  const objs = EDITS[PE.uid];
+  if(tool==="line"){
+    const a = toPdf(x0,y0), b = toPdf(x1,y1);
+    if(Math.abs(x1-x0)+Math.abs(y1-y0) < 6){ peLayer(); peSide(); return; }
+    const o = { id:"o"+(++OIDN), k:"line", x1:a[0], y1:a[1], x2:b[0], y2:b[1], lw:1, color:PAL[0] };
+    objs.push(o); PE.sel = { kind:"obj", o:o }; pushHist(); peLayer(); peSide(); return;
+  }
+  const r = { x:Math.min(x0,x1), y:Math.min(y0,y1), w:Math.abs(x1-x0), h:Math.abs(y1-y0) };
+  if(r.w < 6 || r.h < 6){ peLayer(); peSide(); return; }
+  const pr = rectPdf(r);
+  if(tool==="cover"){
+    const smp = sampleRect(PE.ctx, r);
+    const o = { id:"o"+(++OIDN), k:"patch", x:pr.x, y:pr.y, w:pr.w, h:pr.h,
+                color:(smp&&smp.flat)?smp.bg:PAL[0] };
+    objs.push(o); PE.sel = { kind:"obj", o:o }; PE.tool = "sel";
+    pushHist(); peChrome(); peLayer(); peSide(); return;
+  }
+  if(tool==="rect"){
+    const o = { id:"o"+(++OIDN), k:"rect", x:pr.x, y:pr.y, w:pr.w, h:pr.h, lw:1, color:PAL[0], fill:null };
+    objs.push(o); PE.sel = { kind:"obj", o:o }; pushHist(); peLayer(); peSide(); return;
+  }
+  if(tool==="new"){
+    const size = Math.max(6, Math.min(48, Math.round(pr.h*0.62*10)/10)) || 11;
+    const o = { id:"o"+(++OIDN), k:"t", x:pr.x, base:pr.y+pr.h-size*0.80, w:pr.w,
+                size:size, lh:1.25, align:"l", font:"Helvetica", color:PAL[0], text:"" };
+    objs.push(o); PE.sel = { kind:"obj", o:o };
+    peLayer(); peSide(); startEdit(); return;
+  }
+}
+async function peImgPick(e){
+  const f = e.target.files && e.target.files[0];
+  e.target.value = "";
+  if(!f || !PE) return;
+  try{
+    const buf = new Uint8Array(await f.arrayBuffer());
+    const isPng = buf[0]===0x89 && buf[1]===0x50;
+    const isJpg = buf[0]===0xFF && buf[1]===0xD8;
+    if(!isPng && !isJpg){ toast(t("errImg"),"err"); return; }
+    const url = URL.createObjectURL(new Blob([buf],{type:isPng?"image/png":"image/jpeg"}));
+    const im = new Image();
+    await new Promise((res,rej)=>{ im.onload=res; im.onerror=rej; im.src=url; });
+    const cw = PE.vp.width*0.35, ch = cw*(im.height/im.width);
+    const pr = rectPdf({ x:(PE.vp.width-cw)/2, y:(PE.vp.height-ch)/2, w:cw, h:ch });
+    const o = { id:"o"+(++OIDN), k:"img", x:pr.x, y:pr.y, w:pr.w, h:pr.h,
+                data:buf, type:isPng?"png":"jpg", url:url };
+    EDITS[PE.uid].push(o);
+    PE.sel = { kind:"obj", o:o }; PE.tool = "sel";
+    pushHist(); peChrome(); peLayer(); peSide();
+  }catch(err){ console.error(err); toast(t("errImg"),"err"); }
+}
+
+/* ---- barra e ligações ---- */
+function peChrome(){
+  if(!PE) return;
+  $("peDot").style.background = PE.d.color;
+  $("peName").textContent = PE.d.name;
+  $("peName").title = PE.d.name;
+  $("peWhich").textContent = tp("peWhich",{n:PE.i+1,m:PAGES.length});
+  $("peUndo").innerHTML = IC.undo; $("peUndo").title = tp("undoT");
+  $("peRedo").innerHTML = IC.redo; $("peRedo").title = tp("redoT");
+  $("peUndo").disabled = HPOS<=0;
+  $("peRedo").disabled = HPOS>=HIST.length-1;
+  const rail = $("peRail"); rail.innerHTML = "";
+  const tools = [["sel",IC.cursor,"tSel"],["text",IC.pen,"tText"],["new",IC.tnew,"tNew"],
+                 ["cover",IC.cover,"tCover"],["img",IC.image,"tImg"],["line",IC.linei,"tLine"],
+                 ["rect",IC.recti,"tRect"]];
+  for(const tl of tools){
+    const b = el("button","pe-tool"+(PE.tool===tl[0]?" on":""), tl[1]);
+    b.title = tp(tl[2]);
+    b.onclick = ()=>{
+      if(PE.ed) commitEdit();
+      PE.sel = null;
+      if(tl[0]==="img"){ $("peFile").click(); }
+      else PE.tool = tl[0];
+      peChrome(); peLayer(); peSide();
+    };
+    rail.appendChild(b);
+    if(tl[0]==="text" || tl[0]==="cover"){
+      const sp = el("div");
+      sp.style.cssText = "width:23px;height:1px;background:var(--line);margin:5px 0;flex:0 0 auto";
+      rail.appendChild(sp);
+    }
+  }
+}
+async function peDownload(){
+  if(!PE) return;
+  if(PE.ed) commitEdit();
+  progOn(tp("wSave"));
+  try{
+    const bytes = await buildPdf([PE.p], tp("wSave"));
+    const name = baseName(PE.d.name)+"-pagina-"+(PE.i+1)+".pdf";
+    dl(new Blob([bytes],{type:"application/pdf"}), name);
+    toast(t("okSaved",{f:name}),"ok");
+  }catch(err){ console.error(err); toast(t("errBad",{f:"PDF"}),"err"); }
+  progOff();
+}
+function peInit(){
+  $("peLayer").addEventListener("pointerdown", peDown);
+  $("peBack").onclick = closePE;
+  $("peApply").onclick = ()=>{ const n = PE ? PE.i+1 : 0; closePE(); toast(t("peOk",{n:n}),"ok"); };
+  $("peDl").onclick = peDownload;
+  $("peUndo").onclick = ()=>{ if(PE&&PE.ed) commitEdit(); undo(); if(PE) peChrome(); };
+  $("peRedo").onclick = ()=>{ if(PE&&PE.ed) commitEdit(); redo(); if(PE) peChrome(); };
+  $("peZi").onclick = ()=>{ if(!PE) return; PE.scale = Math.min(4, PE.scale*1.15); peDraw(false); };
+  $("peZo").onclick = ()=>{ if(!PE) return; PE.scale = Math.max(0.2, PE.scale/1.15); peDraw(false); };
+  $("peFw").onclick = ()=>{ if(!PE) return; PE.fit="w"; $("peFw").classList.add("on"); $("peFp").classList.remove("on"); peDraw(true); };
+  $("peFp").onclick = ()=>{ if(!PE) return; PE.fit="p"; $("peFp").classList.add("on"); $("peFw").classList.remove("on"); peDraw(true); };
+  $("peFile").onchange = peImgPick;
+  $("grid").addEventListener("dblclick", e=>{
+    const c = e.target.closest(".pg"); if(!c) return;
+    const i = idxOf(c.dataset.uid); if(i>=0) openPE(i);
+  });
+  let rz = null;
+  window.addEventListener("resize", ()=>{
+    if(!PE) return;
+    clearTimeout(rz); rz = setTimeout(()=>{ if(PE) peDraw(true); }, 180);
+  });
+}
+
+/* ---- escrever as edições no PDF ---- */
+async function fontIn(out, key, cache){
+  if(cache[key]) return cache[key];
+  cache[key] = await out.embedFont(PDFLib.StandardFonts[key]);
+  return cache[key];
+}
+async function drawEdits(out, pg, p, fcache){
+  const objs = EDITS[p.uid];
+  if(!objs || !objs.length) return;
+  for(const o of objs){
+    try{
+      if(o.k==="patch"){
+        pg.drawRectangle({ x:o.x, y:o.y, width:o.w, height:o.h, color:pdfRgb(o.color) });
+      } else if(o.k==="rect"){
+        const opt = { x:o.x, y:o.y, width:o.w, height:o.h, borderColor:pdfRgb(o.color), borderWidth:o.lw };
+        if(o.fill) opt.color = pdfRgb(o.fill);
+        pg.drawRectangle(opt);
+      } else if(o.k==="line"){
+        pg.drawLine({ start:{x:o.x1,y:o.y1}, end:{x:o.x2,y:o.y2}, thickness:o.lw, color:pdfRgb(o.color) });
+      } else if(o.k==="img"){
+        const im = (o.type==="png") ? await out.embedPng(o.data) : await out.embedJpg(o.data);
+        pg.drawImage(im, { x:o.x, y:o.y, width:o.w, height:o.h });
+      } else if(o.k==="t"){
+        const f = await fontIn(out, o.font, fcache);
+        const lines = wrapText(FMET[o.font], o.size, o.text, o.w);
+        let ty = (o.base!=null) ? o.base : (o.y + o.h - o.size*0.80);
+        for(const ln of lines){
+          const s = wa(ln);
+          if(s){
+            let tx = o.x;
+            if(o.align==="c" || o.align==="r"){
+              const lw = FMET[o.font].widthOfTextAtSize(s, o.size);
+              tx = (o.align==="c") ? o.x + (o.w-lw)/2 : o.x + o.w - lw;
+            }
+            pg.drawText(s, { x:tx, y:ty, size:o.size, font:f, color:pdfRgb(o.color) });
+          }
+          ty -= o.size*o.lh;
+        }
+      }
+    }catch(e){ console.error("edição não desenhada", o.k, e); }
+  }
+}
+
 /* ---------------- 21. arranque ---------------- */
 (function init(){
   $("logo").src = (typeof LOGO!=="undefined") ? LOGO : "";
   applyTheme(curTheme());
   icons();
   bind();
+  peInit();
   let l="pt"; try{ l = localStorage.getItem(LKEY)||"pt"; }catch(e){}
   setLang(l);
   HIST=[snap()]; HPOS=0;

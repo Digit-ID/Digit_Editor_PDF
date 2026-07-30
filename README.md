@@ -48,6 +48,19 @@ pedidos, todos ao próprio site: o `index.html` e os 7 ficheiros de `vendor/`.
 * Desfazer e refazer **sem limite de passos**.
 * Atalhos: `Ctrl+A`, `Delete`, `[`, `]`, `Ctrl+S`, `Ctrl+Z`, `Ctrl+Shift+Z`, `Esc`.
 
+### Editar uma página
+* Duplo clique numa miniatura — ou o botão do lápis no pé dela — abre essa página
+  sozinha, em grande, num editor próprio.
+* Os parágrafos que têm texto por baixo ficam marcados. Ao clicar num deles escreve-se
+  dentro dele, com o tamanho, a entrelinha, a cor e o alinhamento medidos no original.
+* Escrever texto novo em qualquer sítio, tapar uma zona, inserir uma imagem ou
+  assinatura (PNG ou JPEG), desenhar linhas e retângulos. Tudo se move e redimensiona.
+* **Repor o texto original** devolve o texto exacto enquanto o PDF não for guardado.
+  As alterações entram no histórico geral: desfazer e refazer sem limite de passos.
+* **Aplicar à página** volta à grelha com as alterações postas — a miniatura passa a
+  mostrar quantas são — e é o **Guardar PDF** normal que as escreve no ficheiro.
+  Também dá para descarregar só aquela página, já alterada.
+
 ### Conversões
 * **PDF → Excel** — extrai o texto com as posições reais e deteta as colunas pelas
   coordenadas. Antes de exportar mostra uma pré-visualização **editável**: dá para
@@ -76,6 +89,16 @@ pedidos, todos ao próprio site: o `index.html` e os 7 ficheiros de `vendor/`.
 
 Nada de funções a meio gás. Estas ficaram deliberadamente de fora:
 
+* **Não reescreve o texto de um PDF como um processador de texto.** Trocar texto
+  existente é tapar o antigo com a cor do fundo e desenhar o novo por cima, por isso só
+  é oferecido quando o fundo daquele parágrafo é liso: sobre uma imagem ou um degradado
+  ficaria uma mancha, e nesse caso o editor recusa e explica porquê. O texto seguinte
+  também não reflui — o que se escreve fica dentro da caixa do parágrafo, e se passar
+  para fora o aviso aparece.
+* **Não reutiliza a letra original.** Os PDF trazem as fontes incorporadas em
+  subconjunto, só com os caracteres que já estavam na página: escrever um acento que lá
+  não estava seria impossível. O DigiPDF mede a largura do texto original, escolhe entre
+  as 12 fontes padrão do PDF a que mais se aproxima, e diz na lateral qual usou.
 * **Não abre PDF protegidos por palavra-passe e não põe nem retira palavras-passe.**
   Fazer isto bem exige criptografia que não é seguro implementar deste lado; um
   ficheiro "protegido" mal feito dá uma falsa sensação de segurança. Quando aparece um
