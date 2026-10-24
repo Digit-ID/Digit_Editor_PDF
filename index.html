@@ -409,6 +409,12 @@ window.__hideBoot=function(){
     .priv{font-size:11.8px;padding:9px 11px}
   }
 </style>
+<script>/* Digit — controlo de acesso por colaborador (definido no portal). Falha de ligação nunca bloqueia. */
+(function(){try{var APP="editorpdf",K="sb_publishable_oMc9Ls4Te9w5MlkuTiuMaQ_pRaEaF1j",U="https://aucnnpvdbvqwijamjokm.supabase.co";var tok=null,m=(location.hash||"").match(/access_token=([^&]+)/);if(m)tok=decodeURIComponent(m[1]);if(!tok){var raw=localStorage.getItem("sb-aucnnpvdbvqwijamjokm-auth-token");if(raw){var js=JSON.parse(raw);tok=js&&(js.access_token||(js.currentSession&&js.currentSession.access_token));}}if(!tok)return;var pl=JSON.parse(atob(tok.split(".")[1].replace(/-/g,"+").replace(/_/g,"/")));var em=pl&&pl.email;if(!em)return;
+fetch(U+"/rest/v1/rpc/digit_perfil",{method:"POST",headers:{apikey:K,Authorization:"Bearer "+K,"Content-Type":"application/json"},body:JSON.stringify({p_email:em})}).then(function(r){return r.ok?r.json():null;}).then(function(d){var r=d&&d[0];if(!r)return;var bl=r.ativo===false||(Array.isArray(r.apps_bloqueadas)&&r.apps_bloqueadas.indexOf(APP)>=0);if(!bl)return;var txt=r.ativo===false?"A tua conta está desativada.":"Não tens acesso ao Editor PDF.";
+function tapar(){if(document.getElementById("digit-sem-acesso"))return;var o=document.createElement("div");o.id="digit-sem-acesso";o.setAttribute("style","position:fixed;inset:0;z-index:2147483647;background:#FBFAF7;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-family:system-ui,-apple-system,Segoe UI,sans-serif;text-align:center;padding:24px");o.innerHTML='<div style="font-size:18px;font-weight:700;color:#111827">'+txt+'</div><div style="font-size:14px;color:#6B7280">Fala com a administração da Digit.</div>';(document.body||document.documentElement).appendChild(o);if(document.body)document.body.style.overflow="hidden";}
+tapar();setInterval(tapar,700);}).catch(function(){});}catch(e){}})();
+</script>
 </head>
 <body>
 
